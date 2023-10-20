@@ -1,8 +1,6 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
+/// Support for decoding discovery_b64 messages.
 library;
 
-export 'src/zebra_discovery_b64_base.dart';
-
-// TODO: Export any libraries intended for clients of this package.
+export 'src/classes/discovery/discovery.dart';
+export 'src/classes/discovery/discovery_advanced.dart';
+export 'src/classes/discovery/discovery_legacy.dart';
