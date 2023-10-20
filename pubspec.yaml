@@ -1,5 +1,5 @@
 name: zebra_discovery_b64
-description: A starting point for Dart libraries or applications.
+description: This library decodes the discovery_b64 message that Zebra printers will send when they connect to a websocket endpoint, also named WebLink in the Zebra documentation.
 version: 1.0.0
 # repository: https://github.com/my_org/my_repo
 
