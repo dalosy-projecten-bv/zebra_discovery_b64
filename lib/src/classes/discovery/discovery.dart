@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v0.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_legacy.dart';
 
 abstract class Discovery {
@@ -14,7 +14,7 @@ abstract class Discovery {
     final discoveryAsBytes = base64Decode(discoveryB64);
 
     //Try to determine the version of the discovery message
-    if (discoveryAsBytes.length < 3) {
+    if (discoveryAsBytes.length <= 3) {
       throw Exception(
         "The version can not be detected because the length of the message is too short (${discoveryAsBytes.length}).",
       );
@@ -26,6 +26,24 @@ abstract class Discovery {
       case 3:
         return DiscoveryLegacy.fromBytes(discoveryAsBytes);
       case 4:
+        if (discoveryAsBytes.length <= 4) {
+          throw Exception(
+            "The advanced version can not be detected because the length of the message is too short (${discoveryAsBytes.length}).",
+          );
+        }
+        final advancedVersion = discoveryAsBytes[4];
+        switch(advancedVersion) {
+          case 0:
+            break;
+          case 1:
+            break;
+          case 2:
+            break;
+          case 4:
+            break;
+          default:
+            throw Exception("The message contains an unknown advanced version ($version)");
+        }
         return DiscoveryAdvanced.fromBytes(discoveryAsBytes);
       default:
         throw Exception("The message contains an unknown version ($version)");
