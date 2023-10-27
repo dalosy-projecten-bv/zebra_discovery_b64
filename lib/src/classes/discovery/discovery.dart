@@ -1,9 +1,26 @@
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v0.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v1.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v2.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v3.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v4.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_legacy.dart';
+import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 abstract class Discovery {
+  Discovery(BytesSplitter bytesSplitter) {
+    notUsed1 = bytesSplitter.getNextBytes(3);
+    discoveryVersion = bytesSplitter.getNextBytes(1);
+  }
+
+  late final Uint8List notUsed1;
+  late final Uint8List discoveryVersion;
+  final map = <String, dynamic>{};
+
+  void initMap();
+
   factory Discovery.fromDiscoveryB64(String discoveryB64) {
     //Strip all after the first :
     if (discoveryB64.contains(':')) {
@@ -22,9 +39,10 @@ abstract class Discovery {
 
     //Use the version to return the right discovery class
     final version = discoveryAsBytes[3];
+    final bytesSplitter = BytesSplitter(discoveryAsBytes);
     switch (version) {
       case 3:
-        return DiscoveryLegacy.fromBytes(discoveryAsBytes);
+        return DiscoveryLegacy(bytesSplitter);
       case 4:
         if (discoveryAsBytes.length <= 4) {
           throw Exception(
@@ -32,19 +50,21 @@ abstract class Discovery {
           );
         }
         final advancedVersion = discoveryAsBytes[4];
-        switch(advancedVersion) {
+        switch (advancedVersion) {
           case 0:
-            break;
+            return DiscoveryAdvancedV0(bytesSplitter);
           case 1:
-            break;
+            return DiscoveryAdvancedV1(bytesSplitter);
           case 2:
-            break;
-          case 4:
-            break;
+            return DiscoveryAdvancedV2(bytesSplitter);
+          case 3:
+            return DiscoveryAdvancedV3(bytesSplitter);
+          case >= 4:
+            return DiscoveryAdvancedV4(bytesSplitter);
           default:
-            throw Exception("The message contains an unknown advanced version ($version)");
+            throw Exception(
+                "The message contains an unknown advanced version ($version)");
         }
-        return DiscoveryAdvanced.fromBytes(discoveryAsBytes);
       default:
         throw Exception("The message contains an unknown version ($version)");
     }
