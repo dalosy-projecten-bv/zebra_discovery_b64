@@ -9,5 +9,4 @@ class DiscoveryAdvancedV3 extends DiscoveryAdvancedV2 {
   }
 
   late final Uint8List avsIniVersion;
-
 }

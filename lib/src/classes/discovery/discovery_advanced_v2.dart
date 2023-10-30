@@ -13,5 +13,4 @@ class DiscoveryAdvancedV2 extends DiscoveryAdvancedV1 {
   late final Uint8List jsonPort;
   late final Uint8List linkOsMajorVer;
   late final Uint8List linkOsMinorVer;
-
 }

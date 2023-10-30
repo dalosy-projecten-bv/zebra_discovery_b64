@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
-enum PrinterError {
+enum PrinterErrorEnum {
   none(
     segment: 0,
     bitfieldValue: 0,
@@ -61,7 +61,7 @@ enum PrinterError {
     enumAsString: "Basic Forced",
   );
 
-  const PrinterError({
+  const PrinterErrorEnum({
     required this.segment,
     required this.bitfieldValue,
     required this.enumAsString,
@@ -71,12 +71,12 @@ enum PrinterError {
   final int bitfieldValue;
   final String enumAsString;
 
-  static List<PrinterError> listFromByteArray(
+  static List<PrinterErrorEnum> listFromByteArray(
     int segment,
     Uint8List byteArray,
   ) {
     final value = parseInteger(byteArray);
-    final list = <PrinterError>[];
+    final list = <PrinterErrorEnum>[];
     for (final printError in values) {
       if (printError.segment == segment &&
           (value & printError.bitfieldValue) != 0) {

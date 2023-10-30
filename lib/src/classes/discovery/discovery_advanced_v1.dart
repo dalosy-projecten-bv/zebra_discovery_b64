@@ -9,5 +9,4 @@ class DiscoveryAdvancedV1 extends DiscoveryAdvancedV0 {
   }
 
   late final Uint8List printHeadWidth;
-
 }

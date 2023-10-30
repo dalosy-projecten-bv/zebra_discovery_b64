@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
-enum PrintMode {
+enum PrintModeEnum {
   rewind(bitfieldValue: 0, enumAsString: "Rewind"),
   tearOff(bitfieldValue: 1, enumAsString: "Tear Off"),
   peelOff(bitfieldValue: 2, enumAsString: "Peel Off"),
@@ -16,7 +16,7 @@ enum PrintMode {
   rfid(bitfieldValue: 10, enumAsString: "RFID"),
   linerlessTear(bitfieldValue: 11, enumAsString: "Linerless Tear");
 
-  const PrintMode({
+  const PrintModeEnum({
     required this.bitfieldValue,
     required this.enumAsString,
   });
@@ -24,11 +24,11 @@ enum PrintMode {
   final int bitfieldValue;
   final String enumAsString;
 
-  static PrintMode fromByteArray(Uint8List byteArray) {
+  static PrintModeEnum fromByteArray(Uint8List byteArray) {
     final value = parseInteger(byteArray);
     return (values.firstWhere(
       (element) => element.bitfieldValue == value,
-      orElse: () => PrintMode.rewind,
+      orElse: () => PrintModeEnum.rewind,
     ));
   }
 }

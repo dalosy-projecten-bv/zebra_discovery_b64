@@ -15,5 +15,4 @@ class DiscoveryAdvancedV4 extends DiscoveryAdvancedV3 {
   late final Uint8List tlsRawPort;
   late final Uint8List tlsJsonPort;
   late final Uint8List wired8021XSecuritySetting;
-
 }

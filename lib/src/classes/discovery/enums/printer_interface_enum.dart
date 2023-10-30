@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
-enum PrinterInterface {
+enum PrinterInterfaceEnum {
   unknown(bitfieldValue: 0, enumAsString: "Unknown"),
   internalWired(bitfieldValue: 1, enumAsString: "Internal Wired"),
   externalWired(bitfieldValue: 2, enumAsString: "External Wired"),
@@ -14,7 +14,7 @@ enum PrinterInterface {
   sdCard(bitfieldValue: 128, enumAsString: "SD Card"),
   battery(bitfieldValue: 256, enumAsString: "Battery");
 
-  const PrinterInterface({
+  const PrinterInterfaceEnum({
     required this.bitfieldValue,
     required this.enumAsString,
   });
@@ -22,17 +22,17 @@ enum PrinterInterface {
   final int bitfieldValue;
   final String enumAsString;
 
-  static PrinterInterface fromByteArray(Uint8List byteArray) {
+  static PrinterInterfaceEnum fromByteArray(Uint8List byteArray) {
     final value = parseInteger(byteArray);
     return (values.firstWhere(
       (element) => element.bitfieldValue == value,
-      orElse: () => PrinterInterface.unknown,
+      orElse: () => PrinterInterfaceEnum.unknown,
     ));
   }
 
-  static List<PrinterInterface> listFromByteArray(Uint8List byteArray) {
+  static List<PrinterInterfaceEnum> listFromByteArray(Uint8List byteArray) {
     final value = parseInteger(byteArray);
-    final list = <PrinterInterface>[];
+    final list = <PrinterInterfaceEnum>[];
     for (final printError in values) {
       if ((value & printError.bitfieldValue) != 0) {
         list.add(printError);

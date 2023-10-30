@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
-enum NetworkProtocol {
+enum NetworkProtocolEnum {
   none(bitfieldValue: 0, enumAsString: "None"),
   ftp(bitfieldValue: 1, enumAsString: "FTP"),
   lpd(bitfieldValue: 2, enumAsString: "LPD"),
@@ -17,7 +17,7 @@ enum NetworkProtocol {
   tls(bitfieldValue: 1024, enumAsString: "TLS"),
   https(bitfieldValue: 2048, enumAsString: "HTTPS");
 
-  const NetworkProtocol({
+  const NetworkProtocolEnum({
     required this.bitfieldValue,
     required this.enumAsString,
   });
@@ -25,9 +25,9 @@ enum NetworkProtocol {
   final int bitfieldValue;
   final String enumAsString;
 
-  static List<NetworkProtocol> listFromByteArray(Uint8List byteArray) {
+  static List<NetworkProtocolEnum> listFromByteArray(Uint8List byteArray) {
     final value = parseInteger(byteArray);
-    final list = <NetworkProtocol>[];
+    final list = <NetworkProtocolEnum>[];
     for (final printError in values) {
       if ((value & printError.bitfieldValue) != 0) {
         list.add(printError);

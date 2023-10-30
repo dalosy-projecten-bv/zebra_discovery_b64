@@ -7,7 +7,6 @@ import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v3.
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v4.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_legacy.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/byte_value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/int_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 

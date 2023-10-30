@@ -2,12 +2,12 @@ import 'dart:typed_data';
 
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
-enum ZbiState {
-  disabled(bitfieldValue: 0, enumAsString: "Disabled"),
-  stopped(bitfieldValue: 1, enumAsString: "Stopped"),
-  running(bitfieldValue: 2, enumAsString: "Running");
+enum PrinterMediaTypeEnum {
+  continuous(bitfieldValue: 0, enumAsString: "Continuous"),
+  blackMark(bitfieldValue: 1, enumAsString: "Black Mark"),
+  gap(bitfieldValue: 2, enumAsString: "Gap");
 
-  const ZbiState({
+  const PrinterMediaTypeEnum({
     required this.bitfieldValue,
     required this.enumAsString,
   });
@@ -15,11 +15,11 @@ enum ZbiState {
   final int bitfieldValue;
   final String enumAsString;
 
-  static ZbiState fromByteArray(Uint8List byteArray) {
+  static PrinterMediaTypeEnum fromByteArray(Uint8List byteArray) {
     final value = parseInteger(byteArray);
     return (values.firstWhere(
       (element) => element.bitfieldValue == value,
-      orElse: () => ZbiState.stopped,
+      orElse: () => PrinterMediaTypeEnum.gap,
     ));
   }
 }

@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
-enum PrinterWarning {
+enum PrinterWarningEnum {
   none(
     segment: 0,
     bitfieldValue: 0,
@@ -29,7 +29,7 @@ enum PrinterWarning {
     enumAsString: "RFID Error",
   );
 
-  const PrinterWarning({
+  const PrinterWarningEnum({
     required this.segment,
     required this.bitfieldValue,
     required this.enumAsString,
@@ -39,12 +39,12 @@ enum PrinterWarning {
   final int bitfieldValue;
   final String enumAsString;
 
-  static List<PrinterWarning> listFromByteArray(
+  static List<PrinterWarningEnum> listFromByteArray(
     int segment,
     Uint8List byteArray,
   ) {
     final value = parseInteger(byteArray);
-    final list = <PrinterWarning>[];
+    final list = <PrinterWarningEnum>[];
     for (final printError in values) {
       if (printError.segment == segment &&
           (value & printError.bitfieldValue) != 0) {
