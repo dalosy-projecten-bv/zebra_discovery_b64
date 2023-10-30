@@ -1,48 +1,56 @@
+import 'dart:typed_data';
+
+import 'package:zebra_discovery_b64/src/classes/helpers.dart';
+
 enum PrinterWarning {
   none(
     segment: 0,
     bitfieldValue: 0,
-    printWarningString: "None",
+    enumAsString: "None",
   ),
   headUnderTemp(
     segment: 2,
     bitfieldValue: 4096,
-    printWarningString: "Head Cold",
+    enumAsString: "Head Cold",
   ),
   ribbonIn(
     segment: 2,
     bitfieldValue: 8192,
-    printWarningString: "Ribbon In",
+    enumAsString: "Ribbon In",
   ),
   batteryLow(
     segment: 2,
     bitfieldValue: 16384,
-    printWarningString: "Battery Low",
+    enumAsString: "Battery Low",
   ),
   rfidError(
     segment: 2,
     bitfieldValue: 32768,
-    printWarningString: "RFID Error",
+    enumAsString: "RFID Error",
   );
 
   const PrinterWarning({
     required this.segment,
     required this.bitfieldValue,
-    required this.printWarningString,
+    required this.enumAsString,
   });
 
   final int segment;
   final int bitfieldValue;
-  final String printWarningString;
+  final String enumAsString;
 
-  static List<PrinterWarning> fromInt(int segment, int value) {
-    final printerWarnings = <PrinterWarning>[];
+  static List<PrinterWarning> listFromByteArray(
+    int segment,
+    Uint8List byteArray,
+  ) {
+    final value = parseInteger(byteArray);
+    final list = <PrinterWarning>[];
     for (final printError in values) {
       if (printError.segment == segment &&
           (value & printError.bitfieldValue) != 0) {
-        printerWarnings.add(printError);
+        list.add(printError);
       }
     }
-    return printerWarnings;
+    return list;
   }
 }

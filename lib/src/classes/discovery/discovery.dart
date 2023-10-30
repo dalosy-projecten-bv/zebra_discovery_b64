@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
 
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v0.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v1.dart';
@@ -7,16 +6,17 @@ import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v2.
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v3.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v4.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_legacy.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 abstract class Discovery {
   Discovery(BytesSplitter bytesSplitter) {
-    notUsed1 = bytesSplitter.getNextBytes(3);
-    discoveryVersion = bytesSplitter.getNextBytes(1);
+    notUsed1 = StringValue.byteArrayToString(bytesSplitter.next(3));
+    discoveryVersion = StringValue.byteToString(bytesSplitter.next(1));
   }
 
-  late final Uint8List notUsed1;
-  late final Uint8List discoveryVersion;
+  late final StringValue notUsed1;
+  late final StringValue discoveryVersion;
   final map = <String, dynamic>{};
 
   void initMap();

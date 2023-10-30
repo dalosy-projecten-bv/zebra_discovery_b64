@@ -1,30 +1,43 @@
+import 'dart:typed_data';
+
+import 'package:zebra_discovery_b64/src/classes/helpers.dart';
+
 enum PrinterInterface {
-  unknown(bitfieldValue: 0, stringValue: "Unknown"),
-  internalWired(bitfieldValue: 1, stringValue: "Internal Wired"),
-  externalWired(bitfieldValue: 2, stringValue: "External Wired"),
-  wireless(bitfieldValue: 4, stringValue: "Wireless"),
-  bluetooth(bitfieldValue: 8, stringValue: "Bluetooth"),
-  parallel(bitfieldValue: 16, stringValue: "Parallel"),
-  serial(bitfieldValue: 32, stringValue: "Serial"),
-  usb(bitfieldValue: 64, stringValue: "USB"),
-  sdCard(bitfieldValue: 128, stringValue: "SD Card"),
-  battery(bitfieldValue: 256, stringValue: "Battery");
+  unknown(bitfieldValue: 0, enumAsString: "Unknown"),
+  internalWired(bitfieldValue: 1, enumAsString: "Internal Wired"),
+  externalWired(bitfieldValue: 2, enumAsString: "External Wired"),
+  wireless(bitfieldValue: 4, enumAsString: "Wireless"),
+  bluetooth(bitfieldValue: 8, enumAsString: "Bluetooth"),
+  parallel(bitfieldValue: 16, enumAsString: "Parallel"),
+  serial(bitfieldValue: 32, enumAsString: "Serial"),
+  usb(bitfieldValue: 64, enumAsString: "USB"),
+  sdCard(bitfieldValue: 128, enumAsString: "SD Card"),
+  battery(bitfieldValue: 256, enumAsString: "Battery");
 
   const PrinterInterface({
     required this.bitfieldValue,
-    required this.stringValue,
+    required this.enumAsString,
   });
 
   final int bitfieldValue;
-  final String stringValue;
+  final String enumAsString;
 
-  static List<PrinterInterface> fromInt(int value) {
-    final printerErrors = <PrinterInterface>[];
+  static PrinterInterface fromByteArray(Uint8List byteArray) {
+    final value = parseInteger(byteArray);
+    return (values.firstWhere(
+      (element) => element.bitfieldValue == value,
+      orElse: () => PrinterInterface.unknown,
+    ));
+  }
+
+  static List<PrinterInterface> listFromByteArray(Uint8List byteArray) {
+    final value = parseInteger(byteArray);
+    final list = <PrinterInterface>[];
     for (final printError in values) {
       if ((value & printError.bitfieldValue) != 0) {
-        printerErrors.add(printError);
+        list.add(printError);
       }
     }
-    return printerErrors;
+    return list;
   }
 }

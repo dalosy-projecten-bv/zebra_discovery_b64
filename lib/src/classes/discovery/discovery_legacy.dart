@@ -5,24 +5,24 @@ import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 class DiscoveryLegacy extends Discovery {
   DiscoveryLegacy(BytesSplitter bytesSplitter) : super(bytesSplitter) {
-    productNumber = bytesSplitter.getNextBytes(8);
-    productName = bytesSplitter.getNextBytes(20);
-    dateCode = bytesSplitter.getNextBytes(7);
-    fwVersion = bytesSplitter.getNextBytes(10);
-    companyAbbreviation = bytesSplitter.getNextBytes(5);
-    hwAddress = bytesSplitter.getNextBytes(6);
-    serialNum = bytesSplitter.getNextBytes(10);
-    usingNetProtocol = bytesSplitter.getNextBytes(2);
-    ipAddress = bytesSplitter.getNextBytes(4);
-    subnetMask = bytesSplitter.getNextBytes(4);
-    defaultGateway = bytesSplitter.getNextBytes(4);
-    systemName = bytesSplitter.getNextBytes(25);
-    notUsed2 = bytesSplitter.getNextBytes(103);
-    getCommunityName = bytesSplitter.getNextBytes(32);
-    setCommunityName = bytesSplitter.getNextBytes(32);
-    notUsed3 = bytesSplitter.getNextBytes(82);
-    portStatus = bytesSplitter.getNextBytes(1);
-    portName = bytesSplitter.getNextBytes(16);
+    productNumber = bytesSplitter.next(8);
+    productName = bytesSplitter.next(20);
+    dateCode = bytesSplitter.next(7);
+    fwVersion = bytesSplitter.next(10);
+    companyAbbreviation = bytesSplitter.next(5);
+    hwAddress = bytesSplitter.next(6);
+    serialNum = bytesSplitter.next(10);
+    usingNetProtocol = bytesSplitter.next(2);
+    ipAddress = bytesSplitter.next(4);
+    subnetMask = bytesSplitter.next(4);
+    defaultGateway = bytesSplitter.next(4);
+    systemName = bytesSplitter.next(25);
+    notUsed2 = bytesSplitter.next(103);
+    getCommunityName = bytesSplitter.next(32);
+    setCommunityName = bytesSplitter.next(32);
+    notUsed3 = bytesSplitter.next(82);
+    portStatus = bytesSplitter.next(1);
+    portName = bytesSplitter.next(16);
   }
 
   late final Uint8List productNumber;

@@ -1,82 +1,88 @@
+import 'dart:typed_data';
+
+import 'package:zebra_discovery_b64/src/classes/helpers.dart';
+
 enum PrinterError {
   none(
     segment: 0,
     bitfieldValue: 0,
-    printErrorString: "None",
+    enumAsString: "None",
   ),
   mediaOut(
     segment: 2,
     bitfieldValue: 1,
-    printErrorString: "Paper Out",
+    enumAsString: "Paper Out",
   ),
   ribbonOut(
     segment: 2,
     bitfieldValue: 2,
-    printErrorString: "Ribbon Out",
+    enumAsString: "Ribbon Out",
   ),
   headOpen(
     segment: 2,
     bitfieldValue: 4,
-    printErrorString: "Head Open",
+    enumAsString: "Head Open",
   ),
   printheadShutdown(
     segment: 2,
     bitfieldValue: 16,
-    printErrorString: "Printhead Shutdown",
+    enumAsString: "Printhead Shutdown",
   ),
   motorOvertemp(
     segment: 2,
     bitfieldValue: 32,
-    printErrorString: "Motor Overtemp",
+    enumAsString: "Motor Overtemp",
   ),
   invalidHead(
     segment: 2,
     bitfieldValue: 128,
-    printErrorString: "Invalid Head",
+    enumAsString: "Invalid Head",
   ),
   thermistorFault(
     segment: 2,
     bitfieldValue: 512,
-    printErrorString: "Thermistor Fault",
+    enumAsString: "Thermistor Fault",
   ),
   paperFeedError(
     segment: 2,
     bitfieldValue: 16384,
-    printErrorString: "Paper Feed",
+    enumAsString: "Paper Feed",
   ),
   paused(
     segment: 2,
     bitfieldValue: 65536,
-    printErrorString: "Paused",
+    enumAsString: "Paused",
   ),
   basicRuntimeError(
-      segment: 2,
-      bitfieldValue: 1048576,
-      printErrorString: "Basic Runtime Error"),
+      segment: 2, bitfieldValue: 1048576, enumAsString: "Basic Runtime Error"),
   basicForced(
     segment: 2,
     bitfieldValue: 2097152,
-    printErrorString: "Basic Forced",
+    enumAsString: "Basic Forced",
   );
 
   const PrinterError({
     required this.segment,
     required this.bitfieldValue,
-    required this.printErrorString,
+    required this.enumAsString,
   });
 
   final int segment;
   final int bitfieldValue;
-  final String printErrorString;
+  final String enumAsString;
 
-  static List<PrinterError> fromInt(int segment, int value) {
-    final printerErrors = <PrinterError>[];
+  static List<PrinterError> listFromByteArray(
+    int segment,
+    Uint8List byteArray,
+  ) {
+    final value = parseInteger(byteArray);
+    final list = <PrinterError>[];
     for (final printError in values) {
       if (printError.segment == segment &&
           (value & printError.bitfieldValue) != 0) {
-        printerErrors.add(printError);
+        list.add(printError);
       }
     }
-    return printerErrors;
+    return list;
   }
 }
