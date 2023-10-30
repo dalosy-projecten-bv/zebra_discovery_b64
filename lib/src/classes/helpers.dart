@@ -19,6 +19,11 @@ class BytesSplitter {
   }
 }
 
+bool parseBoolean(Uint8List byteArray) {
+  byteArray.firstWhere((byte) => byte == 1);
+  return false;
+}
+
 int parseInteger(Uint8List byteArray) {
   var result = 0;
   byteArray.reversed.forEachIndexed(

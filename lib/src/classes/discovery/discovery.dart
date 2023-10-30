@@ -6,17 +6,19 @@ import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v2.
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v3.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v4.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_legacy.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/byte_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/int_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 abstract class Discovery {
   Discovery(BytesSplitter bytesSplitter) {
-    notUsed1 = StringValue.byteArrayToString(bytesSplitter.next(3));
-    discoveryVersion = StringValue.byteToString(bytesSplitter.next(1));
+    notUsed1 = NotUsedValue.fromByteArray(bytesSplitter.next(3));
+    discoveryVersion = ByteValue.fromByteArray(bytesSplitter.next(1));
   }
 
-  late final StringValue notUsed1;
-  late final StringValue discoveryVersion;
+  late final NotUsedValue notUsed1;
+  late final ByteValue discoveryVersion;
   final map = <String, dynamic>{};
 
   void initMap();

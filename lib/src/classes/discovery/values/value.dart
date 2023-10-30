@@ -5,4 +5,5 @@ abstract class Value<T> {
 
   final Uint8List byteArray;
   final T value;
+
 }

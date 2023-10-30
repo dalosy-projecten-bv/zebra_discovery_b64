@@ -7,7 +7,6 @@ import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_interfac
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_warning.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/secondary_printer_language.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/value.dart';
-import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 class EnumListValue<T> extends Value<List<T>> {
   EnumListValue(super.byteArray, super.value);
@@ -31,7 +30,7 @@ class EnumListValue<T> extends Value<List<T>> {
     throw Exception('Unknown type');
   }
 
-  static EnumListValue<T> enumeration<T>(Uint8List byteArray) {
+  static EnumListValue<T> fromByteArray<T>(Uint8List byteArray) {
     if (T == DiscoveredPrinterLanguage) {
       return EnumListValue<T>(
         byteArray,

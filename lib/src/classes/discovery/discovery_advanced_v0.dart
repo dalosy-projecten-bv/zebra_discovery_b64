@@ -1,28 +1,35 @@
-import 'dart:typed_data';
-
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/discovered_printer_language.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/ip_acquisition_protocol.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/network_protocol.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/print_method.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/print_mode.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_error.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_interface.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_media_type.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_warning.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/secondary_printer_language.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/zbi_state.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/addresss_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/bool_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/byte_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/enum_list_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/enum_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/int_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 class DiscoveryAdvancedV0 extends Discovery {
   DiscoveryAdvancedV0(BytesSplitter b) : super(b) {
-    advancedPacketFormat = StringValue.byteToString(b.next(1));
-    notUsed2 = StringValue.notDecoded(b.next(3));
-    companyAbbreviation = StringValue.byteArrayToString(b.next(5));
-    systemName = StringValue.byteArrayToString(b.next(63));
-    productName = StringValue.byteArrayToString(b.next(32));
-    fwVersion = StringValue.byteArrayToString(b.next(16));
-    location = StringValue.byteArrayToString(b.next(36));
+    advancedPacketFormat = ByteValue.fromByteArray(b.next(1));
+    notUsed2 = NotUsedValue.fromByteArray(b.next(3));
+    companyAbbreviation = StringValue.fromByteArray(b.next(5));
+    systemName = StringValue.fromByteArray(b.next(63));
+    productName = StringValue.fromByteArray(b.next(32));
+    fwVersion = StringValue.fromByteArray(b.next(16));
+    location = StringValue.fromByteArray(b.next(36));
     errorsSegment0 = EnumListValue.enumWithSegments<PrinterError>(
       segment: 0,
       byteArray: b.next(4),
@@ -48,47 +55,47 @@ class DiscoveryAdvancedV0 extends Discovery {
       byteArray: b.next(4),
     );
     availableInterfacesBitfield =
-        EnumListValue.enumeration<PrinterInterface>(b.next(4));
-    deviceUniqueId = StringValue.byteArrayToString(b.next(32));
-    dnsDomain = StringValue.byteArrayToString(b.next(100));
-    activeInterface = EnumValue.enumeration<PrinterInterface>(b.next(4));
-    macAddress = StringValue.byteArrayToHexString(b.next(6));
-    ipAcquisitionProto = EnumValue.enumeration<IpAcquisitionProtocol>(
+        EnumListValue.fromByteArray<PrinterInterface>(b.next(4));
+    deviceUniqueId = StringValue.fromByteArray(b.next(32));
+    dnsDomain = StringValue.fromByteArray(b.next(100));
+    activeInterface = EnumValue.fromByteArray<PrinterInterface>(b.next(4));
+    macAddress = HexValue.fromByteArray(b.next(6));
+    ipAcquisitionProto = EnumValue.fromByteArray<IpAcquisitionProtocol>(
       b.next(2),
     );
-    ipAddress = StringValue.byteArrayToAddressString(b.next(4));
-    subnetMask = StringValue.byteArrayToAddressString(b.next(4));
-    gatewayMask = StringValue.byteArrayToAddressString(b.next(4));
-    port = IntValue.byteArrayToInt(b.next(2));
-    availableProtocols = EnumListValue.enumeration<NetworkProtocol>(b.next(2));
+    ipAddress = AddressValue.fromByteArray(b.next(4));
+    subnetMask = AddressValue.fromByteArray(b.next(4));
+    gatewayMask = AddressValue.fromByteArray(b.next(4));
+    port = IntValue.fromByteArray(b.next(2));
+    availableProtocols = EnumListValue.fromByteArray<NetworkProtocol>(b.next(2));
     primaryLanguage =
-        EnumValue.enumeration<DiscoveredPrinterLanguage>(b.next(4));
+        EnumValue.fromByteArray<DiscoveredPrinterLanguage>(b.next(4));
     availableLanguagesBitfield =
-        EnumListValue.enumeration<DiscoveredPrinterLanguage>(b.next(4));
+        EnumListValue.fromByteArray<DiscoveredPrinterLanguage>(b.next(4));
     availableSecondaryLanguagesBitfield =
-        EnumListValue.enumeration<SecondaryPrinterLanguage>(b.next(4));
-    dotsPerMm = IntValue.byteArrayToInt(b.next(2));
-    dotsPerDotRow = IntValue.byteArrayToInt(b.next(2));
-    labelLength = IntValue.byteArrayToInt(b.next(2));
-    labelWidth = IntValue.byteArrayToInt(b.next(2));
-    darkness = IntValue.byteArrayToInt(b.next(2));
-    mediaType = b.next(2);
-    printMethod = b.next(2);
-    printMode = b.next(2);
-    odometerTotal = b.next(4);
-    odometerMarkerOne = b.next(4);
-    odometerMarkerTwo = b.next(4);
-    numOfLabelsInBatch = b.next(2);
-    labelsQueued = b.next(2);
-    zbiEnabled = b.next(1);
-    zbiState = b.next(1);
-    zbiMajorVersion = b.next(1);
-    zbiMinorVersion = b.next(1);
+        EnumListValue.fromByteArray<SecondaryPrinterLanguage>(b.next(4));
+    dotsPerMm = IntValue.fromByteArray(b.next(2));
+    dotsPerDotRow = IntValue.fromByteArray(b.next(2));
+    labelLength = IntValue.fromByteArray(b.next(2));
+    labelWidth = IntValue.fromByteArray(b.next(2));
+    darkness = IntValue.fromByteArray(b.next(2));
+    mediaType = EnumValue.fromByteArray<PrinterMediaType>(b.next(2));
+    printMethod = EnumValue.fromByteArray<PrintMethod>(b.next(2));
+    printMode = EnumValue.fromByteArray<PrintMode>(b.next(2));
+    odometerTotal = IntValue.fromByteArray(b.next(4));
+    odometerMarkerOne = IntValue.fromByteArray(b.next(4));
+    odometerMarkerTwo = IntValue.fromByteArray(b.next(4));
+    numOfLabelsInBatch = IntValue.fromByteArray(b.next(2));
+    labelsQueued = IntValue.fromByteArray(b.next(2));
+    zbiEnabled = BoolValue.fromByteArray(b.next(1));
+    zbiState = ZbiState.fromByteArray(b.next(1));
+    zbiMajorVersion = IntValue.fromByteArray(b.next(1));
+    zbiMinorVersion = IntValue.fromByteArray(b.next(1));
     initMap();
   }
 
-  late final StringValue advancedPacketFormat;
-  late final StringValue notUsed2;
+  late final ByteValue advancedPacketFormat;
+  late final NotUsedValue notUsed2;
   late final StringValue companyAbbreviation;
   late final StringValue systemName;
   late final StringValue productName;
@@ -104,11 +111,11 @@ class DiscoveryAdvancedV0 extends Discovery {
   late final StringValue deviceUniqueId;
   late final StringValue dnsDomain;
   late final EnumValue<PrinterInterface> activeInterface;
-  late final StringValue macAddress;
+  late final HexValue macAddress;
   late final EnumValue<IpAcquisitionProtocol> ipAcquisitionProto;
-  late final StringValue ipAddress;
-  late final StringValue subnetMask;
-  late final StringValue gatewayMask;
+  late final AddressValue ipAddress;
+  late final AddressValue subnetMask;
+  late final AddressValue gatewayMask;
   late final IntValue port;
   late final EnumListValue<NetworkProtocol> availableProtocols;
   late final EnumValue<DiscoveredPrinterLanguage> primaryLanguage;
@@ -121,18 +128,18 @@ class DiscoveryAdvancedV0 extends Discovery {
   late final IntValue labelLength;
   late final IntValue labelWidth;
   late final IntValue darkness;
-  late final Uint8List mediaType;
-  late final Uint8List printMethod;
-  late final Uint8List printMode;
-  late final Uint8List odometerTotal;
-  late final Uint8List odometerMarkerOne;
-  late final Uint8List odometerMarkerTwo;
-  late final Uint8List numOfLabelsInBatch;
-  late final Uint8List labelsQueued;
-  late final Uint8List zbiEnabled;
-  late final Uint8List zbiState;
-  late final Uint8List zbiMajorVersion;
-  late final Uint8List zbiMinorVersion;
+  late final EnumValue<PrinterMediaType> mediaType;
+  late final EnumValue<PrintMethod> printMethod;
+  late final EnumValue<PrintMode> printMode;
+  late final IntValue odometerTotal;
+  late final IntValue odometerMarkerOne;
+  late final IntValue odometerMarkerTwo;
+  late final IntValue numOfLabelsInBatch;
+  late final IntValue labelsQueued;
+  late final BoolValue zbiEnabled;
+  late final ZbiState zbiState;
+  late final IntValue zbiMajorVersion;
+  late final IntValue zbiMinorVersion;
 
   @override
   void initMap() {
