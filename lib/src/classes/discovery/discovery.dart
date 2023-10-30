@@ -11,9 +11,9 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 abstract class Discovery {
-  Discovery(BytesSplitter bytesSplitter) {
-    notUsed1 = NotUsedValue.fromByteArray(bytesSplitter.next(3));
-    discoveryVersion = ByteValue.fromByteArray(bytesSplitter.next(1));
+  Discovery(BytesSplitter b) {
+    notUsed1 = NotUsedValue.fromByteArray(b.next(3));
+    discoveryVersion = ByteValue.fromByteArray(b.next(1));
   }
 
   late final NotUsedValue notUsed1;

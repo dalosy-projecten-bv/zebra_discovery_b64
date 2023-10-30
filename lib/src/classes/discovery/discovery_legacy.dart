@@ -1,48 +1,52 @@
-import 'dart:typed_data';
-
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/address_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/ip_acquisition_protocol.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/printer_port_status.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 class DiscoveryLegacy extends Discovery {
-  DiscoveryLegacy(BytesSplitter bytesSplitter) : super(bytesSplitter) {
-    productNumber = bytesSplitter.next(8);
-    productName = bytesSplitter.next(20);
-    dateCode = bytesSplitter.next(7);
-    fwVersion = bytesSplitter.next(10);
-    companyAbbreviation = bytesSplitter.next(5);
-    hwAddress = bytesSplitter.next(6);
-    serialNum = bytesSplitter.next(10);
-    usingNetProtocol = bytesSplitter.next(2);
-    ipAddress = bytesSplitter.next(4);
-    subnetMask = bytesSplitter.next(4);
-    defaultGateway = bytesSplitter.next(4);
-    systemName = bytesSplitter.next(25);
-    notUsed2 = bytesSplitter.next(103);
-    getCommunityName = bytesSplitter.next(32);
-    setCommunityName = bytesSplitter.next(32);
-    notUsed3 = bytesSplitter.next(82);
-    portStatus = bytesSplitter.next(1);
-    portName = bytesSplitter.next(16);
+  DiscoveryLegacy(BytesSplitter b) : super(b) {
+    productNumber = StringValue.fromByteArray(b.next(8));
+    productName = StringValue.fromByteArray(b.next(20));
+    dateCode = StringValue.fromByteArray(b.next(7));
+    fwVersion = StringValue.fromByteArray(b.next(10));
+    companyAbbreviation = StringValue.fromByteArray(b.next(5));
+    hwAddress = HexValue.fromByteArray(b.next(6));
+    serialNum = StringValue.fromByteArray(b.next(10));
+    usingNetProtocol = IpAcquisitionProtocol.fromByteArray(b.next(2));
+    ipAddress = AddressValue.fromByteArray(b.next(4));
+    subnetMask = AddressValue.fromByteArray(b.next(4));
+    defaultGateway = AddressValue.fromByteArray(b.next(4));
+    systemName = StringValue.fromByteArray(b.next(25));
+    notUsed2 = NotUsedValue.fromByteArray(b.next(103));
+    getCommunityName = HexValue.fromByteArray(b.next(32));
+    setCommunityName = HexValue.fromByteArray(b.next(32));
+    notUsed3 = NotUsedValue.fromByteArray(b.next(82));
+    portStatus = PrinterPortStatus.fromByteArray(b.next(1));
+    portName = StringValue.fromByteArray(b.next(16));
   }
 
-  late final Uint8List productNumber;
-  late final Uint8List productName;
-  late final Uint8List dateCode;
-  late final Uint8List fwVersion;
-  late final Uint8List companyAbbreviation;
-  late final Uint8List hwAddress;
-  late final Uint8List serialNum;
-  late final Uint8List usingNetProtocol;
-  late final Uint8List ipAddress;
-  late final Uint8List subnetMask;
-  late final Uint8List defaultGateway;
-  late final Uint8List systemName;
-  late final Uint8List notUsed2;
-  late final Uint8List getCommunityName;
-  late final Uint8List setCommunityName;
-  late final Uint8List notUsed3;
-  late final Uint8List portStatus;
-  late final Uint8List portName;
+  late final StringValue productNumber;
+  late final StringValue productName;
+  late final StringValue dateCode;
+  late final StringValue fwVersion;
+  late final StringValue companyAbbreviation;
+  late final HexValue hwAddress;
+  late final StringValue serialNum;
+  late final IpAcquisitionProtocol usingNetProtocol;
+  late final AddressValue ipAddress;
+  late final AddressValue subnetMask;
+  late final AddressValue defaultGateway;
+  late final StringValue systemName;
+  late final NotUsedValue notUsed2;
+  late final HexValue getCommunityName;
+  late final HexValue setCommunityName;
+  late final NotUsedValue notUsed3;
+  late final PrinterPortStatus portStatus;
+  late final StringValue portName;
 
   @override
   void initMap() {
