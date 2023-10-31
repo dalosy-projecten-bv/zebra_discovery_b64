@@ -66,7 +66,7 @@ String getNetworkInterfaces(Uint8List byteArray) {
 }
 
 String getNetworkProtocols(Uint8List byteArray) {
-  final values = NetworkProtocolEnum.listFromByteArray(byteArray);
+  final values = networkProtocolEnum.listFromByteArray(byteArray);
   return values.map((e) => e.enumAsString).join(',');
 }
 

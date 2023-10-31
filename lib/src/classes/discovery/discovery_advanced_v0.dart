@@ -156,9 +156,7 @@ class DiscoveryAdvancedV0 extends Discovery {
         MapEntry('HARDWARE_ADDRESS', macAddress.value),
         MapEntry(
           'USING_NET_PROTOCOL',
-          ipAcquisitionProto.value != IpAcquisitionProtocolEnum.static
-              ? "true"
-              : "false",
+          ipAcquisitionProto.value.id != EnumValues.static ? "true" : "false",
         ),
         MapEntry('DNS_NAME', systemName.value),
         MapEntry(

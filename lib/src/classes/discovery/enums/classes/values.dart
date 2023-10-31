@@ -1,18 +1,18 @@
 import 'dart:typed_data';
 
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/value.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
-class Values<ENUM extends Enum, T extends Value<ENUM>> {
+class Values<T extends Enum> {
   Values({
-    required this.values,
     required this.defaultValue,
+    required this.values,
   });
 
-  final Set<T> values;
-  final ENUM defaultValue;
+  final T defaultValue;
+  final Set<Value<T>> values;
 
-  T fromByteArray(Uint8List byteArray) {
+  Value<T> fromByteArray(Uint8List byteArray) {
     final value = parseInteger(byteArray);
     return (values.firstWhere(
       (element) => element.bitfieldValue == value,
@@ -20,11 +20,11 @@ class Values<ENUM extends Enum, T extends Value<ENUM>> {
     ));
   }
 
-  List<T> listFromByteArray(
+  List<Value<T>> listFromByteArray(
     Uint8List byteArray,
   ) {
     final value = parseInteger(byteArray);
-    final list = <T>[];
+    final list = <Value<T>>[];
     for (final printError in values) {
       if ((value & printError.bitfieldValue) != 0) {
         list.add(printError);

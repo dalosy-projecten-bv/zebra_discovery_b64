@@ -1,34 +1,35 @@
-import 'dart:typed_data';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/values.dart';
 
-import 'package:zebra_discovery_b64/src/classes/helpers.dart';
-
-enum PrintModeEnum {
-  rewind(bitfieldValue: 0, enumAsString: "Rewind"),
-  tearOff(bitfieldValue: 1, enumAsString: "Tear Off"),
-  peelOff(bitfieldValue: 2, enumAsString: "Peel Off"),
-  pace(bitfieldValue: 3, enumAsString: "Pace"),
-  cutter(bitfieldValue: 4, enumAsString: "Cutter"),
-  delayedCut(bitfieldValue: 5, enumAsString: "Delayed Cuts"),
-  applicator(bitfieldValue: 6, enumAsString: "Applicator"),
-  linerlessPeel(bitfieldValue: 7, enumAsString: "Linerless Peel"),
-  linerlessRewind(bitfieldValue: 8, enumAsString: "Linerless Rewind"),
-  partialCutter(bitfieldValue: 9, enumAsString: "Partial Cutter"),
-  rfid(bitfieldValue: 10, enumAsString: "RFID"),
-  linerlessTear(bitfieldValue: 11, enumAsString: "Linerless Tear");
-
-  const PrintModeEnum({
-    required this.bitfieldValue,
-    required this.enumAsString,
-  });
-
-  final int bitfieldValue;
-  final String enumAsString;
-
-  static PrintModeEnum fromByteArray(Uint8List byteArray) {
-    final value = parseInteger(byteArray);
-    return (values.firstWhere(
-      (element) => element.bitfieldValue == value,
-      orElse: () => PrintModeEnum.rewind,
-    ));
-  }
+enum EnumValues {
+  rewind,
+  tearOff,
+  peelOff,
+  pace,
+  cutter,
+  delayedCut,
+  applicator,
+  linerlessPeel,
+  linerlessRewind,
+  partialCutter,
+  rfid,
+  linerlessTear,
 }
+
+final printModeEnum = Values<EnumValues>(
+  defaultValue: EnumValues.rewind,
+  values: {
+    Value(EnumValues.rewind, 0, "Rewind"),
+    Value(EnumValues.tearOff, 1, "Tear Off"),
+    Value(EnumValues.peelOff, 2, "Peel Off"),
+    Value(EnumValues.pace, 3, "Pace"),
+    Value(EnumValues.cutter, 4, "Cutter"),
+    Value(EnumValues.delayedCut, 5, "Delayed Cuts"),
+    Value(EnumValues.applicator, 6, "Applicator"),
+    Value(EnumValues.linerlessPeel, 7, "Linerless Peel"),
+    Value(EnumValues.linerlessRewind, 8, "Linerless Rewind"),
+    Value(EnumValues.partialCutter, 9, "Partial Cutter"),
+    Value(EnumValues.rfid, 10, "RFID"),
+    Value(EnumValues.linerlessTear, 11, "Linerless Tear"),
+  },
+);
