@@ -1,4 +1,5 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/ip_acquisition_protocol_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/address_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/bool_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/byte_value.dart';
@@ -130,7 +131,7 @@ class DiscoveryAdvancedV0 extends Discovery {
         MapEntry('FIRMWARE_VER', fwVersion.value),
         MapEntry('LOCATION', location.value),
         MapEntry(
-          "ERRORS",
+          'ERRORS',
           [
             ...errorsSegment0.value,
             ...errorsSegment1.value,
@@ -138,7 +139,7 @@ class DiscoveryAdvancedV0 extends Discovery {
           ].map((e) => e.enumAsString).join(','),
         ),
         MapEntry(
-          "WARNINGS",
+          'WARNINGS',
           [
             ...warningsSegment0.value,
             ...warningsSegment1.value,
@@ -146,30 +147,42 @@ class DiscoveryAdvancedV0 extends Discovery {
           ].map((e) => e.enumAsString).join(','),
         ),
         MapEntry(
-            "ACTIVE_NETWORK_INTERFACE", activeInterface.value.enumAsString),
-        MapEntry("SERIAL_NUMBER", deviceUniqueId.value),
-        MapEntry("DEVICE_UNIQUE_ID", deviceUniqueId.value),
-        MapEntry("DNS_DOMAIN", dnsDomain.value),
-        MapEntry("HARDWARE_ADDRESS", macAddress.value),
-        //MapEntry("DNS_NAME",)
+          'ACTIVE_NETWORK_INTERFACE',
+          activeInterface.value.enumAsString,
+        ),
+        MapEntry('SERIAL_NUMBER', deviceUniqueId.value),
+        MapEntry('DEVICE_UNIQUE_ID', deviceUniqueId.value),
+        MapEntry('DNS_DOMAIN', dnsDomain.value),
+        MapEntry('HARDWARE_ADDRESS', macAddress.value),
         MapEntry(
-          "IP_ACQUISITION_PROTOCOL",
+          'USING_NET_PROTOCOL',
+          ipAcquisitionProto.value != IpAcquisitionProtocolEnum.static
+              ? "true"
+              : "false",
+        ),
+        MapEntry('DNS_NAME', systemName.value),
+        MapEntry(
+          'IP_ACQUISITION_PROTOCOL',
           ipAcquisitionProto.value.enumAsString,
         ),
-        MapEntry("ADDRESS", ipAddress.value),
-        MapEntry("SUBNET_MASK", subnetMask.value),
-        MapEntry("GATEWAY", gatewayMask.value),
-        MapEntry("PORT_NUMBER", port.value.toString()),
+        MapEntry('ADDRESS', ipAddress.value),
+        MapEntry('SUBNET_MASK', subnetMask.value),
+        MapEntry('GATEWAY', gatewayMask.value),
+        MapEntry('PORT_NUMBER', port.value.toString()),
         MapEntry(
-            "AVAILABLE_NETWORK_PROTOCOLS",
-            availableProtocols.value
-                .map((e) => e.enumAsString)
-                .toList()
-                .join(',')),
-        // MapEntry(
-        //   "AVAILABLE_INTERFACES",
-        //   ava,
-        // ),
+          'AVAILABLE_NETWORK_PROTOCOLS',
+          availableProtocols.value
+              .map((e) => e.enumAsString)
+              .toList()
+              .join(','),
+        ),
+        MapEntry(
+          'AVAILABLE_INTERFACES',
+          availableInterfacesBitfield.value
+              .map((e) => e.enumAsString)
+              .toList()
+              .join(','),
+        ),
       },
     );
     // TODO: implement initMap
