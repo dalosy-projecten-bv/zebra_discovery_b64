@@ -1,43 +1,31 @@
-import 'dart:typed_data';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/values.dart';
 
-import 'package:zebra_discovery_b64/src/classes/helpers.dart';
-
-enum PrinterInterfaceEnum {
-  unknown(bitfieldValue: 0, enumAsString: "Unknown"),
-  internalWired(bitfieldValue: 1, enumAsString: "Internal Wired"),
-  externalWired(bitfieldValue: 2, enumAsString: "External Wired"),
-  wireless(bitfieldValue: 4, enumAsString: "Wireless"),
-  bluetooth(bitfieldValue: 8, enumAsString: "Bluetooth"),
-  parallel(bitfieldValue: 16, enumAsString: "Parallel"),
-  serial(bitfieldValue: 32, enumAsString: "Serial"),
-  usb(bitfieldValue: 64, enumAsString: "USB"),
-  sdCard(bitfieldValue: 128, enumAsString: "SD Card"),
-  battery(bitfieldValue: 256, enumAsString: "Battery");
-
-  const PrinterInterfaceEnum({
-    required this.bitfieldValue,
-    required this.enumAsString,
-  });
-
-  final int bitfieldValue;
-  final String enumAsString;
-
-  static PrinterInterfaceEnum fromByteArray(Uint8List byteArray) {
-    final value = parseInteger(byteArray);
-    return (values.firstWhere(
-      (element) => element.bitfieldValue == value,
-      orElse: () => PrinterInterfaceEnum.unknown,
-    ));
-  }
-
-  static List<PrinterInterfaceEnum> listFromByteArray(Uint8List byteArray) {
-    final value = parseInteger(byteArray);
-    final list = <PrinterInterfaceEnum>[];
-    for (final printError in values) {
-      if ((value & printError.bitfieldValue) != 0) {
-        list.add(printError);
-      }
-    }
-    return list;
-  }
+enum EnumValues {
+  unknown,
+  internalWired,
+  externalWired,
+  wireless,
+  bluetooth,
+  parallel,
+  serial,
+  usb,
+  sdCard,
+  battery,
 }
+
+final printerInterfaceEnum = Values<EnumValues>(
+  defaultValue: EnumValues.unknown,
+  values: {
+    Value(EnumValues.unknown, 0, "Unknown"),
+    Value(EnumValues.internalWired, 1, "Internal Wired"),
+    Value(EnumValues.externalWired, 2, "External Wired"),
+    Value(EnumValues.wireless, 4, "Wireless"),
+    Value(EnumValues.bluetooth, 8, "Bluetooth"),
+    Value(EnumValues.parallel, 16, "Parallel"),
+    Value(EnumValues.serial, 32, "Serial"),
+    Value(EnumValues.usb, 64, "USB"),
+    Value(EnumValues.sdCard, 128, "SD Card"),
+    Value(EnumValues.battery, 256, "Battery"),
+  },
+);

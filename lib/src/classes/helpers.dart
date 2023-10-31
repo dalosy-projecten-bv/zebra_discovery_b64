@@ -43,9 +43,9 @@ String getErrors({
   required Uint8List errorsSegment1,
   required Uint8List errorsSegment2,
 }) {
-  final errors = PrinterErrorEnum.listFromByteArray(0, errorsSegment0);
-  errors.addAll(PrinterErrorEnum.listFromByteArray(1, errorsSegment1));
-  errors.addAll(PrinterErrorEnum.listFromByteArray(2, errorsSegment2));
+  final errors = printerErrorEnum.listFromByteArray(0, errorsSegment0);
+  errors.addAll(printerErrorEnum.listFromByteArray(1, errorsSegment1));
+  errors.addAll(printerErrorEnum.listFromByteArray(2, errorsSegment2));
   return errors.map((e) => e.enumAsString).join(',');
 }
 
@@ -61,7 +61,7 @@ String getWarnings({
 }
 
 String getNetworkInterfaces(Uint8List byteArray) {
-  final interfaces = PrinterInterfaceEnum.listFromByteArray(byteArray);
+  final interfaces = printerInterfaceEnum.listFromByteArray(byteArray);
   return interfaces.map((e) => e.enumAsString).join(',');
 }
 

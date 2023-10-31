@@ -1,31 +1,29 @@
-import 'dart:typed_data';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/values.dart';
 
-import 'package:zebra_discovery_b64/src/classes/helpers.dart';
-
-enum PrinterPortStatusEnum {
-  none(bitfieldValue: 0, enumAsString: "None"),
-  online(bitfieldValue: 1, enumAsString: "Online"),
-  offline(bitfieldValue: 2, enumAsString: "Offline"),
-  tonerLow(bitfieldValue: 3, enumAsString: "Toner Low"),
-  paperOut(bitfieldValue: 4, enumAsString: "Paper Out"),
-  paperJammed(bitfieldValue: 5, enumAsString: "Paper Jammed"),
-  doorOpen(bitfieldValue: 6, enumAsString: "Door Open"),
-  printerError(bitfieldValue: 7, enumAsString: "Printer Error"),
-  unknown(bitfieldValue: 8, enumAsString: "Unknown");
-
-  const PrinterPortStatusEnum({
-    required this.bitfieldValue,
-    required this.enumAsString,
-  });
-
-  final int bitfieldValue;
-  final String enumAsString;
-
-  static PrinterPortStatusEnum fromByteArray(Uint8List byteArray) {
-    final value = parseInteger(byteArray);
-    return (values.firstWhere(
-      (element) => element.bitfieldValue == value,
-      orElse: () => PrinterPortStatusEnum.unknown,
-    ));
-  }
+enum EnumValues {
+  none,
+  online,
+  offline,
+  tonerLow,
+  paperOut,
+  paperJammed,
+  doorOpen,
+  printerError,
+  unknown,
 }
+
+final printerPortStatusEnum = Values<EnumValues>(
+  defaultValue: EnumValues.unknown,
+  values: {
+    Value(EnumValues.none, 0, "None"),
+    Value(EnumValues.online, 1, "Online"),
+    Value(EnumValues.offline, 2, "Offline"),
+    Value(EnumValues.tonerLow, 3, "Toner Low"),
+    Value(EnumValues.paperOut, 4, "Paper Out"),
+    Value(EnumValues.paperJammed, 5, "Paper Jammed"),
+    Value(EnumValues.doorOpen, 6, "Door Open"),
+    Value(EnumValues.printerError, 7, "Printer Error"),
+    Value(EnumValues.unknown, 8, "Unknown"),
+  },
+);

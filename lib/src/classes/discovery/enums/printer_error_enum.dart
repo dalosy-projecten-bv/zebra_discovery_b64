@@ -1,88 +1,35 @@
-import 'dart:typed_data';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/value_with_segment.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/values_with_segment.dart';
 
-import 'package:zebra_discovery_b64/src/classes/helpers.dart';
-
-enum PrinterErrorEnum {
-  none(
-    segment: 0,
-    bitfieldValue: 0,
-    enumAsString: "None",
-  ),
-  mediaOut(
-    segment: 2,
-    bitfieldValue: 1,
-    enumAsString: "Paper Out",
-  ),
-  ribbonOut(
-    segment: 2,
-    bitfieldValue: 2,
-    enumAsString: "Ribbon Out",
-  ),
-  headOpen(
-    segment: 2,
-    bitfieldValue: 4,
-    enumAsString: "Head Open",
-  ),
-  printheadShutdown(
-    segment: 2,
-    bitfieldValue: 16,
-    enumAsString: "Printhead Shutdown",
-  ),
-  motorOvertemp(
-    segment: 2,
-    bitfieldValue: 32,
-    enumAsString: "Motor Overtemp",
-  ),
-  invalidHead(
-    segment: 2,
-    bitfieldValue: 128,
-    enumAsString: "Invalid Head",
-  ),
-  thermistorFault(
-    segment: 2,
-    bitfieldValue: 512,
-    enumAsString: "Thermistor Fault",
-  ),
-  paperFeedError(
-    segment: 2,
-    bitfieldValue: 16384,
-    enumAsString: "Paper Feed",
-  ),
-  paused(
-    segment: 2,
-    bitfieldValue: 65536,
-    enumAsString: "Paused",
-  ),
-  basicRuntimeError(
-      segment: 2, bitfieldValue: 1048576, enumAsString: "Basic Runtime Error"),
-  basicForced(
-    segment: 2,
-    bitfieldValue: 2097152,
-    enumAsString: "Basic Forced",
-  );
-
-  const PrinterErrorEnum({
-    required this.segment,
-    required this.bitfieldValue,
-    required this.enumAsString,
-  });
-
-  final int segment;
-  final int bitfieldValue;
-  final String enumAsString;
-
-  static List<PrinterErrorEnum> listFromByteArray(
-    int segment,
-    Uint8List byteArray,
-  ) {
-    final value = parseInteger(byteArray);
-    final list = <PrinterErrorEnum>[];
-    for (final printError in values) {
-      if (printError.segment == segment &&
-          (value & printError.bitfieldValue) != 0) {
-        list.add(printError);
-      }
-    }
-    return list;
-  }
+enum EnumValues {
+  none,
+  mediaOut,
+  ribbonOut,
+  headOpen,
+  printheadShutdown,
+  motorOvertemp,
+  invalidHead,
+  thermistorFault,
+  paperFeedError,
+  paused,
+  basicRuntimeError,
+  basicForced,
 }
+
+final printerErrorEnum = ValuesWithSegment<EnumValues>(
+  values: {
+    ValueWithSegment(EnumValues.none, 0, 0, "None"),
+    ValueWithSegment(EnumValues.mediaOut, 2, 1, "Paper Out"),
+    ValueWithSegment(EnumValues.ribbonOut, 2, 2, "Ribbon Out"),
+    ValueWithSegment(EnumValues.headOpen, 2, 4, "Head Open"),
+    ValueWithSegment(EnumValues.printheadShutdown, 2, 16, "Printhead Shutdown"),
+    ValueWithSegment(EnumValues.motorOvertemp, 2, 32, "Motor Overtemp"),
+    ValueWithSegment(EnumValues.invalidHead, 2, 128, "Invalid Head"),
+    ValueWithSegment(EnumValues.thermistorFault, 2, 512, "Thermistor Fault"),
+    ValueWithSegment(EnumValues.paperFeedError, 2, 16384, "Paper Feed"),
+    ValueWithSegment(EnumValues.paused, 2, 65536, "Paused"),
+    ValueWithSegment(
+        EnumValues.basicRuntimeError, 2, 1048576, "Basic Runtime Error"),
+    ValueWithSegment(EnumValues.basicForced, 2, 2097152, "Basic Forced"),
+  },
+);
