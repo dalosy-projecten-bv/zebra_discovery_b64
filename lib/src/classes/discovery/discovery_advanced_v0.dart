@@ -183,6 +183,14 @@ class DiscoveryAdvancedV0 extends Discovery {
               .toList()
               .join(','),
         ),
+        MapEntry('PRIMARY_LANGUAGE', primaryLanguage.value.enumAsString),
+        MapEntry(
+          'AVAILABLE_LANGUAGES',
+          availableSecondaryLanguagesBitfield.value
+              .map((e) => e.enumAsString)
+              .toList()
+              .join(','),
+        ),
       },
     );
     // TODO: implement initMap
