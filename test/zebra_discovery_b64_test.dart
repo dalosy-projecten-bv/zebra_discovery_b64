@@ -50,7 +50,7 @@ void main() {
       expect(discovery.map['AVAILABLE_NETWORK_PROTOCOLS'],
           'FTP,LPD,TCP,UDP,HTTP,SMTP,POP3,SNMP,Weblink,TLS,HTTPS');
 
-      expect(discovery.map.length, 25);
+      expect(discovery.map.length, 51);
     });
 
     test('Test error codes', () {

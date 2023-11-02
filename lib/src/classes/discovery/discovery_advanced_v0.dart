@@ -16,6 +16,7 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/byte_value.dart
 import 'package:zebra_discovery_b64/src/classes/discovery/values/enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/int_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/list_combined_segmented_enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/list_enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/list_segmented_enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
@@ -31,36 +32,40 @@ class DiscoveryAdvancedV0 extends Discovery {
         productName = StringValue(byteArray.get(76, 32)),
         fwVersion = StringValue(byteArray.get(108, 16)),
         location = StringValue(byteArray.get(124, 36)),
-        errorsSegment0 = ListSegmentedEnumValue(
-          0,
-          byteArray.get(160, 4),
-          printerErrorEnum,
-        ),
-        errorsSegment1 = ListSegmentedEnumValue(
-          1,
-          byteArray.get(164, 4),
-          printerErrorEnum,
-        ),
-        errorsSegment2 = ListSegmentedEnumValue(
-          2,
-          byteArray.get(168, 4),
-          printerErrorEnum,
-        ),
-        warningsSegment0 = ListSegmentedEnumValue(
-          0,
-          byteArray.get(172, 4),
-          printerWarningEnum,
-        ),
-        warningsSegment1 = ListSegmentedEnumValue(
-          1,
-          byteArray.get(176, 4),
-          printerWarningEnum,
-        ),
-        warningsSegment2 = ListSegmentedEnumValue(
-          2,
-          byteArray.get(180, 4),
-          printerWarningEnum,
-        ),
+        errors = ListCombinedSegmentedEnumValue({
+          ListSegmentedEnumValue(
+            0,
+            byteArray.get(160, 4),
+            printerErrorEnum,
+          ),
+          ListSegmentedEnumValue(
+            1,
+            byteArray.get(164, 4),
+            printerErrorEnum,
+          ),
+          ListSegmentedEnumValue(
+            2,
+            byteArray.get(168, 4),
+            printerErrorEnum,
+          ),
+        }),
+        warnings = ListCombinedSegmentedEnumValue({
+          ListSegmentedEnumValue(
+            0,
+            byteArray.get(172, 4),
+            printerWarningEnum,
+          ),
+          ListSegmentedEnumValue(
+            1,
+            byteArray.get(176, 4),
+            printerWarningEnum,
+          ),
+          ListSegmentedEnumValue(
+            2,
+            byteArray.get(180, 4),
+            printerWarningEnum,
+          ),
+        }),
         availableInterfacesBitfield = ListEnumValue(
           byteArray.get(184, 4),
           printerInterfaceEnum,
@@ -123,12 +128,8 @@ class DiscoveryAdvancedV0 extends Discovery {
   final StringValue productName;
   final StringValue fwVersion;
   final StringValue location;
-  final ListSegmentedEnumValue<PrinterError> errorsSegment0;
-  final ListSegmentedEnumValue<PrinterError> errorsSegment1;
-  final ListSegmentedEnumValue<PrinterError> errorsSegment2;
-  final ListSegmentedEnumValue<PrinterWarning> warningsSegment0;
-  final ListSegmentedEnumValue<PrinterWarning> warningsSegment1;
-  final ListSegmentedEnumValue<PrinterWarning> warningsSegment2;
+  final ListCombinedSegmentedEnumValue<PrinterError> errors;
+  final ListCombinedSegmentedEnumValue<PrinterWarning> warnings;
   final ListEnumValue<PrinterInterface> availableInterfacesBitfield;
   final StringValue deviceUniqueId;
   final StringValue dnsDomain;
@@ -176,19 +177,11 @@ class DiscoveryAdvancedV0 extends Discovery {
         MapEntry('LOCATION', location.value),
         MapEntry(
           'ERRORS',
-          {
-            ...errorsSegment0.value,
-            ...errorsSegment1.value,
-            ...errorsSegment2.value,
-          }.getCommaSeparatedList(),
+          errors.values.getCommaSeparatedList(),
         ),
         MapEntry(
           'WARNINGS',
-          {
-            ...warningsSegment0.value,
-            ...warningsSegment1.value,
-            ...warningsSegment2.value,
-          }.getCommaSeparatedList(),
+          warnings.values.getCommaSeparatedList(),
         ),
         MapEntry(
           'ACTIVE_NETWORK_INTERFACE',
