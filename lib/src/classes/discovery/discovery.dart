@@ -12,11 +12,12 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 abstract class Discovery {
-  Discovery(BytesSplitter b, Uint8List byteArray) {
-    notUsed1 = NotUsedValue(byteArray.fromPositions(0, 3));
-    discoveryVersion = ByteValue(byteArray.fromPositions(3, 1));
+  Discovery(this.byteArray) {
+    notUsed1 = NotUsedValue(byteArray.get(0, 3));
+    discoveryVersion = ByteValue(byteArray.get(3, 1));
   }
 
+  late final Uint8List byteArray;
   late final NotUsedValue notUsed1;
   late final ByteValue discoveryVersion;
   final map = <String, dynamic>{};
@@ -41,10 +42,9 @@ abstract class Discovery {
 
     //Use the version to return the right discovery class
     final version = discoveryAsBytes[3];
-    final bytesSplitter = BytesSplitter(discoveryAsBytes);
     switch (version) {
       case 3:
-        return DiscoveryLegacy(bytesSplitter, discoveryAsBytes);
+        return DiscoveryLegacy(discoveryAsBytes);
       case 4:
         if (discoveryAsBytes.length <= 4) {
           throw Exception(
@@ -54,15 +54,15 @@ abstract class Discovery {
         final advancedVersion = discoveryAsBytes[4];
         switch (advancedVersion) {
           case 0:
-            return DiscoveryAdvancedV0(bytesSplitter, discoveryAsBytes);
+            return DiscoveryAdvancedV0(discoveryAsBytes);
           case 1:
-            return DiscoveryAdvancedV1(bytesSplitter, discoveryAsBytes);
+            return DiscoveryAdvancedV1(discoveryAsBytes);
           case 2:
-            return DiscoveryAdvancedV2(bytesSplitter, discoveryAsBytes);
+            return DiscoveryAdvancedV2(discoveryAsBytes);
           case 3:
-            return DiscoveryAdvancedV3(bytesSplitter, discoveryAsBytes);
+            return DiscoveryAdvancedV3(discoveryAsBytes);
           case >= 4:
-            return DiscoveryAdvancedV4(bytesSplitter, discoveryAsBytes);
+            return DiscoveryAdvancedV4(discoveryAsBytes);
           default:
             throw Exception(
                 "The message contains an unknown advanced version ($version)");

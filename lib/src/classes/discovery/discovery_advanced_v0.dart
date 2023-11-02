@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/discovered_printer_language.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/ip_acquisition_protocol.dart';
@@ -25,92 +23,63 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.da
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 class DiscoveryAdvancedV0 extends Discovery {
-  DiscoveryAdvancedV0(BytesSplitter b, Uint8List byteArray)
-      : super(b, byteArray) {
-    advancedPacketFormat = ByteValue(byteArray.fromPositions(4, 1));
-    notUsed2 = NotUsedValue(byteArray.fromPositions(5, 3));
-    companyAbbreviation = StringValue(byteArray.fromPositions(8, 5));
-    systemName = StringValue(byteArray.fromPositions(13, 63));
-    productName = StringValue(byteArray.fromPositions(76, 32));
-    fwVersion = StringValue(byteArray.fromPositions(108, 16));
-    location = StringValue(byteArray.fromPositions(124, 36));
-    errorsSegment0 = ListSegmentedEnumValue(
-      0,
-      byteArray.fromPositions(160, 4),
-      printerErrorEnum,
-    );
-    errorsSegment1 = ListSegmentedEnumValue(
-      1,
-      byteArray.fromPositions(164, 4),
-      printerErrorEnum,
-    );
-    errorsSegment2 = ListSegmentedEnumValue(
-      2,
-      byteArray.fromPositions(168, 4),
-      printerErrorEnum,
-    );
-    warningsSegment0 = ListSegmentedEnumValue(
-      0,
-      byteArray.fromPositions(172, 4),
-      printerWarningEnum,
-    );
-    warningsSegment1 = ListSegmentedEnumValue(
-      1,
-      byteArray.fromPositions(176, 4),
-      printerWarningEnum,
-    );
-    warningsSegment2 = ListSegmentedEnumValue(
-      2,
-      byteArray.fromPositions(180, 4),
-      printerWarningEnum,
-    );
+  DiscoveryAdvancedV0(super.byteArray) {
+    advancedPacketFormat = ByteValue(byteArray.get(4, 1));
+    notUsed2 = NotUsedValue(byteArray.get(5, 3));
+    companyAbbreviation = StringValue(byteArray.get(8, 5));
+    systemName = StringValue(byteArray.get(13, 63));
+    productName = StringValue(byteArray.get(76, 32));
+    fwVersion = StringValue(byteArray.get(108, 16));
+    location = StringValue(byteArray.get(124, 36));
+    errorsSegment0 =
+        ListSegmentedEnumValue(0, byteArray.get(160, 4), printerErrorEnum);
+    errorsSegment1 =
+        ListSegmentedEnumValue(1, byteArray.get(164, 4), printerErrorEnum);
+    errorsSegment2 =
+        ListSegmentedEnumValue(2, byteArray.get(168, 4), printerErrorEnum);
+    warningsSegment0 =
+        ListSegmentedEnumValue(0, byteArray.get(172, 4), printerWarningEnum);
+    warningsSegment1 =
+        ListSegmentedEnumValue(1, byteArray.get(176, 4), printerWarningEnum);
+    warningsSegment2 =
+        ListSegmentedEnumValue(2, byteArray.get(180, 4), printerWarningEnum);
     availableInterfacesBitfield =
-        ListEnumValue(byteArray.fromPositions(184, 4), printerInterfaceEnum);
-    deviceUniqueId = StringValue(byteArray.fromPositions(188, 32));
-    dnsDomain = StringValue(byteArray.fromPositions(220, 100));
-    activeInterface = EnumValue(
-      byteArray.fromPositions(320, 4),
-      printerInterfaceEnum,
-    );
-    macAddress = HexValue(byteArray.fromPositions(324, 6));
-    ipAcquisitionProto = EnumValue(
-      byteArray.fromPositions(330, 2),
-      ipAcquisitionProtocolEnum,
-    );
-    ipAddress = AddressValue(byteArray.fromPositions(332, 4));
-    subnetMask = AddressValue(byteArray.fromPositions(336, 4));
-    gatewayMask = AddressValue(byteArray.fromPositions(340, 4));
-    port = IntValue(byteArray.fromPositions(344, 2));
+        ListEnumValue(byteArray.get(184, 4), printerInterfaceEnum);
+    deviceUniqueId = StringValue(byteArray.get(188, 32));
+    dnsDomain = StringValue(byteArray.get(220, 100));
+    activeInterface = EnumValue(byteArray.get(320, 4), printerInterfaceEnum);
+    macAddress = HexValue(byteArray.get(324, 6));
+    ipAcquisitionProto =
+        EnumValue(byteArray.get(330, 2), ipAcquisitionProtocolEnum);
+    ipAddress = AddressValue(byteArray.get(332, 4));
+    subnetMask = AddressValue(byteArray.get(336, 4));
+    gatewayMask = AddressValue(byteArray.get(340, 4));
+    port = IntValue(byteArray.get(344, 2));
     availableProtocols =
-        ListEnumValue(byteArray.fromPositions(346, 2), networkProtocolEnum);
-    primaryLanguage = EnumValue(
-      byteArray.fromPositions(348, 4),
-      discoveredPrinterLanguagesEnum,
-    );
-    availableLanguagesBitfield = EnumValue(
-      byteArray.fromPositions(352, 4),
-      discoveredPrinterLanguagesEnum,
-    );
-    availableSecondaryLanguagesBitfield = ListEnumValue(
-        byteArray.fromPositions(356, 4), secondaryPrinterLanguageEnum);
-    dotsPerMm = IntValue(byteArray.fromPositions(360, 2));
-    dotsPerDotRow = IntValue(byteArray.fromPositions(362, 2));
-    labelLength = IntValue(byteArray.fromPositions(364, 2));
-    labelWidth = IntValue(byteArray.fromPositions(366, 2));
-    darkness = IntValue(byteArray.fromPositions(368, 2));
-    mediaType =
-        EnumValue(byteArray.fromPositions(370, 2), printerMediaTypeEnum);
-    printMethod = EnumValue(byteArray.fromPositions(372, 2), printMethodEnum);
-    printMode = EnumValue(byteArray.fromPositions(374, 2), printModeEnum);
-    odometerTotal = IntValue(byteArray.fromPositions(376, 4));
-    odometerMarkerOne = IntValue(byteArray.fromPositions(380, 4));
-    odometerMarkerTwo = IntValue(byteArray.fromPositions(384, 4));
-    numOfLabelsInBatch = IntValue(byteArray.fromPositions(388, 2));
-    labelsQueued = IntValue(byteArray.fromPositions(390, 2));
-    zbiEnabled = BoolValue(byteArray.fromPositions(392, 1));
-    zbiState = EnumValue(byteArray.fromPositions(393, 1), zbiStateEnum);
-    zbiMajorVersion = IntValue(byteArray.fromPositions(394, 1));
-    zbiMinorVersion = IntValue(byteArray.fromPositions(395, 1));
+        ListEnumValue(byteArray.get(346, 2), networkProtocolEnum);
+    primaryLanguage =
+        EnumValue(byteArray.get(348, 4), discoveredPrinterLanguagesEnum);
+    availableLanguagesBitfield =
+        EnumValue(byteArray.get(352, 4), discoveredPrinterLanguagesEnum);
+    availableSecondaryLanguagesBitfield =
+        ListEnumValue(byteArray.get(356, 4), secondaryPrinterLanguageEnum);
+    dotsPerMm = IntValue(byteArray.get(360, 2));
+    dotsPerDotRow = IntValue(byteArray.get(362, 2));
+    labelLength = IntValue(byteArray.get(364, 2));
+    labelWidth = IntValue(byteArray.get(366, 2));
+    darkness = IntValue(byteArray.get(368, 2));
+    mediaType = EnumValue(byteArray.get(370, 2), printerMediaTypeEnum);
+    printMethod = EnumValue(byteArray.get(372, 2), printMethodEnum);
+    printMode = EnumValue(byteArray.get(374, 2), printModeEnum);
+    odometerTotal = IntValue(byteArray.get(376, 4));
+    odometerMarkerOne = IntValue(byteArray.get(380, 4));
+    odometerMarkerTwo = IntValue(byteArray.get(384, 4));
+    numOfLabelsInBatch = IntValue(byteArray.get(388, 2));
+    labelsQueued = IntValue(byteArray.get(390, 2));
+    zbiEnabled = BoolValue(byteArray.get(392, 1));
+    zbiState = EnumValue(byteArray.get(393, 1), zbiStateEnum);
+    zbiMajorVersion = IntValue(byteArray.get(394, 1));
+    zbiMinorVersion = IntValue(byteArray.get(395, 1));
     initMap();
   }
 
