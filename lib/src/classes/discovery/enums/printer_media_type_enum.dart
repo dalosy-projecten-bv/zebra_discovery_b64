@@ -1,17 +1,17 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
-enum EnumValues {
+enum PrinterMediaType {
   continuous,
   blackMark,
   gap,
 }
 
 final printerMediaTypeEnum = EnumBase(
-  defaultEnum: EnumValues.gap,
+  defaultEnum: PrinterMediaType.gap,
   values: {
-    EnumData(EnumValues.continuous, 0, "Continuous"),
-    EnumData(EnumValues.blackMark, 1, "Black Mark"),
-    EnumData(EnumValues.gap, 2, "Gap"),
+    EnumData(PrinterMediaType.continuous, 0, "Continuous"),
+    EnumData(PrinterMediaType.blackMark, 1, "Black Mark"),
+    EnumData(PrinterMediaType.gap, 2, "Gap"),
   },
 );

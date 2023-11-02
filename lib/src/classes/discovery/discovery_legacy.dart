@@ -1,10 +1,10 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/ip_acquisition_protocol_enum.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_port_status_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/address_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/printer_port_status.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
@@ -27,7 +27,7 @@ class DiscoveryLegacy extends Discovery {
     getCommunityName = HexValue.fromByteArray(b.next(32));
     setCommunityName = HexValue.fromByteArray(b.next(32));
     notUsed3 = NotUsedValue.fromByteArray(b.next(82));
-    portStatus = PrinterPortStatus.fromByteArray(b.next(1));
+    portStatus = EnumValue.fromByteArray(printerPortStatusEnum, b.next(1));
     portName = StringValue.fromByteArray(b.next(16));
   }
 
@@ -47,7 +47,7 @@ class DiscoveryLegacy extends Discovery {
   late final HexValue getCommunityName;
   late final HexValue setCommunityName;
   late final NotUsedValue notUsed3;
-  late final PrinterPortStatus portStatus;
+  late final EnumValue<PrinterPortStatus> portStatus;
   late final StringValue portName;
 
   @override

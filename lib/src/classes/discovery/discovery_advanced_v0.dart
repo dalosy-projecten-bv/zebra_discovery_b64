@@ -1,6 +1,11 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/discovered_printer_language_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/ip_acquisition_protocol_enum.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/print_method_enum.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/print_mode_enum.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_interface_enum.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_media_type_enum.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/zbi_state_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/address_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/bool_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/byte_value.dart';
@@ -13,12 +18,7 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/list_printer_in
 import 'package:zebra_discovery_b64/src/classes/discovery/values/list_printer_warning.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/list_secondary_printer_language.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/print_method.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/print_mode.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/printer_interface.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/printer_media_type.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/zbi_state.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 class DiscoveryAdvancedV0 extends Discovery {
@@ -39,7 +39,7 @@ class DiscoveryAdvancedV0 extends Discovery {
     availableInterfacesBitfield = ListPrinterInterface.fromByteArray(b.next(4));
     deviceUniqueId = StringValue.fromByteArray(b.next(32));
     dnsDomain = StringValue.fromByteArray(b.next(100));
-    activeInterface = PrinterInterface.fromByteArray(b.next(4));
+    activeInterface = EnumValue.fromByteArray(printerInterfaceEnum, b.next(4));
     macAddress = HexValue.fromByteArray(b.next(6));
     ipAcquisitionProto =
         EnumValue.fromByteArray(ipAcquisitionProtocolEnum, b.next(2));
@@ -59,16 +59,16 @@ class DiscoveryAdvancedV0 extends Discovery {
     labelLength = IntValue.fromByteArray(b.next(2));
     labelWidth = IntValue.fromByteArray(b.next(2));
     darkness = IntValue.fromByteArray(b.next(2));
-    mediaType = PrinterMediaType.fromByteArray(b.next(2));
-    printMethod = PrintMethod.fromByteArray(b.next(2));
-    printMode = PrintMode.fromByteArray(b.next(2));
+    mediaType = EnumValue.fromByteArray(printerMediaTypeEnum, b.next(2));
+    printMethod = EnumValue.fromByteArray(printMethods, b.next(2));
+    printMode = EnumValue.fromByteArray(printModeEnum, b.next(2));
     odometerTotal = IntValue.fromByteArray(b.next(4));
     odometerMarkerOne = IntValue.fromByteArray(b.next(4));
     odometerMarkerTwo = IntValue.fromByteArray(b.next(4));
     numOfLabelsInBatch = IntValue.fromByteArray(b.next(2));
     labelsQueued = IntValue.fromByteArray(b.next(2));
     zbiEnabled = BoolValue.fromByteArray(b.next(1));
-    zbiState = ZbiState.fromByteArray(b.next(1));
+    zbiState = EnumValue.fromByteArray(zbiStateEnum, b.next(1));
     zbiMajorVersion = IntValue.fromByteArray(b.next(1));
     zbiMinorVersion = IntValue.fromByteArray(b.next(1));
     initMap();
@@ -90,7 +90,7 @@ class DiscoveryAdvancedV0 extends Discovery {
   late final ListPrinterInterface availableInterfacesBitfield;
   late final StringValue deviceUniqueId;
   late final StringValue dnsDomain;
-  late final PrinterInterface activeInterface;
+  late final EnumValue<PrinterInterface> activeInterface;
   late final HexValue macAddress;
   late final EnumValue<IpAcquisitionProtocol> ipAcquisitionProto;
   late final AddressValue ipAddress;
@@ -106,16 +106,16 @@ class DiscoveryAdvancedV0 extends Discovery {
   late final IntValue labelLength;
   late final IntValue labelWidth;
   late final IntValue darkness;
-  late final PrinterMediaType mediaType;
-  late final PrintMethod printMethod;
-  late final PrintMode printMode;
+  late final EnumValue<PrinterMediaType> mediaType;
+  late final EnumValue<PrintMethod> printMethod;
+  late final EnumValue<PrintMode> printMode;
   late final IntValue odometerTotal;
   late final IntValue odometerMarkerOne;
   late final IntValue odometerMarkerTwo;
   late final IntValue numOfLabelsInBatch;
   late final IntValue labelsQueued;
   late final BoolValue zbiEnabled;
-  late final ZbiState zbiState;
+  late final EnumValue<ZbiState> zbiState;
   late final IntValue zbiMajorVersion;
   late final IntValue zbiMinorVersion;
 

@@ -1,7 +1,7 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
-enum EnumValues {
+enum PrinterPortStatus {
   none,
   online,
   offline,
@@ -14,16 +14,16 @@ enum EnumValues {
 }
 
 final printerPortStatusEnum = EnumBase(
-  defaultEnum: EnumValues.unknown,
+  defaultEnum: PrinterPortStatus.unknown,
   values: {
-    EnumData(EnumValues.none, 0, "None"),
-    EnumData(EnumValues.online, 1, "Online"),
-    EnumData(EnumValues.offline, 2, "Offline"),
-    EnumData(EnumValues.tonerLow, 3, "Toner Low"),
-    EnumData(EnumValues.paperOut, 4, "Paper Out"),
-    EnumData(EnumValues.paperJammed, 5, "Paper Jammed"),
-    EnumData(EnumValues.doorOpen, 6, "Door Open"),
-    EnumData(EnumValues.printerError, 7, "Printer Error"),
-    EnumData(EnumValues.unknown, 8, "Unknown"),
+    EnumData(PrinterPortStatus.none, 0, "None"),
+    EnumData(PrinterPortStatus.online, 1, "Online"),
+    EnumData(PrinterPortStatus.offline, 2, "Offline"),
+    EnumData(PrinterPortStatus.tonerLow, 3, "Toner Low"),
+    EnumData(PrinterPortStatus.paperOut, 4, "Paper Out"),
+    EnumData(PrinterPortStatus.paperJammed, 5, "Paper Jammed"),
+    EnumData(PrinterPortStatus.doorOpen, 6, "Door Open"),
+    EnumData(PrinterPortStatus.printerError, 7, "Printer Error"),
+    EnumData(PrinterPortStatus.unknown, 8, "Unknown"),
   },
 );

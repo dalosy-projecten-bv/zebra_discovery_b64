@@ -1,7 +1,7 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
-enum EnumValues {
+enum Wired8021xSecuritySetting {
   none,
   peap,
   eapTls,
@@ -9,11 +9,11 @@ enum EnumValues {
 }
 
 final wired8021xSecuritySettingEnum = EnumBase(
-  defaultEnum: EnumValues.none,
+  defaultEnum: Wired8021xSecuritySetting.none,
   values: {
-    EnumData(EnumValues.none, 0, "None"),
-    EnumData(EnumValues.peap, 1, "PEAP"),
-    EnumData(EnumValues.eapTls, 2, "EAP-TLS"),
-    EnumData(EnumValues.eapTtls, 3, "EAP-TTLS"),
+    EnumData(Wired8021xSecuritySetting.none, 0, "None"),
+    EnumData(Wired8021xSecuritySetting.peap, 1, "PEAP"),
+    EnumData(Wired8021xSecuritySetting.eapTls, 2, "EAP-TLS"),
+    EnumData(Wired8021xSecuritySetting.eapTtls, 3, "EAP-TTLS"),
   },
 );
