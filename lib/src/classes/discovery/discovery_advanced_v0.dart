@@ -1,6 +1,7 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/discovered_printer_language_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/ip_acquisition_protocol_enum.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/network_protocol_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/print_method_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/print_mode_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_interface_enum.dart';
@@ -12,7 +13,7 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/byte_value.dart
 import 'package:zebra_discovery_b64/src/classes/discovery/values/enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/int_value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/list_network_protocol.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/list_enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/list_printer_error.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/list_printer_interface.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/list_printer_warning.dart';
@@ -47,7 +48,8 @@ class DiscoveryAdvancedV0 extends Discovery {
     subnetMask = AddressValue.fromByteArray(b.next(4));
     gatewayMask = AddressValue.fromByteArray(b.next(4));
     port = IntValue.fromByteArray(b.next(2));
-    availableProtocols = ListNetworkProtocol.fromByteArray(b.next(2));
+    availableProtocols =
+        ListEnumValue.fromByteArray(networkProtocolEnum, b.next(2));
     primaryLanguage =
         EnumValue.fromByteArray(discoveredPrinterLanguages, b.next(4));
     availableLanguagesBitfield =
@@ -97,7 +99,7 @@ class DiscoveryAdvancedV0 extends Discovery {
   late final AddressValue subnetMask;
   late final AddressValue gatewayMask;
   late final IntValue port;
-  late final ListNetworkProtocol availableProtocols;
+  late final ListEnumValue<NetworkProtocol> availableProtocols;
   late final EnumValue<DiscoveredPrinterLanguage> primaryLanguage;
   late final EnumValue<DiscoveredPrinterLanguage> availableLanguagesBitfield;
   late final ListSecondaryPrinterLanguage availableSecondaryLanguagesBitfield;
