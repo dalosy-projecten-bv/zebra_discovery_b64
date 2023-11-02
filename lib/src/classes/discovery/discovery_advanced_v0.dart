@@ -6,6 +6,7 @@ import 'package:zebra_discovery_b64/src/classes/discovery/enums/print_method_enu
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/print_mode_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_interface_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_media_type_enum.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/secondary_printer_language_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/zbi_state_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/address_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/bool_value.dart';
@@ -15,9 +16,7 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart'
 import 'package:zebra_discovery_b64/src/classes/discovery/values/int_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/list_enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/list_printer_error.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/list_printer_interface.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/list_printer_warning.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/list_secondary_printer_language.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
@@ -37,7 +36,8 @@ class DiscoveryAdvancedV0 extends Discovery {
     warningsSegment0 = ListPrinterWarning.fromByteArray(0, b.next(4));
     warningsSegment1 = ListPrinterWarning.fromByteArray(1, b.next(4));
     warningsSegment2 = ListPrinterWarning.fromByteArray(2, b.next(4));
-    availableInterfacesBitfield = ListPrinterInterface.fromByteArray(b.next(4));
+    availableInterfacesBitfield =
+        ListEnumValue.fromByteArray(printerInterfaceEnum, b.next(4));
     deviceUniqueId = StringValue.fromByteArray(b.next(32));
     dnsDomain = StringValue.fromByteArray(b.next(100));
     activeInterface = EnumValue.fromByteArray(printerInterfaceEnum, b.next(4));
@@ -55,7 +55,7 @@ class DiscoveryAdvancedV0 extends Discovery {
     availableLanguagesBitfield =
         EnumValue.fromByteArray(discoveredPrinterLanguages, b.next(4));
     availableSecondaryLanguagesBitfield =
-        ListSecondaryPrinterLanguage.fromByteArray(b.next(4));
+        ListEnumValue.fromByteArray(secondaryPrinterLanguage, b.next(4));
     dotsPerMm = IntValue.fromByteArray(b.next(2));
     dotsPerDotRow = IntValue.fromByteArray(b.next(2));
     labelLength = IntValue.fromByteArray(b.next(2));
@@ -89,7 +89,7 @@ class DiscoveryAdvancedV0 extends Discovery {
   late final ListPrinterWarning warningsSegment0;
   late final ListPrinterWarning warningsSegment1;
   late final ListPrinterWarning warningsSegment2;
-  late final ListPrinterInterface availableInterfacesBitfield;
+  late final ListEnumValue<PrinterInterface> availableInterfacesBitfield;
   late final StringValue deviceUniqueId;
   late final StringValue dnsDomain;
   late final EnumValue<PrinterInterface> activeInterface;
@@ -102,7 +102,8 @@ class DiscoveryAdvancedV0 extends Discovery {
   late final ListEnumValue<NetworkProtocol> availableProtocols;
   late final EnumValue<DiscoveredPrinterLanguage> primaryLanguage;
   late final EnumValue<DiscoveredPrinterLanguage> availableLanguagesBitfield;
-  late final ListSecondaryPrinterLanguage availableSecondaryLanguagesBitfield;
+  late final ListEnumValue<SecondaryPrinterLanguage>
+      availableSecondaryLanguagesBitfield;
   late final IntValue dotsPerMm;
   late final IntValue dotsPerDotRow;
   late final IntValue labelLength;
