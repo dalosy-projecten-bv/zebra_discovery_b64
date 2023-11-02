@@ -54,10 +54,10 @@ String getWarnings({
   required Uint8List warningsSegment1,
   required Uint8List warningsSegment2,
 }) {
-  final errors = PrinterWarningEnum.listFromByteArray(0, warningsSegment0);
-  errors.addAll(PrinterWarningEnum.listFromByteArray(1, warningsSegment1));
-  errors.addAll(PrinterWarningEnum.listFromByteArray(2, warningsSegment2));
-  return errors.map((e) => e.enumAsString).join(',');
+  final warnings = printerWarningEnum.listFromByteArray(0, warningsSegment0);
+  warnings.addAll(printerWarningEnum.listFromByteArray(1, warningsSegment1));
+  warnings.addAll(printerWarningEnum.listFromByteArray(2, warningsSegment2));
+  return warnings.map((e) => e.enumAsString).join(',');
 }
 
 String getNetworkInterfaces(Uint8List byteArray) {
