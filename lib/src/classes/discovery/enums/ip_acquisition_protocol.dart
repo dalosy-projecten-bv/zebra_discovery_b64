@@ -13,7 +13,7 @@ enum IpAcquisitionProtocol {
 
 final ipAcquisitionProtocolEnum = EnumBase(
   defaultEnum: IpAcquisitionProtocol.all,
-  values: {
+  values: [
     EnumData(IpAcquisitionProtocol.all, 0, 'All'),
     EnumData(IpAcquisitionProtocol.glean, 1, 'Glean'),
     EnumData(IpAcquisitionProtocol.rarp, 2, 'RARP'),
@@ -21,5 +21,5 @@ final ipAcquisitionProtocolEnum = EnumBase(
     EnumData(IpAcquisitionProtocol.dhcp, 4, 'DHCP'),
     EnumData(IpAcquisitionProtocol.dhcpAndBootp, 5, 'DHCP and Bootp'),
     EnumData(IpAcquisitionProtocol.static, 6, 'Static'),
-  },
+  ],
 );

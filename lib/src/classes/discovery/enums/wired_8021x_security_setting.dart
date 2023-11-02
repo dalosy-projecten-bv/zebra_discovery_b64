@@ -10,10 +10,10 @@ enum Wired8021xSecuritySetting {
 
 final wired8021xSecuritySettingEnum = EnumBase(
   defaultEnum: Wired8021xSecuritySetting.none,
-  values: {
+  values: [
     EnumData(Wired8021xSecuritySetting.none, 0, "None"),
     EnumData(Wired8021xSecuritySetting.peap, 1, "PEAP"),
     EnumData(Wired8021xSecuritySetting.eapTls, 2, "EAP-TLS"),
     EnumData(Wired8021xSecuritySetting.eapTtls, 3, "EAP-TTLS"),
-  },
+  ],
 );

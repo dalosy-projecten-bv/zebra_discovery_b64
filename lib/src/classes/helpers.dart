@@ -20,13 +20,13 @@ extension Uint8ListExtension on Uint8List {
   }
 }
 
-extension SetExtension on Set<SegmentedEnumData> {
+extension SetExtension on Iterable<SegmentedEnumData> {
   String getCommaSeparatedList() {
     return map((e) => e.enumAsString).join(',');
   }
 }
 
-extension ListExtension on Set<EnumData> {
+extension ListExtension on Iterable<EnumData> {
   String getCommaSeparatedList() {
     return map((e) => e.enumAsString).join(',');
   }

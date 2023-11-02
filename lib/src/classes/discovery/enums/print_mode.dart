@@ -18,7 +18,7 @@ enum PrintMode {
 
 final printModeEnum = EnumBase(
   defaultEnum: PrintMode.rewind,
-  values: {
+  values: [
     EnumData(PrintMode.rewind, 0, "Rewind"),
     EnumData(PrintMode.tearOff, 1, "Tear Off"),
     EnumData(PrintMode.peelOff, 2, "Peel Off"),
@@ -31,5 +31,5 @@ final printModeEnum = EnumBase(
     EnumData(PrintMode.partialCutter, 9, "Partial Cutter"),
     EnumData(PrintMode.rfid, 10, "RFID"),
     EnumData(PrintMode.linerlessTear, 11, "Linerless Tear"),
-  },
+  ],
 );

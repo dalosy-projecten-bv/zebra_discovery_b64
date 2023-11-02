@@ -15,7 +15,7 @@ enum PrinterPortStatus {
 
 final printerPortStatusEnum = EnumBase(
   defaultEnum: PrinterPortStatus.unknown,
-  values: {
+  values: [
     EnumData(PrinterPortStatus.none, 0, "None"),
     EnumData(PrinterPortStatus.online, 1, "Online"),
     EnumData(PrinterPortStatus.offline, 2, "Offline"),
@@ -25,5 +25,5 @@ final printerPortStatusEnum = EnumBase(
     EnumData(PrinterPortStatus.doorOpen, 6, "Door Open"),
     EnumData(PrinterPortStatus.printerError, 7, "Printer Error"),
     EnumData(PrinterPortStatus.unknown, 8, "Unknown"),
-  },
+  ],
 );

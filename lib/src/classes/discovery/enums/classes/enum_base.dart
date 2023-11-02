@@ -10,7 +10,7 @@ class EnumBase<T extends Enum> {
   });
 
   final T defaultEnum;
-  final Set<EnumData<T>> values;
+  final List<EnumData<T>> values;
 
   EnumData<T> fromByteArray(Uint8List byteArray) {
     final value = parseInteger(byteArray);
@@ -21,16 +21,16 @@ class EnumBase<T extends Enum> {
     ));
   }
 
-  Set<EnumData<T>> setFromByteArray(
+  List<EnumData<T>> listFromByteArray(
     Uint8List byteArray,
   ) {
     final value = parseInteger(byteArray);
-    final set = <EnumData<T>>{};
+    final list = <EnumData<T>>[];
     for (final printError in values) {
       if ((value & printError.bitfieldValue) != 0) {
-        set.add(printError);
+        list.add(printError);
       }
     }
-    return set;
+    return list;
   }
 }

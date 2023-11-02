@@ -9,9 +9,9 @@ enum ZbiState {
 
 final zbiStateEnum = EnumBase(
   defaultEnum: ZbiState.stopped,
-  values: {
+  values: [
     EnumData(ZbiState.disabled, 0, "Disabled"),
     EnumData(ZbiState.stopped, 1, "Stopped"),
     EnumData(ZbiState.running, 2, "Running"),
-  },
+  ],
 );

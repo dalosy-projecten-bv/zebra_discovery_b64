@@ -32,7 +32,7 @@ class DiscoveryAdvancedV0 extends Discovery {
         productName = StringValue(byteArray.get(76, 32)),
         fwVersion = StringValue(byteArray.get(108, 16)),
         location = StringValue(byteArray.get(124, 36)),
-        errors = ListCombinedSegmentedEnumValue({
+        errors = ListCombinedSegmentedEnumValue([
           ListSegmentedEnumValue(
             0,
             byteArray.get(160, 4),
@@ -48,8 +48,8 @@ class DiscoveryAdvancedV0 extends Discovery {
             byteArray.get(168, 4),
             printerErrorEnum,
           ),
-        }),
-        warnings = ListCombinedSegmentedEnumValue({
+        ]),
+        warnings = ListCombinedSegmentedEnumValue([
           ListSegmentedEnumValue(
             0,
             byteArray.get(172, 4),
@@ -65,7 +65,7 @@ class DiscoveryAdvancedV0 extends Discovery {
             byteArray.get(180, 4),
             printerWarningEnum,
           ),
-        }),
+        ]),
         availableInterfacesBitfield = ListEnumValue(
           byteArray.get(184, 4),
           printerInterfaceEnum,

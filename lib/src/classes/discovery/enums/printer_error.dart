@@ -17,7 +17,7 @@ enum PrinterError {
 }
 
 final printerErrorEnum = SegmentedEnumBase(
-  values: {
+  values: [
     SegmentedEnumData(PrinterError.none, 0, 0, "None"),
     SegmentedEnumData(PrinterError.mediaOut, 2, 1, "Paper Out"),
     SegmentedEnumData(PrinterError.ribbonOut, 2, 2, "Ribbon Out"),
@@ -32,5 +32,5 @@ final printerErrorEnum = SegmentedEnumBase(
     SegmentedEnumData(
         PrinterError.basicRuntimeError, 2, 1048576, "Basic Runtime Error"),
     SegmentedEnumData(PrinterError.basicForced, 2, 2097152, "Basic Forced"),
-  },
+  ],
 );

@@ -10,10 +10,10 @@ enum DiscoveredPrinterLanguage {
 
 final discoveredPrinterLanguagesEnum = EnumBase(
   defaultEnum: DiscoveredPrinterLanguage.unknown,
-  values: {
+  values: [
     EnumData(DiscoveredPrinterLanguage.unknown, 0, 'unknown'),
     EnumData(DiscoveredPrinterLanguage.zpl, 1, 'ZPL'),
     EnumData(DiscoveredPrinterLanguage.cpcl, 2, 'CPCL'),
     EnumData(DiscoveredPrinterLanguage.epl, 4, 'EPL'),
-  },
+  ],
 );

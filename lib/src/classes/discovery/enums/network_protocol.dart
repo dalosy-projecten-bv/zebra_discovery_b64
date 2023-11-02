@@ -19,7 +19,7 @@ enum NetworkProtocol {
 
 final networkProtocolEnum = EnumBase(
   defaultEnum: NetworkProtocol.none,
-  values: {
+  values: [
     EnumData(NetworkProtocol.none, 0, 'None'),
     EnumData(NetworkProtocol.ftp, 1, 'FTP'),
     EnumData(NetworkProtocol.lpd, 2, 'LPD'),
@@ -33,5 +33,5 @@ final networkProtocolEnum = EnumBase(
     EnumData(NetworkProtocol.weblink, 512, 'Weblink'),
     EnumData(NetworkProtocol.tls, 1024, 'TLS'),
     EnumData(NetworkProtocol.https, 2048, 'HTTPS'),
-  },
+  ],
 );

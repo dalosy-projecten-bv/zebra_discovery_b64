@@ -8,8 +8,8 @@ enum PrintMethod {
 
 final printMethodEnum = EnumBase(
   defaultEnum: PrintMethod.directThermal,
-  values: {
+  values: [
     EnumData(PrintMethod.directThermal, 0, 'Direct Thermal'),
     EnumData(PrintMethod.thermalTransfer, 1, 'Thermal Transfer'),
-  },
+  ],
 );

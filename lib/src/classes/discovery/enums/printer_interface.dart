@@ -16,7 +16,7 @@ enum PrinterInterface {
 
 final printerInterfaceEnum = EnumBase(
   defaultEnum: PrinterInterface.unknown,
-  values: {
+  values: [
     EnumData(PrinterInterface.unknown, 0, "Unknown"),
     EnumData(PrinterInterface.internalWired, 1, "Internal Wired"),
     EnumData(PrinterInterface.externalWired, 2, "External Wired"),
@@ -27,5 +27,5 @@ final printerInterfaceEnum = EnumBase(
     EnumData(PrinterInterface.usb, 64, "USB"),
     EnumData(PrinterInterface.sdCard, 128, "SD Card"),
     EnumData(PrinterInterface.battery, 256, "Battery"),
-  },
+  ],
 );

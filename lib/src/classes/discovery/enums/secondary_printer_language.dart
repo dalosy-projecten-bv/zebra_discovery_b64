@@ -9,9 +9,9 @@ enum SecondaryPrinterLanguage {
 
 final secondaryPrinterLanguageEnum = EnumBase(
   defaultEnum: SecondaryPrinterLanguage.unknown,
-  values: {
+  values: [
     EnumData(SecondaryPrinterLanguage.unknown, 0, "Unknown"),
     EnumData(SecondaryPrinterLanguage.sgd, 1, "SGD"),
     EnumData(SecondaryPrinterLanguage.snmp, 2, "SNMP"),
-  },
+  ],
 );

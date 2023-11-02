@@ -9,9 +9,9 @@ enum PrinterMediaType {
 
 final printerMediaTypeEnum = EnumBase(
   defaultEnum: PrinterMediaType.gap,
-  values: {
+  values: [
     EnumData(PrinterMediaType.continuous, 0, "Continuous"),
     EnumData(PrinterMediaType.blackMark, 1, "Black Mark"),
     EnumData(PrinterMediaType.gap, 2, "Gap"),
-  },
+  ],
 );

@@ -8,7 +8,7 @@ class SegmentedEnumBase<T extends Enum> {
     required this.values,
   });
 
-  final Set<SegmentedEnumData<T>> values;
+  final List<SegmentedEnumData<T>> values;
 
   List<SegmentedEnumData<T>> listFromByteArray(
     int segment,

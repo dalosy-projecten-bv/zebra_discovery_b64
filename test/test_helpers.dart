@@ -32,12 +32,12 @@ String getWarnings({
 }
 
 String getNetworkInterfaces(Uint8List byteArray) {
-  final interfaces = printerInterfaceEnum.setFromByteArray(byteArray);
+  final interfaces = printerInterfaceEnum.listFromByteArray(byteArray);
   return interfaces.map((e) => e.enumAsString).join(',');
 }
 
 String getNetworkProtocols(Uint8List byteArray) {
-  final values = networkProtocolEnum.setFromByteArray(byteArray);
+  final values = networkProtocolEnum.listFromByteArray(byteArray);
   return values.map((e) => e.enumAsString).join(',');
 }
 

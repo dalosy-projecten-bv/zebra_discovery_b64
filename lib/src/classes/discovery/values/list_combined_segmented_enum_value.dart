@@ -3,9 +3,9 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/list_segmented_
 
 class ListCombinedSegmentedEnumValue<T extends Enum> {
   ListCombinedSegmentedEnumValue(this.setOfSegmentedEnumValues)
-      : values = {
+      : values = [
           for (final sublist in setOfSegmentedEnumValues) ...sublist.value
-        };
-  final Set<ListSegmentedEnumValue<T>> setOfSegmentedEnumValues;
-  final Set<SegmentedEnumData<T>> values;
+        ];
+  final List<ListSegmentedEnumValue<T>> setOfSegmentedEnumValues;
+  final List<SegmentedEnumData<T>> values;
 }
