@@ -26,7 +26,7 @@ extension SetExtension on Set<SegmentedEnumData> {
   }
 }
 
-extension ListExtension on List<EnumData> {
+extension ListExtension on Set<EnumData> {
   String getCommaSeparatedList() {
     return map((e) => e.enumAsString).join(',');
   }
