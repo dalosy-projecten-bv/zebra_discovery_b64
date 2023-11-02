@@ -1,13 +1,12 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/discovered_printer_language_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/ip_acquisition_protocol_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/address_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/bool_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/byte_value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/discovered_printer_language.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/int_value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/ip_acquisition_protocol.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/list_discovered_printer_language.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/list_network_protocol.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/list_printer_error.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/list_printer_interface.dart';
@@ -42,15 +41,17 @@ class DiscoveryAdvancedV0 extends Discovery {
     dnsDomain = StringValue.fromByteArray(b.next(100));
     activeInterface = PrinterInterface.fromByteArray(b.next(4));
     macAddress = HexValue.fromByteArray(b.next(6));
-    ipAcquisitionProto = IpAcquisitionProtocol.fromByteArray(b.next(2));
+    ipAcquisitionProto =
+        EnumValue.fromByteArray(ipAcquisitionProtocolEnum, b.next(2));
     ipAddress = AddressValue.fromByteArray(b.next(4));
     subnetMask = AddressValue.fromByteArray(b.next(4));
     gatewayMask = AddressValue.fromByteArray(b.next(4));
     port = IntValue.fromByteArray(b.next(2));
     availableProtocols = ListNetworkProtocol.fromByteArray(b.next(2));
-    primaryLanguage = DiscoveredPrinterLanguage.fromByteArray(b.next(4));
+    primaryLanguage =
+        EnumValue.fromByteArray(discoveredPrinterLanguages, b.next(4));
     availableLanguagesBitfield =
-        ListDiscoveredPrinterLanguage.fromByteArray(b.next(4));
+        EnumValue.fromByteArray(discoveredPrinterLanguages, b.next(4));
     availableSecondaryLanguagesBitfield =
         ListSecondaryPrinterLanguage.fromByteArray(b.next(4));
     dotsPerMm = IntValue.fromByteArray(b.next(2));
@@ -91,14 +92,14 @@ class DiscoveryAdvancedV0 extends Discovery {
   late final StringValue dnsDomain;
   late final PrinterInterface activeInterface;
   late final HexValue macAddress;
-  late final IpAcquisitionProtocol ipAcquisitionProto;
+  late final EnumValue<IpAcquisitionProtocol> ipAcquisitionProto;
   late final AddressValue ipAddress;
   late final AddressValue subnetMask;
   late final AddressValue gatewayMask;
   late final IntValue port;
   late final ListNetworkProtocol availableProtocols;
-  late final DiscoveredPrinterLanguage primaryLanguage;
-  late final ListDiscoveredPrinterLanguage availableLanguagesBitfield;
+  late final EnumValue<DiscoveredPrinterLanguage> primaryLanguage;
+  late final EnumValue<DiscoveredPrinterLanguage> availableLanguagesBitfield;
   late final ListSecondaryPrinterLanguage availableSecondaryLanguagesBitfield;
   late final IntValue dotsPerMm;
   late final IntValue dotsPerDotRow;
@@ -156,7 +157,9 @@ class DiscoveryAdvancedV0 extends Discovery {
         MapEntry('HARDWARE_ADDRESS', macAddress.value),
         MapEntry(
           'USING_NET_PROTOCOL',
-          ipAcquisitionProto.value.id != EnumValues.static ? "true" : "false",
+          ipAcquisitionProto.value.enumeration != IpAcquisitionProtocol.static
+              ? "true"
+              : "false",
         ),
         MapEntry('DNS_NAME', systemName.value),
         MapEntry(

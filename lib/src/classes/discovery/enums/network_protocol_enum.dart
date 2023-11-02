@@ -1,5 +1,5 @@
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/values.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
 enum EnumValues {
   none,
@@ -17,21 +17,21 @@ enum EnumValues {
   https,
 }
 
-final networkProtocolEnum = Values<EnumValues>(
-  defaultValue: EnumValues.none,
+final networkProtocolEnum = EnumBase(
+  defaultEnum: EnumValues.none,
   values: {
-    Value(EnumValues.none, 0, 'None'),
-    Value(EnumValues.ftp, 1, 'FTP'),
-    Value(EnumValues.lpd, 2, 'LPD'),
-    Value(EnumValues.tcpRaw, 4, 'TCP'),
-    Value(EnumValues.udpRaw, 8, 'UDP'),
-    Value(EnumValues.http, 16, 'HTTP'),
-    Value(EnumValues.smtp, 32, 'SMTP'),
-    Value(EnumValues.pop3, 64, 'POP3'),
-    Value(EnumValues.snmp, 128, 'SNMP'),
-    Value(EnumValues.telnet, 256, 'Telnet'),
-    Value(EnumValues.weblink, 512, 'Weblink'),
-    Value(EnumValues.tls, 1024, 'TLS'),
-    Value(EnumValues.https, 2048, 'HTTPS'),
+    EnumData(EnumValues.none, 0, 'None'),
+    EnumData(EnumValues.ftp, 1, 'FTP'),
+    EnumData(EnumValues.lpd, 2, 'LPD'),
+    EnumData(EnumValues.tcpRaw, 4, 'TCP'),
+    EnumData(EnumValues.udpRaw, 8, 'UDP'),
+    EnumData(EnumValues.http, 16, 'HTTP'),
+    EnumData(EnumValues.smtp, 32, 'SMTP'),
+    EnumData(EnumValues.pop3, 64, 'POP3'),
+    EnumData(EnumValues.snmp, 128, 'SNMP'),
+    EnumData(EnumValues.telnet, 256, 'Telnet'),
+    EnumData(EnumValues.weblink, 512, 'Weblink'),
+    EnumData(EnumValues.tls, 1024, 'TLS'),
+    EnumData(EnumValues.https, 2048, 'HTTPS'),
   },
 );

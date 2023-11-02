@@ -1,5 +1,5 @@
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/values.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
 enum EnumValues {
   unknown,
@@ -14,18 +14,18 @@ enum EnumValues {
   battery,
 }
 
-final printerInterfaceEnum = Values<EnumValues>(
-  defaultValue: EnumValues.unknown,
+final printerInterfaceEnum = EnumBase(
+  defaultEnum: EnumValues.unknown,
   values: {
-    Value(EnumValues.unknown, 0, "Unknown"),
-    Value(EnumValues.internalWired, 1, "Internal Wired"),
-    Value(EnumValues.externalWired, 2, "External Wired"),
-    Value(EnumValues.wireless, 4, "Wireless"),
-    Value(EnumValues.bluetooth, 8, "Bluetooth"),
-    Value(EnumValues.parallel, 16, "Parallel"),
-    Value(EnumValues.serial, 32, "Serial"),
-    Value(EnumValues.usb, 64, "USB"),
-    Value(EnumValues.sdCard, 128, "SD Card"),
-    Value(EnumValues.battery, 256, "Battery"),
+    EnumData(EnumValues.unknown, 0, "Unknown"),
+    EnumData(EnumValues.internalWired, 1, "Internal Wired"),
+    EnumData(EnumValues.externalWired, 2, "External Wired"),
+    EnumData(EnumValues.wireless, 4, "Wireless"),
+    EnumData(EnumValues.bluetooth, 8, "Bluetooth"),
+    EnumData(EnumValues.parallel, 16, "Parallel"),
+    EnumData(EnumValues.serial, 32, "Serial"),
+    EnumData(EnumValues.usb, 64, "USB"),
+    EnumData(EnumValues.sdCard, 128, "SD Card"),
+    EnumData(EnumValues.battery, 256, "Battery"),
   },
 );

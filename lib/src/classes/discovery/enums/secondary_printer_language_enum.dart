@@ -1,5 +1,5 @@
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/values.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
 enum EnumValues {
   unknown,
@@ -7,11 +7,11 @@ enum EnumValues {
   snmp,
 }
 
-final secondaryPrinterLanguageEnum = Values<EnumValues>(
-  defaultValue: EnumValues.unknown,
+final secondaryPrinterLanguageEnum = EnumBase(
+  defaultEnum: EnumValues.unknown,
   values: {
-    Value(EnumValues.unknown, 0, "Unknown"),
-    Value(EnumValues.sgd, 1, "SGD"),
-    Value(EnumValues.snmp, 2, "SNMP"),
+    EnumData(EnumValues.unknown, 0, "Unknown"),
+    EnumData(EnumValues.sgd, 1, "SGD"),
+    EnumData(EnumValues.snmp, 2, "SNMP"),
   },
 );

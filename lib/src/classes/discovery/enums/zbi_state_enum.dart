@@ -1,5 +1,5 @@
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/values.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
 enum EnumValues {
   disabled,
@@ -7,11 +7,11 @@ enum EnumValues {
   running,
 }
 
-final zbiStateEnum = Values<EnumValues>(
-  defaultValue: EnumValues.stopped,
+final zbiStateEnum = EnumBase(
+  defaultEnum: EnumValues.stopped,
   values: {
-    Value(EnumValues.disabled, 0, "Disabled"),
-    Value(EnumValues.stopped, 1, "Stopped"),
-    Value(EnumValues.running, 2, "Running"),
+    EnumData(EnumValues.disabled, 0, "Disabled"),
+    EnumData(EnumValues.stopped, 1, "Stopped"),
+    EnumData(EnumValues.running, 2, "Running"),
   },
 );

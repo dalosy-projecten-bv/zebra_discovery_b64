@@ -1,5 +1,5 @@
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/value_with_segment.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/values_with_segment.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/segmented_enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/segmented_enum_data.dart';
 
 enum EnumValues {
   none,
@@ -9,12 +9,12 @@ enum EnumValues {
   rfidError,
 }
 
-final printerWarningEnum = ValuesWithSegment<EnumValues>(
+final printerWarningEnum = SegmentedEnumBase(
   values: {
-    ValueWithSegment(EnumValues.none, 0, 0, "None"),
-    ValueWithSegment(EnumValues.headUnderTemp, 2, 4096, "Head Cold"),
-    ValueWithSegment(EnumValues.ribbonIn, 2, 8192, "Ribbon In"),
-    ValueWithSegment(EnumValues.batteryLow, 2, 16384, "Battery Low"),
-    ValueWithSegment(EnumValues.rfidError, 2, 32768, "RFID Error"),
+    SegmentedEnumData(EnumValues.none, 0, 0, "None"),
+    SegmentedEnumData(EnumValues.headUnderTemp, 2, 4096, "Head Cold"),
+    SegmentedEnumData(EnumValues.ribbonIn, 2, 8192, "Ribbon In"),
+    SegmentedEnumData(EnumValues.batteryLow, 2, 16384, "Battery Low"),
+    SegmentedEnumData(EnumValues.rfidError, 2, 32768, "RFID Error"),
   },
 );

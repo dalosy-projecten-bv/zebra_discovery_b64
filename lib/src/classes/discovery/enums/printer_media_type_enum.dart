@@ -1,5 +1,5 @@
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/values.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
 enum EnumValues {
   continuous,
@@ -7,11 +7,11 @@ enum EnumValues {
   gap,
 }
 
-final printerMediaTypeEnum = Values<EnumValues>(
-  defaultValue: EnumValues.gap,
+final printerMediaTypeEnum = EnumBase(
+  defaultEnum: EnumValues.gap,
   values: {
-    Value(EnumValues.continuous, 0, "Continuous"),
-    Value(EnumValues.blackMark, 1, "Black Mark"),
-    Value(EnumValues.gap, 2, "Gap"),
+    EnumData(EnumValues.continuous, 0, "Continuous"),
+    EnumData(EnumValues.blackMark, 1, "Black Mark"),
+    EnumData(EnumValues.gap, 2, "Gap"),
   },
 );

@@ -1,19 +1,19 @@
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/values.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
-enum EnumValues {
+enum DiscoveredPrinterLanguage {
   unknown,
   zpl,
   cpcl,
   epl,
 }
 
-final discoveredPrinterLanguageEnum = Values<EnumValues>(
-  defaultValue: EnumValues.unknown,
+final discoveredPrinterLanguages = EnumBase(
+  defaultEnum: DiscoveredPrinterLanguage.unknown,
   values: {
-    Value(EnumValues.unknown, 0, 'unknown'),
-    Value(EnumValues.zpl, 1, 'ZPL'),
-    Value(EnumValues.cpcl, 2, 'CPCL'),
-    Value(EnumValues.epl, 4, 'EPL'),
+    EnumData(DiscoveredPrinterLanguage.unknown, 0, 'unknown'),
+    EnumData(DiscoveredPrinterLanguage.zpl, 1, 'ZPL'),
+    EnumData(DiscoveredPrinterLanguage.cpcl, 2, 'CPCL'),
+    EnumData(DiscoveredPrinterLanguage.epl, 4, 'EPL'),
   },
 );

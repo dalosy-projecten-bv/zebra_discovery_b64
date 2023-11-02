@@ -1,5 +1,5 @@
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/values.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
 enum EnumValues {
   none,
@@ -13,17 +13,17 @@ enum EnumValues {
   unknown,
 }
 
-final printerPortStatusEnum = Values<EnumValues>(
-  defaultValue: EnumValues.unknown,
+final printerPortStatusEnum = EnumBase(
+  defaultEnum: EnumValues.unknown,
   values: {
-    Value(EnumValues.none, 0, "None"),
-    Value(EnumValues.online, 1, "Online"),
-    Value(EnumValues.offline, 2, "Offline"),
-    Value(EnumValues.tonerLow, 3, "Toner Low"),
-    Value(EnumValues.paperOut, 4, "Paper Out"),
-    Value(EnumValues.paperJammed, 5, "Paper Jammed"),
-    Value(EnumValues.doorOpen, 6, "Door Open"),
-    Value(EnumValues.printerError, 7, "Printer Error"),
-    Value(EnumValues.unknown, 8, "Unknown"),
+    EnumData(EnumValues.none, 0, "None"),
+    EnumData(EnumValues.online, 1, "Online"),
+    EnumData(EnumValues.offline, 2, "Offline"),
+    EnumData(EnumValues.tonerLow, 3, "Toner Low"),
+    EnumData(EnumValues.paperOut, 4, "Paper Out"),
+    EnumData(EnumValues.paperJammed, 5, "Paper Jammed"),
+    EnumData(EnumValues.doorOpen, 6, "Door Open"),
+    EnumData(EnumValues.printerError, 7, "Printer Error"),
+    EnumData(EnumValues.unknown, 8, "Unknown"),
   },
 );

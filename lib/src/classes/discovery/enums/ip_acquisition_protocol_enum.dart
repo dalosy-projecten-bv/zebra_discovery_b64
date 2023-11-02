@@ -1,7 +1,7 @@
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/values.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
-enum EnumValues {
+enum IpAcquisitionProtocol {
   all,
   glean,
   rarp,
@@ -11,15 +11,15 @@ enum EnumValues {
   static,
 }
 
-final ipAcquisitionProtocolEnum = Values<EnumValues>(
-  defaultValue: EnumValues.all,
+final ipAcquisitionProtocolEnum = EnumBase(
+  defaultEnum: IpAcquisitionProtocol.all,
   values: {
-    Value(EnumValues.all, 0, 'All'),
-    Value(EnumValues.glean, 1, 'Glean'),
-    Value(EnumValues.rarp, 2, 'RARP'),
-    Value(EnumValues.bootp, 3, 'Bootp'),
-    Value(EnumValues.dhcp, 4, 'DHCP'),
-    Value(EnumValues.dhcpAndBootp, 5, 'DHCP and Bootp'),
-    Value(EnumValues.static, 6, 'Static'),
+    EnumData(IpAcquisitionProtocol.all, 0, 'All'),
+    EnumData(IpAcquisitionProtocol.glean, 1, 'Glean'),
+    EnumData(IpAcquisitionProtocol.rarp, 2, 'RARP'),
+    EnumData(IpAcquisitionProtocol.bootp, 3, 'Bootp'),
+    EnumData(IpAcquisitionProtocol.dhcp, 4, 'DHCP'),
+    EnumData(IpAcquisitionProtocol.dhcpAndBootp, 5, 'DHCP and Bootp'),
+    EnumData(IpAcquisitionProtocol.static, 6, 'Static'),
   },
 );

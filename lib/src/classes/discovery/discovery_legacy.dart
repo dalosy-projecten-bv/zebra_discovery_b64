@@ -1,7 +1,8 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/ip_acquisition_protocol_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/address_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/ip_acquisition_protocol.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/printer_port_status.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.dart';
@@ -16,7 +17,8 @@ class DiscoveryLegacy extends Discovery {
     companyAbbreviation = StringValue.fromByteArray(b.next(5));
     hwAddress = HexValue.fromByteArray(b.next(6));
     serialNum = StringValue.fromByteArray(b.next(10));
-    usingNetProtocol = IpAcquisitionProtocol.fromByteArray(b.next(2));
+    usingNetProtocol =
+        EnumValue.fromByteArray(ipAcquisitionProtocolEnum, b.next(2));
     ipAddress = AddressValue.fromByteArray(b.next(4));
     subnetMask = AddressValue.fromByteArray(b.next(4));
     defaultGateway = AddressValue.fromByteArray(b.next(4));
@@ -36,7 +38,7 @@ class DiscoveryLegacy extends Discovery {
   late final StringValue companyAbbreviation;
   late final HexValue hwAddress;
   late final StringValue serialNum;
-  late final IpAcquisitionProtocol usingNetProtocol;
+  late final EnumValue<IpAcquisitionProtocol> usingNetProtocol;
   late final AddressValue ipAddress;
   late final AddressValue subnetMask;
   late final AddressValue defaultGateway;

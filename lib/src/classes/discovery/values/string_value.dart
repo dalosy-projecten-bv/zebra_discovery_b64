@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:zebra_discovery_b64/src/classes/discovery/values/value_base.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_base.dart';
 
 class StringValue extends ValueBase<String> {
   StringValue(super.byteArray, super.value);
