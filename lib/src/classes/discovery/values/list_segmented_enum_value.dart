@@ -6,7 +6,10 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_b
 
 class ListSegmentedEnumValue<T extends Enum>
     extends ValueBase<List<SegmentedEnumData<T>>> {
-  ListSegmentedEnumValue(super.byteArray, super.value);
+  ListSegmentedEnumValue({
+    required super.byteArray,
+    required super.value,
+  });
 
   factory ListSegmentedEnumValue.fromByteArray(
     int segment,
@@ -14,8 +17,8 @@ class ListSegmentedEnumValue<T extends Enum>
     Uint8List byteArray,
   ) {
     return ListSegmentedEnumValue(
-      byteArray,
-      enumBase.listFromByteArray(segment, byteArray),
+      byteArray: byteArray,
+      value: enumBase.listFromByteArray(segment, byteArray),
     );
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/ip_acquisition_protocol_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_port_status_enum.dart';
@@ -9,24 +11,24 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.da
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 class DiscoveryLegacy extends Discovery {
-  DiscoveryLegacy(BytesSplitter b) : super(b) {
+  DiscoveryLegacy(BytesSplitter b, Uint8List byteArray) : super(b, byteArray) {
     productNumber = StringValue.fromByteArray(b.next(8));
     productName = StringValue.fromByteArray(b.next(20));
     dateCode = StringValue.fromByteArray(b.next(7));
     fwVersion = StringValue.fromByteArray(b.next(10));
     companyAbbreviation = StringValue.fromByteArray(b.next(5));
-    hwAddress = HexValue.fromByteArray(b.next(6));
+    hwAddress = HexValue.fromPositions(byteArray, 54, 6);
     serialNum = StringValue.fromByteArray(b.next(10));
     usingNetProtocol =
         EnumValue.fromByteArray(ipAcquisitionProtocolEnum, b.next(2));
-    ipAddress = AddressValue.fromByteArray(b.next(4));
-    subnetMask = AddressValue.fromByteArray(b.next(4));
-    defaultGateway = AddressValue.fromByteArray(b.next(4));
+    ipAddress = AddressValue.fromPositions(byteArray, 72, 4);
+    subnetMask = AddressValue.fromPositions(byteArray, 76, 4);
+    defaultGateway = AddressValue.fromPositions(byteArray, 80, 4);
     systemName = StringValue.fromByteArray(b.next(25));
-    notUsed2 = NotUsedValue.fromByteArray(b.next(103));
-    getCommunityName = HexValue.fromByteArray(b.next(32));
-    setCommunityName = HexValue.fromByteArray(b.next(32));
-    notUsed3 = NotUsedValue.fromByteArray(b.next(82));
+    notUsed2 = NotUsedValue.fromPositions(byteArray, 109, 103);
+    getCommunityName = HexValue.fromPositions(byteArray, 212, 32);
+    setCommunityName = HexValue.fromPositions(byteArray, 244, 32);
+    notUsed3 = NotUsedValue.fromPositions(byteArray, 276, 82);
     portStatus = EnumValue.fromByteArray(printerPortStatusEnum, b.next(1));
     portName = StringValue.fromByteArray(b.next(16));
   }

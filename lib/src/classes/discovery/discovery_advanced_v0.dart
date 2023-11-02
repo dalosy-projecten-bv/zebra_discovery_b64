@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/discovered_printer_language_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/ip_acquisition_protocol_enum.dart';
@@ -23,9 +25,10 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.da
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 class DiscoveryAdvancedV0 extends Discovery {
-  DiscoveryAdvancedV0(BytesSplitter b) : super(b) {
-    advancedPacketFormat = ByteValue.fromByteArray(b.next(1));
-    notUsed2 = NotUsedValue.fromByteArray(b.next(3));
+  DiscoveryAdvancedV0(BytesSplitter b, Uint8List byteArray)
+      : super(b, byteArray) {
+    advancedPacketFormat = ByteValue.fromPositions(byteArray, 4, 1);
+    notUsed2 = NotUsedValue.fromPositions(byteArray, 5, 3);
     companyAbbreviation = StringValue.fromByteArray(b.next(5));
     systemName = StringValue.fromByteArray(b.next(63));
     productName = StringValue.fromByteArray(b.next(32));
@@ -66,13 +69,13 @@ class DiscoveryAdvancedV0 extends Discovery {
     deviceUniqueId = StringValue.fromByteArray(b.next(32));
     dnsDomain = StringValue.fromByteArray(b.next(100));
     activeInterface = EnumValue.fromByteArray(printerInterfaceEnum, b.next(4));
-    macAddress = HexValue.fromByteArray(b.next(6));
+    macAddress = HexValue.fromPositions(byteArray, 324, 6);
     ipAcquisitionProto =
         EnumValue.fromByteArray(ipAcquisitionProtocolEnum, b.next(2));
-    ipAddress = AddressValue.fromByteArray(b.next(4));
-    subnetMask = AddressValue.fromByteArray(b.next(4));
-    gatewayMask = AddressValue.fromByteArray(b.next(4));
-    port = IntValue.fromByteArray(b.next(2));
+    ipAddress = AddressValue.fromPositions(byteArray, 332, 4);
+    subnetMask = AddressValue.fromPositions(byteArray, 336, 4);
+    gatewayMask = AddressValue.fromPositions(byteArray, 340, 4);
+    port = IntValue.fromPositions(byteArray, 344, 2);
     availableProtocols =
         ListEnumValue.fromByteArray(networkProtocolEnum, b.next(2));
     primaryLanguage =
@@ -81,23 +84,23 @@ class DiscoveryAdvancedV0 extends Discovery {
         EnumValue.fromByteArray(discoveredPrinterLanguages, b.next(4));
     availableSecondaryLanguagesBitfield =
         ListEnumValue.fromByteArray(secondaryPrinterLanguage, b.next(4));
-    dotsPerMm = IntValue.fromByteArray(b.next(2));
-    dotsPerDotRow = IntValue.fromByteArray(b.next(2));
-    labelLength = IntValue.fromByteArray(b.next(2));
-    labelWidth = IntValue.fromByteArray(b.next(2));
-    darkness = IntValue.fromByteArray(b.next(2));
+    dotsPerMm = IntValue.fromPositions(byteArray, 360, 2);
+    dotsPerDotRow = IntValue.fromPositions(byteArray, 362, 2);
+    labelLength = IntValue.fromPositions(byteArray, 364, 2);
+    labelWidth = IntValue.fromPositions(byteArray, 366, 2);
+    darkness = IntValue.fromPositions(byteArray, 368, 2);
     mediaType = EnumValue.fromByteArray(printerMediaTypeEnum, b.next(2));
     printMethod = EnumValue.fromByteArray(printMethods, b.next(2));
     printMode = EnumValue.fromByteArray(printModeEnum, b.next(2));
-    odometerTotal = IntValue.fromByteArray(b.next(4));
-    odometerMarkerOne = IntValue.fromByteArray(b.next(4));
-    odometerMarkerTwo = IntValue.fromByteArray(b.next(4));
-    numOfLabelsInBatch = IntValue.fromByteArray(b.next(2));
-    labelsQueued = IntValue.fromByteArray(b.next(2));
-    zbiEnabled = BoolValue.fromByteArray(b.next(1));
+    odometerTotal = IntValue.fromPositions(byteArray, 376, 4);
+    odometerMarkerOne = IntValue.fromPositions(byteArray, 380, 4);
+    odometerMarkerTwo = IntValue.fromPositions(byteArray, 384, 4);
+    numOfLabelsInBatch = IntValue.fromPositions(byteArray, 388, 2);
+    labelsQueued = IntValue.fromPositions(byteArray, 390, 2);
+    zbiEnabled = BoolValue.fromPositions(byteArray, 392, 1);
     zbiState = EnumValue.fromByteArray(zbiStateEnum, b.next(1));
-    zbiMajorVersion = IntValue.fromByteArray(b.next(1));
-    zbiMinorVersion = IntValue.fromByteArray(b.next(1));
+    zbiMajorVersion = IntValue.fromPositions(byteArray, 394, 1);
+    zbiMinorVersion = IntValue.fromPositions(byteArray, 395, 1);
     initMap();
   }
 

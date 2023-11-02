@@ -5,12 +5,15 @@ import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_dat
 import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_base.dart';
 
 class EnumValue<T extends Enum> extends ValueBase<EnumData<T>> {
-  EnumValue(super.byteArray, super.value);
+  EnumValue({
+    required super.byteArray,
+    required super.value,
+  });
 
   factory EnumValue.fromByteArray(EnumBase<T> enumBase, Uint8List byteArray) {
     return EnumValue(
-      byteArray,
-      enumBase.fromByteArray(byteArray),
+      byteArray: byteArray,
+      value: enumBase.fromByteArray(byteArray),
     );
   }
 }

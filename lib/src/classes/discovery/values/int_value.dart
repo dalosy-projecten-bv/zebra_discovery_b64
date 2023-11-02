@@ -4,9 +4,15 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_b
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 class IntValue extends ValueBase<int> {
-  IntValue(super.byteArray, super.value);
+  IntValue({
+    required super.byteArray,
+  }) : super(value: parseInteger(byteArray));
 
-  factory IntValue.fromByteArray(Uint8List byteArray) {
-    return IntValue(byteArray, parseInteger(byteArray));
+  factory IntValue.fromPositions(
+      Uint8List byteArray,
+      int start,
+      int length,
+      ) {
+    return IntValue(byteArray: byteArray.sublist(start, start + length));
   }
 }
