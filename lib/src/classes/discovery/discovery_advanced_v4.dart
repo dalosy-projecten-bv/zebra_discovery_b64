@@ -19,4 +19,16 @@ class DiscoveryAdvancedV4 extends DiscoveryAdvancedV3 {
   final IntValue tlsRawPort;
   final IntValue tlsJsonPort;
   final EnumValue<Wired8021xSecuritySetting> wired8021XSecuritySetting;
+
+  @override
+  void initMap() {
+    super.initMap();
+    map.addEntries({
+      MapEntry('PROCESSOR_ID', processorId.value),
+      MapEntry('TLS_RAW_PORT_NUMBER', tlsRawPort.value.toString()),
+      MapEntry('TLS_JSON_PORT_NUMBER', tlsJsonPort.value.toString()),
+      MapEntry('WIRED_8021X_SECURITY_SETTING',
+          wired8021XSecuritySetting.value.enumAsString),
+    });
+  }
 }

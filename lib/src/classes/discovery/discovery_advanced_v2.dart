@@ -12,4 +12,14 @@ class DiscoveryAdvancedV2 extends DiscoveryAdvancedV1 {
   final IntValue jsonPort;
   final ByteValue linkOsMajorVer;
   final ByteValue linkOsMinorVer;
+
+  @override
+  void initMap() {
+    super.initMap();
+    map.addEntries({
+      MapEntry('JSON_PORT_NUMBER', jsonPort.value.toString()),
+      MapEntry('LINK_OS_MAJOR_VER', linkOsMajorVer.value.toString()),
+      MapEntry('LINK_OS_MINOR_VER', linkOsMinorVer.value.toString()),
+    });
+  }
 }

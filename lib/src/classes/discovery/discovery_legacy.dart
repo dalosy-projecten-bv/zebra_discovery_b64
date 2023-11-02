@@ -1,7 +1,7 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/ip_acquisition_protocol.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_port_status.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/address_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/bool_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
@@ -17,8 +17,7 @@ class DiscoveryLegacy extends Discovery {
     companyAbbreviation = StringValue(byteArray.get(49, 5));
     hwAddress = HexValue(byteArray.get(54, 6));
     serialNum = StringValue(byteArray.get(60, 10));
-    usingNetProtocol =
-        EnumValue(byteArray.get(70, 2), ipAcquisitionProtocolEnum);
+    usingNetProtocol = BoolValue(byteArray.get(70, 2));
     ipAddress = AddressValue(byteArray.get(72, 4));
     subnetMask = AddressValue(byteArray.get(76, 4));
     defaultGateway = AddressValue(byteArray.get(80, 4));
@@ -38,7 +37,7 @@ class DiscoveryLegacy extends Discovery {
   late final StringValue companyAbbreviation;
   late final HexValue hwAddress;
   late final StringValue serialNum;
-  late final EnumValue<IpAcquisitionProtocol> usingNetProtocol;
+  late final BoolValue usingNetProtocol;
   late final AddressValue ipAddress;
   late final AddressValue subnetMask;
   late final AddressValue defaultGateway;
@@ -52,6 +51,36 @@ class DiscoveryLegacy extends Discovery {
 
   @override
   void initMap() {
-    // TODO: implement initMap
+    super.initMap();
+    map.addEntries({
+      MapEntry(
+          'PORT_NUMBER',
+          productName.value.startsWith('QL') ||
+                  productName.value.startsWith('RW') ||
+                  productName.value.startsWith('MZ') ||
+                  productName.value.startsWith('P4T') ||
+                  productName.value.startsWith('MQ') ||
+                  productName.value.startsWith('MU')
+              ? '6101'
+              : '9100'),
+      MapEntry('DNS_NAME', systemName.value),
+      MapEntry('ADDRESS', ipAddress.value),
+      MapEntry('COMPANY_ABBREVIATION', companyAbbreviation.value),
+      MapEntry('COMPANY_ABBREVIATION', companyAbbreviation.value),
+      MapEntry('PRODUCT_NUMBER', productNumber.value),
+      MapEntry('PRODUCT_NAME', productName.value),
+      MapEntry('DATE_CODE', dateCode.value),
+      MapEntry('FIRMWARE_VER', fwVersion.value),
+      MapEntry('HARDWARE_ADDRESS', hwAddress.value),
+      MapEntry('SERIAL_NUMBER', serialNum.value),
+      MapEntry('USING_NET_PROTOCOL', usingNetProtocol.value.toString()),
+      MapEntry('SUBNET_MASK', subnetMask.value),
+      MapEntry('GATEWAY', defaultGateway.value),
+      MapEntry('SYSTEM_NAME', systemName.value),
+      MapEntry('PORT_NAME', portName.value),
+      MapEntry('PORT_STATUS', portStatus.value.enumAsString),
+      MapEntry('ENCRYPTED_GET_COMMUNITY_NAME', getCommunityName.value),
+      MapEntry('ENCRYPTED_SET_COMMUNITY_NAME', setCommunityName.value),
+    });
   }
 }

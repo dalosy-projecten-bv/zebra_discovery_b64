@@ -7,4 +7,12 @@ class DiscoveryAdvancedV3 extends DiscoveryAdvancedV2 {
       : avsIniVersion = StringValue(byteArray.get(402, 6));
 
   final StringValue avsIniVersion;
+
+  @override
+  void initMap() {
+    super.initMap();
+    map.addEntries({
+      MapEntry('AVS_INI_VER', avsIniVersion.value),
+    });
+  }
 }

@@ -7,4 +7,12 @@ class DiscoveryAdvancedV1 extends DiscoveryAdvancedV0 {
       : printHeadWidth = IntValue(byteArray.get(396, 2));
 
   final IntValue printHeadWidth;
+
+  @override
+  void initMap() {
+    super.initMap();
+    map.addEntries({
+      MapEntry('PRINT_HEAD_WIDTH', printHeadWidth.value.toString()),
+    });
+  }
 }
