@@ -4,8 +4,10 @@ import 'package:zebra_discovery_b64/src/classes/discovery/enums/ip_acquisition_p
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/network_protocol_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/print_method_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/print_mode_enum.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_error_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_interface_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_media_type_enum.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_warning_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/secondary_printer_language_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/zbi_state_enum.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/address_value.dart';
@@ -15,8 +17,7 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/enum_value.dart
 import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/int_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/list_enum_value.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/list_printer_error.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/values/list_printer_warning.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/list_segmented_enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
@@ -30,12 +31,36 @@ class DiscoveryAdvancedV0 extends Discovery {
     productName = StringValue.fromByteArray(b.next(32));
     fwVersion = StringValue.fromByteArray(b.next(16));
     location = StringValue.fromByteArray(b.next(36));
-    errorsSegment0 = ListPrinterError.fromByteArray(0, b.next(4));
-    errorsSegment1 = ListPrinterError.fromByteArray(1, b.next(4));
-    errorsSegment2 = ListPrinterError.fromByteArray(2, b.next(4));
-    warningsSegment0 = ListPrinterWarning.fromByteArray(0, b.next(4));
-    warningsSegment1 = ListPrinterWarning.fromByteArray(1, b.next(4));
-    warningsSegment2 = ListPrinterWarning.fromByteArray(2, b.next(4));
+    errorsSegment0 = ListSegmentedEnumValue.fromByteArray(
+      0,
+      printerErrorEnum,
+      b.next(4),
+    );
+    errorsSegment1 = ListSegmentedEnumValue.fromByteArray(
+      1,
+      printerErrorEnum,
+      b.next(4),
+    );
+    errorsSegment2 = ListSegmentedEnumValue.fromByteArray(
+      2,
+      printerErrorEnum,
+      b.next(4),
+    );
+    warningsSegment0 = ListSegmentedEnumValue.fromByteArray(
+      0,
+      printerWarningEnum,
+      b.next(4),
+    );
+    warningsSegment1 = ListSegmentedEnumValue.fromByteArray(
+      1,
+      printerWarningEnum,
+      b.next(4),
+    );
+    warningsSegment2 = ListSegmentedEnumValue.fromByteArray(
+      2,
+      printerWarningEnum,
+      b.next(4),
+    );
     availableInterfacesBitfield =
         ListEnumValue.fromByteArray(printerInterfaceEnum, b.next(4));
     deviceUniqueId = StringValue.fromByteArray(b.next(32));
@@ -83,12 +108,12 @@ class DiscoveryAdvancedV0 extends Discovery {
   late final StringValue productName;
   late final StringValue fwVersion;
   late final StringValue location;
-  late final ListPrinterError errorsSegment0;
-  late final ListPrinterError errorsSegment1;
-  late final ListPrinterError errorsSegment2;
-  late final ListPrinterWarning warningsSegment0;
-  late final ListPrinterWarning warningsSegment1;
-  late final ListPrinterWarning warningsSegment2;
+  late final ListSegmentedEnumValue<PrinterError> errorsSegment0;
+  late final ListSegmentedEnumValue<PrinterError> errorsSegment1;
+  late final ListSegmentedEnumValue<PrinterError> errorsSegment2;
+  late final ListSegmentedEnumValue<PrinterWarning> warningsSegment0;
+  late final ListSegmentedEnumValue<PrinterWarning> warningsSegment1;
+  late final ListSegmentedEnumValue<PrinterWarning> warningsSegment2;
   late final ListEnumValue<PrinterInterface> availableInterfacesBitfield;
   late final StringValue deviceUniqueId;
   late final StringValue dnsDomain;

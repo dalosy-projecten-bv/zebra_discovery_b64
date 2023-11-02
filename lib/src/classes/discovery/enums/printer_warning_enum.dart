@@ -1,7 +1,7 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/segmented_enum_base.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/segmented_enum_data.dart';
 
-enum EnumValues {
+enum PrinterWarning {
   none,
   headUnderTemp,
   ribbonIn,
@@ -11,10 +11,10 @@ enum EnumValues {
 
 final printerWarningEnum = SegmentedEnumBase(
   values: {
-    SegmentedEnumData(EnumValues.none, 0, 0, "None"),
-    SegmentedEnumData(EnumValues.headUnderTemp, 2, 4096, "Head Cold"),
-    SegmentedEnumData(EnumValues.ribbonIn, 2, 8192, "Ribbon In"),
-    SegmentedEnumData(EnumValues.batteryLow, 2, 16384, "Battery Low"),
-    SegmentedEnumData(EnumValues.rfidError, 2, 32768, "RFID Error"),
+    SegmentedEnumData(PrinterWarning.none, 0, 0, "None"),
+    SegmentedEnumData(PrinterWarning.headUnderTemp, 2, 4096, "Head Cold"),
+    SegmentedEnumData(PrinterWarning.ribbonIn, 2, 8192, "Ribbon In"),
+    SegmentedEnumData(PrinterWarning.batteryLow, 2, 16384, "Battery Low"),
+    SegmentedEnumData(PrinterWarning.rfidError, 2, 32768, "RFID Error"),
   },
 );
