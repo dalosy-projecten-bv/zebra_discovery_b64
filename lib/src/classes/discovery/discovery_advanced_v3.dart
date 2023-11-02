@@ -3,9 +3,8 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.da
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 class DiscoveryAdvancedV3 extends DiscoveryAdvancedV2 {
-  DiscoveryAdvancedV3(super.byteArray) {
-    avsIniVersion = StringValue(byteArray.get(402, 6));
-  }
+  DiscoveryAdvancedV3(super.byteArray)
+      : avsIniVersion = StringValue(byteArray.get(402, 6));
 
-  late final StringValue avsIniVersion;
+  final StringValue avsIniVersion;
 }

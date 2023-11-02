@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:meta/meta.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v0.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v1.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v2.dart';
@@ -12,17 +13,23 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 abstract class Discovery {
-  Discovery(this.byteArray) {
-    notUsed1 = NotUsedValue(byteArray.get(0, 3));
-    discoveryVersion = ByteValue(byteArray.get(3, 1));
+  Discovery(this.byteArray)
+      : notUsed1 = NotUsedValue(byteArray.get(0, 3)),
+        discoveryVersion = ByteValue(byteArray.get(3, 1)) {
+    initMap();
   }
 
-  late final Uint8List byteArray;
-  late final NotUsedValue notUsed1;
-  late final ByteValue discoveryVersion;
+  final Uint8List byteArray;
+  final NotUsedValue notUsed1;
+  final ByteValue discoveryVersion;
   final map = <String, dynamic>{};
 
-  void initMap();
+  @mustCallSuper
+  void initMap() {
+    map.addEntries({
+      MapEntry('DISCOVERY_VER', discoveryVersion.value.toString()),
+    });
+  }
 
   factory Discovery.fromDiscoveryB64(String discoveryB64) {
     //Strip all after the first :
