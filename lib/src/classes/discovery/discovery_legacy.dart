@@ -12,25 +12,25 @@ import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 class DiscoveryLegacy extends Discovery {
   DiscoveryLegacy(BytesSplitter b, Uint8List byteArray) : super(b, byteArray) {
-    productNumber = StringValue.fromByteArray(b.next(8));
-    productName = StringValue.fromByteArray(b.next(20));
-    dateCode = StringValue.fromByteArray(b.next(7));
-    fwVersion = StringValue.fromByteArray(b.next(10));
-    companyAbbreviation = StringValue.fromByteArray(b.next(5));
+    productNumber = StringValue.fromPositions(byteArray, 4, 8);
+    productName = StringValue.fromPositions(byteArray, 12, 20);
+    dateCode = StringValue.fromPositions(byteArray, 32, 7);
+    fwVersion = StringValue.fromPositions(byteArray, 39, 10);
+    companyAbbreviation = StringValue.fromPositions(byteArray, 49, 5);
     hwAddress = HexValue.fromPositions(byteArray, 54, 6);
-    serialNum = StringValue.fromByteArray(b.next(10));
+    serialNum = StringValue.fromPositions(byteArray, 60, 10);
     usingNetProtocol =
         EnumValue.fromByteArray(ipAcquisitionProtocolEnum, b.next(2));
     ipAddress = AddressValue.fromPositions(byteArray, 72, 4);
     subnetMask = AddressValue.fromPositions(byteArray, 76, 4);
     defaultGateway = AddressValue.fromPositions(byteArray, 80, 4);
-    systemName = StringValue.fromByteArray(b.next(25));
+    systemName = StringValue.fromPositions(byteArray, 84, 25);
     notUsed2 = NotUsedValue.fromPositions(byteArray, 109, 103);
     getCommunityName = HexValue.fromPositions(byteArray, 212, 32);
     setCommunityName = HexValue.fromPositions(byteArray, 244, 32);
     notUsed3 = NotUsedValue.fromPositions(byteArray, 276, 82);
     portStatus = EnumValue.fromByteArray(printerPortStatusEnum, b.next(1));
-    portName = StringValue.fromByteArray(b.next(16));
+    portName = StringValue.fromPositions(byteArray, 359, 16);
   }
 
   late final StringValue productNumber;

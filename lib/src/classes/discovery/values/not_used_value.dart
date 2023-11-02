@@ -5,20 +5,13 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_b
 class NotUsedValue extends ValueBase {
   NotUsedValue({
     required super.byteArray,
-    required super.value,
-  });
+  }) : super(value: null);
 
   factory NotUsedValue.fromPositions(
     Uint8List byteArray,
     int start,
     int length,
   ) {
-    return NotUsedValue(
-      byteArray: byteArray.sublist(
-        start,
-        start + length,
-      ),
-      value: null,
-    );
+    return NotUsedValue(byteArray: byteArray.sublist(start, start + length));
   }
 }

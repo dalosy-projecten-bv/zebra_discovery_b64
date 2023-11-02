@@ -29,11 +29,11 @@ class DiscoveryAdvancedV0 extends Discovery {
       : super(b, byteArray) {
     advancedPacketFormat = ByteValue.fromPositions(byteArray, 4, 1);
     notUsed2 = NotUsedValue.fromPositions(byteArray, 5, 3);
-    companyAbbreviation = StringValue.fromByteArray(b.next(5));
-    systemName = StringValue.fromByteArray(b.next(63));
-    productName = StringValue.fromByteArray(b.next(32));
-    fwVersion = StringValue.fromByteArray(b.next(16));
-    location = StringValue.fromByteArray(b.next(36));
+    companyAbbreviation = StringValue.fromPositions(byteArray, 8, 5);
+    systemName = StringValue.fromPositions(byteArray, 13, 63);
+    productName = StringValue.fromPositions(byteArray, 76, 32);
+    fwVersion = StringValue.fromPositions(byteArray, 108, 16);
+    location = StringValue.fromPositions(byteArray, 124, 36);
     errorsSegment0 = ListSegmentedEnumValue.fromByteArray(
       0,
       printerErrorEnum,
@@ -66,8 +66,8 @@ class DiscoveryAdvancedV0 extends Discovery {
     );
     availableInterfacesBitfield =
         ListEnumValue.fromByteArray(printerInterfaceEnum, b.next(4));
-    deviceUniqueId = StringValue.fromByteArray(b.next(32));
-    dnsDomain = StringValue.fromByteArray(b.next(100));
+    deviceUniqueId = StringValue.fromPositions(byteArray, 188, 32);
+    dnsDomain = StringValue.fromPositions(byteArray, 220, 100);
     activeInterface = EnumValue.fromByteArray(printerInterfaceEnum, b.next(4));
     macAddress = HexValue.fromPositions(byteArray, 324, 6);
     ipAcquisitionProto =
