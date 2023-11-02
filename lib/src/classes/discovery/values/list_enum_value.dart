@@ -7,7 +7,10 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_b
 class ListEnumValue<T extends Enum> extends ValueBase<List<EnumData<T>>> {
   ListEnumValue(super.byteArray, super.value);
 
-  factory ListEnumValue.fromByteArray(EnumBase<T> enumBase, Uint8List byteArray) {
+  factory ListEnumValue.fromByteArray(
+    EnumBase<T> enumBase,
+    Uint8List byteArray,
+  ) {
     return ListEnumValue(
       byteArray,
       enumBase.listFromByteArray(byteArray),
