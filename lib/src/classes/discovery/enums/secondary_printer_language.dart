@@ -7,7 +7,7 @@ enum SecondaryPrinterLanguage {
   snmp,
 }
 
-final secondaryPrinterLanguage = EnumBase(
+final secondaryPrinterLanguageEnum = EnumBase(
   defaultEnum: SecondaryPrinterLanguage.unknown,
   values: {
     EnumData(SecondaryPrinterLanguage.unknown, 0, "Unknown"),

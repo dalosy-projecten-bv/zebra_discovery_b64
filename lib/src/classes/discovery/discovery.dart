@@ -13,8 +13,8 @@ import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 abstract class Discovery {
   Discovery(BytesSplitter b, Uint8List byteArray) {
-    notUsed1 = NotUsedValue.fromPositions(byteArray, 0, 3);
-    discoveryVersion = ByteValue.fromPositions(byteArray, 3, 1);
+    notUsed1 = NotUsedValue(byteArray.fromPositions(0, 3));
+    discoveryVersion = ByteValue(byteArray.fromPositions(3, 1));
   }
 
   late final NotUsedValue notUsed1;

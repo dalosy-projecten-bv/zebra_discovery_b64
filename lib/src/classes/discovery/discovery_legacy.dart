@@ -1,8 +1,8 @@
 import 'dart:typed_data';
 
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/ip_acquisition_protocol_enum.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_port_status_enum.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/ip_acquisition_protocol.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_port_status.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/address_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart';
@@ -12,25 +12,26 @@ import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 class DiscoveryLegacy extends Discovery {
   DiscoveryLegacy(BytesSplitter b, Uint8List byteArray) : super(b, byteArray) {
-    productNumber = StringValue.fromPositions(byteArray, 4, 8);
-    productName = StringValue.fromPositions(byteArray, 12, 20);
-    dateCode = StringValue.fromPositions(byteArray, 32, 7);
-    fwVersion = StringValue.fromPositions(byteArray, 39, 10);
-    companyAbbreviation = StringValue.fromPositions(byteArray, 49, 5);
-    hwAddress = HexValue.fromPositions(byteArray, 54, 6);
-    serialNum = StringValue.fromPositions(byteArray, 60, 10);
+    productNumber = StringValue(byteArray.fromPositions(4, 8));
+    productName = StringValue(byteArray.fromPositions(12, 20));
+    dateCode = StringValue(byteArray.fromPositions(32, 7));
+    fwVersion = StringValue(byteArray.fromPositions(39, 10));
+    companyAbbreviation = StringValue(byteArray.fromPositions(49, 5));
+    hwAddress = HexValue(byteArray.fromPositions(54, 6));
+    serialNum = StringValue(byteArray.fromPositions(60, 10));
     usingNetProtocol =
-        EnumValue.fromByteArray(ipAcquisitionProtocolEnum, b.next(2));
-    ipAddress = AddressValue.fromPositions(byteArray, 72, 4);
-    subnetMask = AddressValue.fromPositions(byteArray, 76, 4);
-    defaultGateway = AddressValue.fromPositions(byteArray, 80, 4);
-    systemName = StringValue.fromPositions(byteArray, 84, 25);
-    notUsed2 = NotUsedValue.fromPositions(byteArray, 109, 103);
-    getCommunityName = HexValue.fromPositions(byteArray, 212, 32);
-    setCommunityName = HexValue.fromPositions(byteArray, 244, 32);
-    notUsed3 = NotUsedValue.fromPositions(byteArray, 276, 82);
-    portStatus = EnumValue.fromByteArray(printerPortStatusEnum, b.next(1));
-    portName = StringValue.fromPositions(byteArray, 359, 16);
+        EnumValue(byteArray.fromPositions(70, 2), ipAcquisitionProtocolEnum);
+    ipAddress = AddressValue(byteArray.fromPositions(72, 4));
+    subnetMask = AddressValue(byteArray.fromPositions(76, 4));
+    defaultGateway = AddressValue(byteArray.fromPositions(80, 4));
+    systemName = StringValue(byteArray.fromPositions(84, 25));
+    notUsed2 = NotUsedValue(byteArray.fromPositions(109, 103));
+    getCommunityName = HexValue(byteArray.fromPositions(212, 32));
+    setCommunityName = HexValue(byteArray.fromPositions(244, 32));
+    notUsed3 = NotUsedValue(byteArray.fromPositions(276, 82));
+    portStatus =
+        EnumValue(byteArray.fromPositions(358, 1), printerPortStatusEnum);
+    portName = StringValue(byteArray.fromPositions(359, 16));
   }
 
   late final StringValue productNumber;

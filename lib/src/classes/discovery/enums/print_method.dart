@@ -6,7 +6,7 @@ enum PrintMethod {
   thermalTransfer,
 }
 
-final printMethods = EnumBase(
+final printMethodEnum = EnumBase(
   defaultEnum: PrintMethod.directThermal,
   values: {
     EnumData(PrintMethod.directThermal, 0, 'Direct Thermal'),

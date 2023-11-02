@@ -8,7 +8,7 @@ enum DiscoveredPrinterLanguage {
   epl,
 }
 
-final discoveredPrinterLanguages = EnumBase(
+final discoveredPrinterLanguagesEnum = EnumBase(
   defaultEnum: DiscoveredPrinterLanguage.unknown,
   values: {
     EnumData(DiscoveredPrinterLanguage.unknown, 0, 'unknown'),

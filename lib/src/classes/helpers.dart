@@ -1,10 +1,10 @@
 import 'dart:typed_data';
 
 import 'package:collection/collection.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/network_protocol_enum.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_error_enum.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_interface_enum.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_warning_enum.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/network_protocol.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_error.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_interface.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_warning.dart';
 
 class BytesSplitter {
   BytesSplitter(this._byteArray);
@@ -73,5 +73,11 @@ String getNetworkProtocols(Uint8List byteArray) {
 extension StringExtension on String {
   String removeSpaces() {
     return replaceAll(' ', '');
+  }
+}
+
+extension Uint8ListExtension on Uint8List {
+  Uint8List fromPositions(int start, int length) {
+    return sublist(start, start + length);
   }
 }
