@@ -120,7 +120,7 @@ class DiscoveryAdvancedV0 extends Discovery {
           4,
           discoveredPrinterLanguagesEnum,
         ),
-        availableLanguagesBitfield = EnumValue(
+        availableLanguagesBitfield = ListEnumValue(
           byteArray,
           352,
           4,
@@ -173,7 +173,7 @@ class DiscoveryAdvancedV0 extends Discovery {
   final IntValue port;
   final ListEnumValue<NetworkProtocol> availableProtocols;
   final EnumValue<DiscoveredPrinterLanguage> primaryLanguage;
-  final EnumValue<DiscoveredPrinterLanguage> availableLanguagesBitfield;
+  final ListEnumValue<DiscoveredPrinterLanguage> availableLanguagesBitfield;
   final ListEnumValue<SecondaryPrinterLanguage>
       availableSecondaryLanguagesBitfield;
   final IntValue dotsPerMm;
