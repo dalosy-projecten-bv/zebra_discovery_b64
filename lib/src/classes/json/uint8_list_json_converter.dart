@@ -47,6 +47,8 @@ class Byte {
       value & 128 != 0,
     );
   }
+  String toJson() =>
+      "${toBit(bit7)}${toBit(bit6)}${toBit(bit5)}${toBit(bit4)}${toBit(bit3)}${toBit(bit2)}${toBit(bit1)}${toBit(bit0)}";
 }
 
 class Uint8ListConverter extends JsonConverter<Uint8List, List<Byte>> {

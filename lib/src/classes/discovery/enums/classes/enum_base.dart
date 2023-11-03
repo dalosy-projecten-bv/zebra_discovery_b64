@@ -4,14 +4,12 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 import 'package:zebra_discovery_b64/src/classes/json/generic_converter.dart';
+import 'package:zebra_discovery_b64/src/classes/json/my_json_serializable.dart';
 import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
 part 'enum_base.g.dart';
 
-@JsonSerializable(
-    createFactory: false,
-    explicitToJson: true,
-    converters: [GenericConverter()])
+@MyJsonSerializable()
 class EnumBase<T extends Enum> implements Serializable {
   EnumBase({
     required this.defaultEnum,

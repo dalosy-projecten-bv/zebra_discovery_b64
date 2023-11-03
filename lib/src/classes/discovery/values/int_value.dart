@@ -1,12 +1,13 @@
 import 'dart:typed_data';
 
-import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_base.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
+import 'package:zebra_discovery_b64/src/classes/json/my_json_serializable.dart';
+import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.dart';
 
 part 'int_value.g.dart';
 
-@JsonSerializable(createFactory: false)
+@MyJsonSerializable()
 class IntValue extends ValueBase<int> {
   IntValue(
     Uint8List byteArray,

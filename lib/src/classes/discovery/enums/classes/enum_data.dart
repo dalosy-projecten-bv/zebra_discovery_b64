@@ -1,13 +1,10 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/json/generic_converter.dart';
+import 'package:zebra_discovery_b64/src/classes/json/my_json_serializable.dart';
 import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
 part 'enum_data.g.dart';
 
-@JsonSerializable(
-    createFactory: false,
-    explicitToJson: true,
-    converters: [GenericConverter()])
+@MyJsonSerializable()
 class EnumData<T extends Enum> implements Serializable {
   const EnumData(
     this.enumeration,

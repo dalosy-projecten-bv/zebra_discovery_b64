@@ -7,7 +7,7 @@ part of 'bool_value.dart';
 // **************************************************************************
 
 Map<String, dynamic> _$BoolValueToJson(BoolValue instance) => <String, dynamic>{
-      'byteArray': instance.byteArray,
+      'byteArray': const Uint8ListConverter().toJson(instance.byteArray),
       'start': instance.start,
       'length': instance.length,
       'value': instance.value,

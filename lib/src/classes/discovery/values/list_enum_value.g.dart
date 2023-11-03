@@ -9,8 +9,8 @@ part of 'list_enum_value.dart';
 Map<String, dynamic> _$ListEnumValueToJson<T extends Enum>(
         ListEnumValue<T> instance) =>
     <String, dynamic>{
-      'byteArray': instance.byteArray,
+      'byteArray': const Uint8ListConverter().toJson(instance.byteArray),
       'start': instance.start,
       'length': instance.length,
-      'value': instance.value,
+      'value': instance.value.map((e) => e.toJson()).toList(),
     };

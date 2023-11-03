@@ -3,10 +3,11 @@ import 'dart:typed_data';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/segmented_enum_data.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
+import 'package:zebra_discovery_b64/src/classes/json/my_json_serializable.dart';
 
 part 'segmented_enum_base.g.dart';
 
-@JsonSerializable(createFactory: false)
+@MyJsonSerializable()
 class SegmentedEnumBase<T extends Enum> {
   SegmentedEnumBase({
     required List<T> values,

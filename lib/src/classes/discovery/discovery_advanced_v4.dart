@@ -1,13 +1,14 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v3.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/wired_8021x_security_setting.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/int_value.dart';
+import 'package:zebra_discovery_b64/src/classes/json/my_json_serializable.dart';
+import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.dart';
 
 part 'discovery_advanced_v4.g.dart';
 
-@JsonSerializable(createFactory: false)
+@MyJsonSerializable()
 class DiscoveryAdvancedV4 extends DiscoveryAdvancedV3 {
   DiscoveryAdvancedV4(super.byteArray)
       : processorId = HexValue(byteArray, 408, 8),

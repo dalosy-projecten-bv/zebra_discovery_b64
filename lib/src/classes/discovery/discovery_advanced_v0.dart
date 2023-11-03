@@ -1,4 +1,3 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/discovered_printer_language.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/ip_acquisition_protocol.dart';
@@ -23,10 +22,12 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/list_segmented_
 import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
+import 'package:zebra_discovery_b64/src/classes/json/my_json_serializable.dart';
+import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.dart';
 
 part 'discovery_advanced_v0.g.dart';
 
-@JsonSerializable(createFactory: false)
+@MyJsonSerializable()
 class DiscoveryAdvancedV0 extends Discovery {
   DiscoveryAdvancedV0(super.byteArray)
       : advancedPacketFormat = ByteValue(byteArray, 4, 1),

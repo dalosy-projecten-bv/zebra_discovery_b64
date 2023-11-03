@@ -1,11 +1,12 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v1.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/byte_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/int_value.dart';
+import 'package:zebra_discovery_b64/src/classes/json/my_json_serializable.dart';
+import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.dart';
 
 part 'discovery_advanced_v2.g.dart';
 
-@JsonSerializable(createFactory: false)
+@MyJsonSerializable()
 class DiscoveryAdvancedV2 extends DiscoveryAdvancedV1 {
   DiscoveryAdvancedV2(super.byteArray)
       : jsonPort = IntValue(byteArray, 398, 2),

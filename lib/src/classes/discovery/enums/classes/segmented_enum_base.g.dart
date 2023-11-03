@@ -9,5 +9,5 @@ part of 'segmented_enum_base.dart';
 Map<String, dynamic> _$SegmentedEnumBaseToJson<T extends Enum>(
         SegmentedEnumBase<T> instance) =>
     <String, dynamic>{
-      'values': instance.values,
+      'values': instance.values.map((e) => e.toJson()).toList(),
     };

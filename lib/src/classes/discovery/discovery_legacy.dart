@@ -1,4 +1,3 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_port_status.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/address_value.dart';
@@ -7,10 +6,12 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/enum_value.dart
 import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.dart';
+import 'package:zebra_discovery_b64/src/classes/json/my_json_serializable.dart';
+import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.dart';
 
 part 'discovery_legacy.g.dart';
 
-@JsonSerializable(createFactory: false)
+@MyJsonSerializable()
 class DiscoveryLegacy extends Discovery {
   DiscoveryLegacy(super.byteArray)
       : productNumber = StringValue(byteArray, 4, 8),
