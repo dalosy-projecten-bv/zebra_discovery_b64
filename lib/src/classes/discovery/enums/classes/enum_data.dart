@@ -1,5 +1,5 @@
 class EnumData<T extends Enum> {
-  EnumData(
+  const EnumData(
     this.enumeration,
     this.bitfieldValue,
     this.enumAsString,

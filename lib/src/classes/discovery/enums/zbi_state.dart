@@ -1,17 +1,19 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
 enum ZbiState {
-  disabled,
-  stopped,
-  running,
+  disabled(0, "Disabled"),
+  stopped(1, "Stopped"),
+  running(2, "Running");
+
+  const ZbiState(this.bitfieldValue, this.enumAsString);
+
+  final int bitfieldValue;
+  final String enumAsString;
 }
 
 final zbiStateEnum = EnumBase(
   defaultEnum: ZbiState.stopped,
-  values: [
-    EnumData(ZbiState.disabled, 0, "Disabled"),
-    EnumData(ZbiState.stopped, 1, "Stopped"),
-    EnumData(ZbiState.running, 2, "Running"),
-  ],
+  values: ZbiState.values,
+  bitfieldValue: (enumeration) => enumeration.bitfieldValue,
+  enumAsString: (enumeration) => enumeration.enumAsString,
 );

@@ -1,15 +1,18 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
 enum PrintMethod {
-  directThermal,
-  thermalTransfer,
+  directThermal(0, 'Direct Thermal'),
+  thermalTransfer(1, 'Thermal Transfer');
+
+  const PrintMethod(this.bitfieldValue, this.enumAsString);
+
+  final int bitfieldValue;
+  final String enumAsString;
 }
 
 final printMethodEnum = EnumBase(
   defaultEnum: PrintMethod.directThermal,
-  values: [
-    EnumData(PrintMethod.directThermal, 0, 'Direct Thermal'),
-    EnumData(PrintMethod.thermalTransfer, 1, 'Thermal Transfer'),
-  ],
+  values: PrintMethod.values,
+  bitfieldValue: (enumeration) => enumeration.bitfieldValue,
+  enumAsString: (enumeration) => enumeration.enumAsString,
 );

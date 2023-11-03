@@ -1,31 +1,26 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
 enum PrinterInterface {
-  unknown,
-  internalWired,
-  externalWired,
-  wireless,
-  bluetooth,
-  parallel,
-  serial,
-  usb,
-  sdCard,
-  battery,
+  unknown(0, "Unknown"),
+  internalWired(1, "Internal Wired"),
+  externalWired(2, "External Wired"),
+  wireless(4, "Wireless"),
+  bluetooth(8, "Bluetooth"),
+  parallel(16, "Parallel"),
+  serial(32, "Serial"),
+  usb(64, "USB"),
+  sdCard(128, "SD Card"),
+  battery(256, "Battery");
+
+  const PrinterInterface(this.bitfieldValue, this.enumAsString);
+
+  final int bitfieldValue;
+  final String enumAsString;
 }
 
 final printerInterfaceEnum = EnumBase(
   defaultEnum: PrinterInterface.unknown,
-  values: [
-    EnumData(PrinterInterface.unknown, 0, "Unknown"),
-    EnumData(PrinterInterface.internalWired, 1, "Internal Wired"),
-    EnumData(PrinterInterface.externalWired, 2, "External Wired"),
-    EnumData(PrinterInterface.wireless, 4, "Wireless"),
-    EnumData(PrinterInterface.bluetooth, 8, "Bluetooth"),
-    EnumData(PrinterInterface.parallel, 16, "Parallel"),
-    EnumData(PrinterInterface.serial, 32, "Serial"),
-    EnumData(PrinterInterface.usb, 64, "USB"),
-    EnumData(PrinterInterface.sdCard, 128, "SD Card"),
-    EnumData(PrinterInterface.battery, 256, "Battery"),
-  ],
+  values: PrinterInterface.values,
+  bitfieldValue: (enumeration) => enumeration.bitfieldValue,
+  enumAsString: (enumeration) => enumeration.enumAsString,
 );

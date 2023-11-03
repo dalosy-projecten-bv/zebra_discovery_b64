@@ -1,17 +1,19 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
 enum SecondaryPrinterLanguage {
-  unknown,
-  sgd,
-  snmp,
+  unknown(0, "Unknown"),
+  sgd(1, "SGD"),
+  snmp(2, "SNMP");
+
+  const SecondaryPrinterLanguage(this.bitfieldValue, this.enumAsString);
+
+  final int bitfieldValue;
+  final String enumAsString;
 }
 
 final secondaryPrinterLanguageEnum = EnumBase(
   defaultEnum: SecondaryPrinterLanguage.unknown,
-  values: [
-    EnumData(SecondaryPrinterLanguage.unknown, 0, "Unknown"),
-    EnumData(SecondaryPrinterLanguage.sgd, 1, "SGD"),
-    EnumData(SecondaryPrinterLanguage.snmp, 2, "SNMP"),
-  ],
+  values: SecondaryPrinterLanguage.values,
+  bitfieldValue: (enumeration) => enumeration.bitfieldValue,
+  enumAsString: (enumeration) => enumeration.enumAsString,
 );

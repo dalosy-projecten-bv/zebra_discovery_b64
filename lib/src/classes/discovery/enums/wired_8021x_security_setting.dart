@@ -1,19 +1,20 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
 enum Wired8021xSecuritySetting {
-  none,
-  peap,
-  eapTls,
-  eapTtls,
+  none(0, "None"),
+  peap(1, "PEAP"),
+  eapTls(2, "EAP-TLS"),
+  eapTtls(3, "EAP-TTLS");
+
+  const Wired8021xSecuritySetting(this.bitfieldValue, this.enumAsString);
+
+  final int bitfieldValue;
+  final String enumAsString;
 }
 
 final wired8021xSecuritySettingEnum = EnumBase(
   defaultEnum: Wired8021xSecuritySetting.none,
-  values: [
-    EnumData(Wired8021xSecuritySetting.none, 0, "None"),
-    EnumData(Wired8021xSecuritySetting.peap, 1, "PEAP"),
-    EnumData(Wired8021xSecuritySetting.eapTls, 2, "EAP-TLS"),
-    EnumData(Wired8021xSecuritySetting.eapTtls, 3, "EAP-TTLS"),
-  ],
+  values: Wired8021xSecuritySetting.values,
+  bitfieldValue: (enumeration) => enumeration.bitfieldValue,
+  enumAsString: (enumeration) => enumeration.enumAsString,
 );

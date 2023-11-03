@@ -1,19 +1,20 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 
 enum DiscoveredPrinterLanguage {
-  unknown,
-  zpl,
-  cpcl,
-  epl,
+  unknown(0, 'unknown'),
+  zpl(1, 'ZPL'),
+  cpcl(2, 'CPCL'),
+  epl(4, 'EPL');
+
+  const DiscoveredPrinterLanguage(this.bitfieldValue, this.enumAsString);
+
+  final int bitfieldValue;
+  final String enumAsString;
 }
 
 final discoveredPrinterLanguagesEnum = EnumBase(
   defaultEnum: DiscoveredPrinterLanguage.unknown,
-  values: [
-    EnumData(DiscoveredPrinterLanguage.unknown, 0, 'unknown'),
-    EnumData(DiscoveredPrinterLanguage.zpl, 1, 'ZPL'),
-    EnumData(DiscoveredPrinterLanguage.cpcl, 2, 'CPCL'),
-    EnumData(DiscoveredPrinterLanguage.epl, 4, 'EPL'),
-  ],
+  values: DiscoveredPrinterLanguage.values,
+  bitfieldValue: (enumeration) => enumeration.bitfieldValue,
+  enumAsString: (enumeration) => enumeration.enumAsString,
 );
