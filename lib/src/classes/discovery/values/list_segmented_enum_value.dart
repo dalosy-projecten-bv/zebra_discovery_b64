@@ -9,9 +9,16 @@ class ListSegmentedEnumValue<T extends Enum>
   ListSegmentedEnumValue(
     int segment,
     Uint8List byteArray,
+    int start,
+    int length,
     SegmentedEnumBase<T> enumBase,
   ) : super(
-          byteArray,
-          enumBase.listFromByteArray(segment, byteArray),
+          byteArray: byteArray,
+          start: start,
+          length: length,
+          value: enumBase.listFromByteArray(
+            segment,
+            byteArray.sublist(start, start + length),
+          ),
         );
 }

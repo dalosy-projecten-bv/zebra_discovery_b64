@@ -5,8 +5,16 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_b
 class StringValue extends ValueBase<String> {
   StringValue(
     Uint8List byteArray,
+    int start,
+    int length,
   ) : super(
-          byteArray,
-          String.fromCharCodes(byteArray.takeWhile((value) => value != 0)),
+          byteArray: byteArray,
+          start: start,
+          length: length,
+          value: String.fromCharCodes(
+            byteArray
+                .sublist(start, start + length)
+                .takeWhile((value) => value != 0),
+          ),
         );
 }

@@ -14,12 +14,6 @@ int parseInteger(Uint8List byteArray) {
   return result;
 }
 
-extension Uint8ListExtension on Uint8List {
-  Uint8List get(int start, int length) {
-    return sublist(start, start + length);
-  }
-}
-
 extension SetExtension on Iterable<SegmentedEnumData> {
   String getCommaSeparatedList() {
     return map((e) => e.enumAsString).join(',');

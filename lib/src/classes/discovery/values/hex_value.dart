@@ -5,9 +5,14 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_b
 class HexValue extends ValueBase<String> {
   HexValue(
     Uint8List byteArray,
+    int start,
+    int length,
   ) : super(
-          byteArray,
-          byteArray
+          byteArray: byteArray,
+          start: start,
+          length: length,
+          value: byteArray
+              .sublist(start, start + length)
               .map((e) => e.toRadixString(16).toUpperCase().padRight(2, '0'))
               .toList()
               .join(),

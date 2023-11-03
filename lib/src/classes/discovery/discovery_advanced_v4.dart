@@ -3,15 +3,16 @@ import 'package:zebra_discovery_b64/src/classes/discovery/enums/wired_8021x_secu
 import 'package:zebra_discovery_b64/src/classes/discovery/values/enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/int_value.dart';
-import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 class DiscoveryAdvancedV4 extends DiscoveryAdvancedV3 {
   DiscoveryAdvancedV4(super.byteArray)
-      : processorId = HexValue(byteArray.get(408, 8)),
-        tlsRawPort = IntValue(byteArray.get(416, 2)),
-        tlsJsonPort = IntValue(byteArray.get(418, 2)),
+      : processorId = HexValue(byteArray, 408, 8),
+        tlsRawPort = IntValue(byteArray, 416, 2),
+        tlsJsonPort = IntValue(byteArray, 418, 2),
         wired8021XSecuritySetting = EnumValue(
-          byteArray.get(420, 1),
+          byteArray,
+          420,
+          1,
           wired8021xSecuritySettingEnum,
         );
 

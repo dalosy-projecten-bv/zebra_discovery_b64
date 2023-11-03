@@ -10,12 +10,11 @@ import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v4.
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_legacy.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/byte_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
-import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 abstract class Discovery {
   Discovery(this.byteArray)
-      : notUsed1 = NotUsedValue(byteArray.get(0, 3)),
-        discoveryVersion = ByteValue(byteArray.get(3, 1)) {
+      : notUsed1 = NotUsedValue(byteArray, 0, 3),
+        discoveryVersion = ByteValue(byteArray, 3, 1) {
     initMap();
   }
 

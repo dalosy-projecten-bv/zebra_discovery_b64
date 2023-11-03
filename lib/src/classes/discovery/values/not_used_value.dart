@@ -5,5 +5,12 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_b
 class NotUsedValue extends ValueBase {
   NotUsedValue(
     Uint8List byteArray,
-  ) : super(byteArray, null);
+    int start,
+    int length,
+  ) : super(
+          byteArray: byteArray,
+          start: start,
+          length: length,
+          value: null,
+        );
 }

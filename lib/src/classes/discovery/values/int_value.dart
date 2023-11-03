@@ -6,8 +6,14 @@ import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 class IntValue extends ValueBase<int> {
   IntValue(
     Uint8List byteArray,
+    int start,
+    int length,
   ) : super(
-          byteArray,
-          parseInteger(byteArray),
+          byteArray: byteArray,
+          start: start,
+          length: length,
+          value: parseInteger(
+            byteArray.sublist(start, start + length),
+          ),
         );
 }

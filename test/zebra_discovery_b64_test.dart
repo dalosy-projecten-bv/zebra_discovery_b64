@@ -187,7 +187,7 @@ void main() {
     test('Test serial number decode', () {
       final serial = 'ABCDEFGHIJKLMNOP';
       final byteArray = Uint8List.fromList(utf8.encode(serial));
-      final result = StringValue(byteArray);
+      final result = StringValue(byteArray, 0, 16);
       expect(result.value, serial);
     });
 
@@ -198,7 +198,7 @@ void main() {
       bytesBuilder.add(Uint8List.fromList(
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       ));
-      final result = StringValue(bytesBuilder.toBytes());
+      final result = StringValue(bytesBuilder.toBytes(),0, 13);
       expect(result.value, serial);
     });
   });
