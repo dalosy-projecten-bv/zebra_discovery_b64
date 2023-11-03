@@ -9,45 +9,44 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.da
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
 class DiscoveryLegacy extends Discovery {
-  DiscoveryLegacy(super.byteArray) {
-    productNumber = StringValue(byteArray.get(4, 8));
-    productName = StringValue(byteArray.get(12, 20));
-    dateCode = StringValue(byteArray.get(32, 7));
-    fwVersion = StringValue(byteArray.get(39, 10));
-    companyAbbreviation = StringValue(byteArray.get(49, 5));
-    hwAddress = HexValue(byteArray.get(54, 6));
-    serialNum = StringValue(byteArray.get(60, 10));
-    usingNetProtocol = BoolValue(byteArray.get(70, 2));
-    ipAddress = AddressValue(byteArray.get(72, 4));
-    subnetMask = AddressValue(byteArray.get(76, 4));
-    defaultGateway = AddressValue(byteArray.get(80, 4));
-    systemName = StringValue(byteArray.get(84, 25));
-    notUsed2 = NotUsedValue(byteArray.get(109, 103));
-    getCommunityName = HexValue(byteArray.get(212, 32));
-    setCommunityName = HexValue(byteArray.get(244, 32));
-    notUsed3 = NotUsedValue(byteArray.get(276, 82));
-    portStatus = EnumValue(byteArray.get(358, 1), printerPortStatusEnum);
-    portName = StringValue(byteArray.get(359, 16));
-  }
+  DiscoveryLegacy(super.byteArray)
+      : productNumber = StringValue(byteArray.get(4, 8)),
+        productName = StringValue(byteArray.get(12, 20)),
+        dateCode = StringValue(byteArray.get(32, 7)),
+        fwVersion = StringValue(byteArray.get(39, 10)),
+        companyAbbreviation = StringValue(byteArray.get(49, 5)),
+        hwAddress = HexValue(byteArray.get(54, 6)),
+        serialNum = StringValue(byteArray.get(60, 10)),
+        usingNetProtocol = BoolValue(byteArray.get(70, 2)),
+        ipAddress = AddressValue(byteArray.get(72, 4)),
+        subnetMask = AddressValue(byteArray.get(76, 4)),
+        defaultGateway = AddressValue(byteArray.get(80, 4)),
+        systemName = StringValue(byteArray.get(84, 25)),
+        notUsed2 = NotUsedValue(byteArray.get(109, 103)),
+        getCommunityName = HexValue(byteArray.get(212, 32)),
+        setCommunityName = HexValue(byteArray.get(244, 32)),
+        notUsed3 = NotUsedValue(byteArray.get(276, 82)),
+        portStatus = EnumValue(byteArray.get(358, 1), printerPortStatusEnum),
+        portName = StringValue(byteArray.get(359, 16));
 
-  late final StringValue productNumber;
-  late final StringValue productName;
-  late final StringValue dateCode;
-  late final StringValue fwVersion;
-  late final StringValue companyAbbreviation;
-  late final HexValue hwAddress;
-  late final StringValue serialNum;
-  late final BoolValue usingNetProtocol;
-  late final AddressValue ipAddress;
-  late final AddressValue subnetMask;
-  late final AddressValue defaultGateway;
-  late final StringValue systemName;
-  late final NotUsedValue notUsed2;
-  late final HexValue getCommunityName;
-  late final HexValue setCommunityName;
-  late final NotUsedValue notUsed3;
-  late final EnumValue<PrinterPortStatus> portStatus;
-  late final StringValue portName;
+  final StringValue productNumber;
+  final StringValue productName;
+  final StringValue dateCode;
+  final StringValue fwVersion;
+  final StringValue companyAbbreviation;
+  final HexValue hwAddress;
+  final StringValue serialNum;
+  final BoolValue usingNetProtocol;
+  final AddressValue ipAddress;
+  final AddressValue subnetMask;
+  final AddressValue defaultGateway;
+  final StringValue systemName;
+  final NotUsedValue notUsed2;
+  final HexValue getCommunityName;
+  final HexValue setCommunityName;
+  final NotUsedValue notUsed3;
+  final EnumValue<PrinterPortStatus> portStatus;
+  final StringValue portName;
 
   @override
   void initMap() {
