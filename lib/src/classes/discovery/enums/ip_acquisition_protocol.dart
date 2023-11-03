@@ -1,6 +1,11 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
-enum IpAcquisitionProtocol {
+part 'ip_acquisition_protocol.g.dart';
+
+@JsonEnum(alwaysCreate: true)
+enum IpAcquisitionProtocol implements Serializable {
   all(0, 'All'),
   glean(1, 'Glean'),
   rarp(2, 'RARP'),
@@ -13,6 +18,9 @@ enum IpAcquisitionProtocol {
 
   final int bitfieldValue;
   final String enumAsString;
+
+  @override
+  String toJson() => _$IpAcquisitionProtocolEnumMap[this]!;
 }
 
 final ipAcquisitionProtocolEnum = EnumBase(

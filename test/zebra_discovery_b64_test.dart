@@ -21,6 +21,11 @@ void main() {
     test('Decode an advancedV4 message', () {
       final discovery = Discovery.fromDiscoveryB64(discoveryB64AdvancedV4);
       expect(discovery, isA<DiscoveryAdvancedV4>());
+      final json = discovery.toJson();
+      JsonEncoder encoder = JsonEncoder.withIndent('  ');
+      String prettyprint = encoder.convert(json);
+      print(prettyprint);
+
       expect(discovery.map['DISCOVERY_VER'], '4');
       expect(discovery.map['ADVANCED_DISCOVERY_VER'], '5');
       expect(discovery.map['COMPANY_ABBREVIATION'], 'ZBR');

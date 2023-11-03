@@ -1,6 +1,11 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
-enum PrinterInterface {
+part 'printer_interface.g.dart';
+
+@JsonEnum(alwaysCreate: true)
+enum PrinterInterface implements Serializable {
   unknown(0, "Unknown"),
   internalWired(1, "Internal Wired"),
   externalWired(2, "External Wired"),
@@ -16,6 +21,9 @@ enum PrinterInterface {
 
   final int bitfieldValue;
   final String enumAsString;
+
+  @override
+  String toJson() => _$PrinterInterfaceEnumMap[this]!;
 }
 
 final printerInterfaceEnum = EnumBase(

@@ -1,9 +1,18 @@
 import 'dart:typed_data';
 
+import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_data.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
+import 'package:zebra_discovery_b64/src/classes/json/generic_converter.dart';
+import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
-class EnumBase<T extends Enum> {
+part 'enum_base.g.dart';
+
+@JsonSerializable(
+    createFactory: false,
+    explicitToJson: true,
+    converters: [GenericConverter()])
+class EnumBase<T extends Enum> implements Serializable {
   EnumBase({
     required this.defaultEnum,
     required List<T> values,
@@ -15,7 +24,10 @@ class EnumBase<T extends Enum> {
 
   final T defaultEnum;
   final List<EnumData<T>> values;
+
+  @JsonKey(includeToJson: false, includeFromJson: false)
   final int Function(T enumeration) bitfieldValue;
+  @JsonKey(includeToJson: false, includeFromJson: false)
   final String Function(T enumeration) enumAsString;
 
   EnumData<T> fromByteArray(Uint8List byteArray) {
@@ -39,4 +51,7 @@ class EnumBase<T extends Enum> {
     }
     return list;
   }
+
+  @override
+  Map<String, dynamic> toJson() => _$EnumBaseToJson(this);
 }

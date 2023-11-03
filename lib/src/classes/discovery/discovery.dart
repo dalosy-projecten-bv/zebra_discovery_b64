@@ -77,4 +77,6 @@ abstract class Discovery {
         throw Exception("The message contains an unknown version ($version)");
     }
   }
+
+  Map<String, dynamic> toJson();
 }

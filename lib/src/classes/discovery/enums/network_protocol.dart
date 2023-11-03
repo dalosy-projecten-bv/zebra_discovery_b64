@@ -1,6 +1,11 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
-enum NetworkProtocol {
+part 'network_protocol.g.dart';
+
+@JsonEnum(alwaysCreate: true)
+enum NetworkProtocol implements Serializable {
   none(0, 'None'),
   ftp(1, 'FTP'),
   lpd(2, 'LPD'),
@@ -19,6 +24,9 @@ enum NetworkProtocol {
 
   final int bitfieldValue;
   final String enumAsString;
+
+  @override
+  String toJson() => _$NetworkProtocolEnumMap[this]!;
 }
 
 final networkProtocolEnum = EnumBase(

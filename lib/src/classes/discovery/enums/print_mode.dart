@@ -1,6 +1,11 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
-enum PrintMode {
+part 'print_mode.g.dart';
+
+@JsonEnum(alwaysCreate: true)
+enum PrintMode implements Serializable {
   rewind(0, "Rewind"),
   tearOff(1, "Tear Off"),
   peelOff(2, "Peel Off"),
@@ -18,6 +23,9 @@ enum PrintMode {
 
   final int bitfieldValue;
   final String enumAsString;
+
+  @override
+  String toJson() => _$PrintModeEnumMap[this]!;
 }
 
 final printModeEnum = EnumBase(

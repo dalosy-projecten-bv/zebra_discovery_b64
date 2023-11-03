@@ -1,6 +1,11 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
-enum PrintMethod {
+part 'print_method.g.dart';
+
+@JsonEnum(alwaysCreate: true)
+enum PrintMethod implements Serializable {
   directThermal(0, 'Direct Thermal'),
   thermalTransfer(1, 'Thermal Transfer');
 
@@ -8,6 +13,9 @@ enum PrintMethod {
 
   final int bitfieldValue;
   final String enumAsString;
+
+  @override
+  String toJson() => _$PrintMethodEnumMap[this]!;
 }
 
 final printMethodEnum = EnumBase(

@@ -1,6 +1,11 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/segmented_enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
-enum PrinterError {
+part 'printer_error.g.dart';
+
+@JsonEnum(alwaysCreate: true)
+enum PrinterError implements Serializable {
   none(0, 0, "None"),
   mediaOut(2, 1, "Paper Out"),
   ribbonOut(2, 2, "Ribbon Out"),
@@ -19,6 +24,9 @@ enum PrinterError {
   final int segment;
   final int bitfieldValue;
   final String enumAsString;
+
+  @override
+  String toJson() => _$PrinterErrorEnumMap[this]!;
 }
 
 final printerErrorEnum = SegmentedEnumBase(

@@ -1,6 +1,11 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
-enum PrinterPortStatus {
+part 'printer_port_status.g.dart';
+
+@JsonEnum(alwaysCreate: true)
+enum PrinterPortStatus implements Serializable {
   none(0, "None"),
   online(1, "Online"),
   offline(2, "Offline"),
@@ -15,6 +20,9 @@ enum PrinterPortStatus {
 
   final int bitfieldValue;
   final String enumAsString;
+
+  @override
+  String toJson() => _$PrinterPortStatusEnumMap[this]!;
 }
 
 final printerPortStatusEnum = EnumBase(

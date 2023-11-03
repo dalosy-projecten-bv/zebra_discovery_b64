@@ -1,6 +1,11 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/segmented_enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
-enum PrinterWarning {
+part 'printer_warning.g.dart';
+
+@JsonEnum(alwaysCreate: true)
+enum PrinterWarning implements Serializable {
   none(0, 0, "None"),
   headUnderTemp(2, 4096, "Head Cold"),
   ribbonIn(2, 8192, "Ribbon In"),
@@ -12,6 +17,9 @@ enum PrinterWarning {
   final int segment;
   final int bitfieldValue;
   final String enumAsString;
+
+  @override
+  String toJson() => _$PrinterWarningEnumMap[this]!;
 }
 
 final printerWarningEnum = SegmentedEnumBase(

@@ -1,8 +1,12 @@
 import 'dart:typed_data';
 
+import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/segmented_enum_data.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
+part 'segmented_enum_base.g.dart';
+
+@JsonSerializable(createFactory: false)
 class SegmentedEnumBase<T extends Enum> {
   SegmentedEnumBase({
     required List<T> values,
@@ -19,8 +23,11 @@ class SegmentedEnumBase<T extends Enum> {
             .toList();
 
   final List<SegmentedEnumData<T>> values;
+  @JsonKey(includeToJson: false, includeFromJson: false)
   final int Function(T enumeration) segment;
+  @JsonKey(includeToJson: false, includeFromJson: false)
   final int Function(T enumeration) bitfieldValue;
+  @JsonKey(includeToJson: false, includeFromJson: false)
   final String Function(T enumeration) enumAsString;
 
   List<SegmentedEnumData<T>> listFromByteArray(
@@ -37,4 +44,6 @@ class SegmentedEnumBase<T extends Enum> {
     }
     return list;
   }
+
+  Map<String, dynamic> toJson() => _$SegmentedEnumBaseToJson(this);
 }

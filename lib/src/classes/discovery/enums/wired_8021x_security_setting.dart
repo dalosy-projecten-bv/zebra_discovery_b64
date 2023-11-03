@@ -1,6 +1,11 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/classes/enum_base.dart';
+import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
-enum Wired8021xSecuritySetting {
+part 'wired_8021x_security_setting.g.dart';
+
+@JsonEnum(alwaysCreate: true)
+enum Wired8021xSecuritySetting implements Serializable {
   none(0, "None"),
   peap(1, "PEAP"),
   eapTls(2, "EAP-TLS"),
@@ -10,6 +15,9 @@ enum Wired8021xSecuritySetting {
 
   final int bitfieldValue;
   final String enumAsString;
+
+  @override
+  String toJson() => _$Wired8021xSecuritySettingEnumMap[this]!;
 }
 
 final wired8021xSecuritySettingEnum = EnumBase(

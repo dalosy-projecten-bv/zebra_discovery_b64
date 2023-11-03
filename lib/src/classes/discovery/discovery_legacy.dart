@@ -1,3 +1,4 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_port_status.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/address_value.dart';
@@ -7,6 +8,9 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart'
 import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.dart';
 
+part 'discovery_legacy.g.dart';
+
+@JsonSerializable(createFactory: false)
 class DiscoveryLegacy extends Discovery {
   DiscoveryLegacy(super.byteArray)
       : productNumber = StringValue(byteArray, 4, 8),
@@ -81,4 +85,7 @@ class DiscoveryLegacy extends Discovery {
       MapEntry('ENCRYPTED_SET_COMMUNITY_NAME', setCommunityName.value),
     });
   }
+
+  @override
+  Map<String, dynamic> toJson() => _$DiscoveryLegacyToJson(this);
 }

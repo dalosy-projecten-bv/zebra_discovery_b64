@@ -1,7 +1,11 @@
 import 'dart:typed_data';
 
+import 'package:json_annotation/json_annotation.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_base.dart';
 
+part 'hex_value.g.dart';
+
+@JsonSerializable(createFactory: false)
 class HexValue extends ValueBase<String> {
   HexValue(
     Uint8List byteArray,
@@ -17,4 +21,6 @@ class HexValue extends ValueBase<String> {
               .toList()
               .join(),
         );
+
+  Map<String, dynamic> toJson() => _$HexValueToJson(this);
 }
