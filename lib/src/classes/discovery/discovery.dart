@@ -8,6 +8,7 @@ import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v2.
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v3.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v4.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_legacy.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/discovery_version.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/byte_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
 
@@ -37,44 +38,32 @@ abstract class Discovery {
     }
 
     //decode the base64 string to an array of bytes
-    final discoveryAsBytes = base64Decode(discoveryB64);
+    final byteArray = base64Decode(discoveryB64);
 
-    //Try to determine the version of the discovery message
-    if (discoveryAsBytes.length <= 3) {
-      throw Exception(
-        "The version can not be detected because the length of the message is too short (${discoveryAsBytes.length}).",
-      );
-    }
+    final discoveryVersion = DiscoveryVersion(byteArray);
 
-    //Use the version to return the right discovery class
-    final version = discoveryAsBytes[3];
-    switch (version) {
+    switch (discoveryVersion.version) {
       case 3:
-        return DiscoveryLegacy(discoveryAsBytes);
+        return DiscoveryLegacy(byteArray);
       case 4:
-        if (discoveryAsBytes.length <= 4) {
-          throw Exception(
-            "The advanced version can not be detected because the length of the message is too short (${discoveryAsBytes.length}).",
-          );
-        }
-        final advancedVersion = discoveryAsBytes[4];
-        switch (advancedVersion) {
+        switch (discoveryVersion.advancedVersion) {
           case 0:
-            return DiscoveryAdvancedV0(discoveryAsBytes);
+            return DiscoveryAdvancedV0(byteArray);
           case 1:
-            return DiscoveryAdvancedV1(discoveryAsBytes);
+            return DiscoveryAdvancedV1(byteArray);
           case 2:
-            return DiscoveryAdvancedV2(discoveryAsBytes);
+            return DiscoveryAdvancedV2(byteArray);
           case 3:
-            return DiscoveryAdvancedV3(discoveryAsBytes);
+            return DiscoveryAdvancedV3(byteArray);
           case >= 4:
-            return DiscoveryAdvancedV4(discoveryAsBytes);
+            return DiscoveryAdvancedV4(byteArray);
           default:
             throw Exception(
-                "The message contains an unknown advanced version ($version)");
+                "The message contains an unknown advanced version ($discoveryVersion)");
         }
       default:
-        throw Exception("The message contains an unknown version ($version)");
+        throw Exception(
+            "The message contains an unknown version ($discoveryVersion)");
     }
   }
 
