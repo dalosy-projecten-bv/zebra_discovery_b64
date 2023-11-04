@@ -1,15 +1,28 @@
 import 'dart:typed_data';
 
-abstract class ValueBase<T> {
-  ValueBase({
-    required Uint8List byteArray,
-    required this.start,
-    required this.length,
-    required this.value,
-  }) : byteArray = byteArray.sublist(start, start + length);
+import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 
-  final Uint8List byteArray;
+abstract class ValueBase<T> {
+  ValueBase(
+    Uint8List fullByteArray,
+    this.start,
+    this.length,
+  ) {
+    final result = fullByteArray.sublistSafe(start, start + length);
+    byteArray = result.byteArray;
+    decodeError = result.decodeError;
+    if (decodeError) {
+      value = null;
+      return;
+    }
+    value = constructValue(result.byteArray);
+  }
+
+  late final Uint8List byteArray;
   final int start;
   final int length;
-  final T value;
+  late final T? value;
+  late final bool decodeError;
+
+  T constructValue(Uint8List byteArray);
 }

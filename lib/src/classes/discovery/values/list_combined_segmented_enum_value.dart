@@ -7,7 +7,7 @@ part 'list_combined_segmented_enum_value.g.dart';
 @MyJsonSerializable()
 class ListCombinedSegmentedEnumValue<T extends Enum> {
   ListCombinedSegmentedEnumValue(this.segmentedEnumValues)
-      : values = [for (final sublist in segmentedEnumValues) ...sublist.value];
+      : values = [for (final sublist in segmentedEnumValues) ...?sublist.value];
   final List<ListSegmentedEnumValue<T>> segmentedEnumValues;
   final List<SegmentedEnumData<T>> values;
 

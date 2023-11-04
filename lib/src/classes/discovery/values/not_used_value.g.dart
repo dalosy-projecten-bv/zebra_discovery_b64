@@ -12,4 +12,5 @@ Map<String, dynamic> _$NotUsedValueToJson(NotUsedValue instance) =>
       'start': instance.start,
       'length': instance.length,
       'value': instance.value,
+      'decodeError': instance.decodeError,
     };

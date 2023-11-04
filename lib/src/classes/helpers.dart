@@ -25,3 +25,33 @@ extension ListExtension on Iterable<EnumData> {
     return map((e) => e.enumAsString).join(',');
   }
 }
+
+extension Uint8ListExtension on Uint8List {
+  ({
+    Uint8List byteArray,
+    bool decodeError,
+  }) sublistSafe(start, [int? end]) {
+    if (start >= length) {
+      return (
+        byteArray: Uint8List(0),
+        decodeError: true,
+      );
+    }
+    if (end == null) {
+      return (
+        byteArray: sublist(start),
+        decodeError: false,
+      );
+    }
+    if (end <= length) {
+      return (
+        byteArray: sublist(start, end),
+        decodeError: false,
+      );
+    }
+    return (
+      byteArray: sublist(start),
+      decodeError: true,
+    );
+  }
+}

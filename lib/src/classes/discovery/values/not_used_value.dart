@@ -7,17 +7,15 @@ import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.d
 part 'not_used_value.g.dart';
 
 @MyJsonSerializable()
-class NotUsedValue extends ValueBase {
+class NotUsedValue extends ValueBase<Object?> {
   NotUsedValue(
-    Uint8List byteArray,
-    int start,
-    int length,
-  ) : super(
-          byteArray: byteArray,
-          start: start,
-          length: length,
-          value: null,
-        );
+    super.fullByteArray,
+    super.start,
+    super.length,
+  );
+
+  @override
+  Object? constructValue(Uint8List byteArray) => null;
 
   Map<String, dynamic> toJson() => _$NotUsedValueToJson(this);
 }

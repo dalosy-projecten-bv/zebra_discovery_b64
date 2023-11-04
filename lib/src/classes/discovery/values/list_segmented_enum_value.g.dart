@@ -12,5 +12,8 @@ Map<String, dynamic> _$ListSegmentedEnumValueToJson<T extends Enum>(
       'byteArray': const Uint8ListConverter().toJson(instance.byteArray),
       'start': instance.start,
       'length': instance.length,
-      'value': instance.value.map((e) => e.toJson()).toList(),
+      'value': instance.value?.map((e) => e.toJson()).toList(),
+      'decodeError': instance.decodeError,
+      'enumBase': instance.enumBase.toJson(),
+      'segment': instance.segment,
     };

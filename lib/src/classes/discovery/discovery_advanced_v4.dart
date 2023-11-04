@@ -34,7 +34,7 @@ class DiscoveryAdvancedV4 extends DiscoveryAdvancedV3 {
       MapEntry('TLS_RAW_PORT_NUMBER', tlsRawPort.value.toString()),
       MapEntry('TLS_JSON_PORT_NUMBER', tlsJsonPort.value.toString()),
       MapEntry('WIRED_8021X_SECURITY_SETTING',
-          wired8021XSecuritySetting.value.enumAsString),
+          wired8021XSecuritySetting.value?.enumAsString),
     });
   }
 

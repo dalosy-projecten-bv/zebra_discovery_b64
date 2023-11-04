@@ -216,7 +216,7 @@ class DiscoveryAdvancedV0 extends Discovery {
         ),
         MapEntry(
           'ACTIVE_NETWORK_INTERFACE',
-          activeInterface.value.enumAsString,
+          activeInterface.value?.enumAsString,
         ),
         MapEntry('SERIAL_NUMBER', deviceUniqueId.value),
         MapEntry('DEVICE_UNIQUE_ID', deviceUniqueId.value),
@@ -224,14 +224,14 @@ class DiscoveryAdvancedV0 extends Discovery {
         MapEntry('HARDWARE_ADDRESS', macAddress.value),
         MapEntry(
           'USING_NET_PROTOCOL',
-          ipAcquisitionProto.value.enumeration != IpAcquisitionProtocol.static
+          ipAcquisitionProto.value?.enumeration != IpAcquisitionProtocol.static
               ? "true"
               : "false",
         ),
         MapEntry('DNS_NAME', systemName.value),
         MapEntry(
           'IP_ACQUISITION_PROTOCOL',
-          ipAcquisitionProto.value.enumAsString,
+          ipAcquisitionProto.value?.enumAsString,
         ),
         MapEntry('ADDRESS', ipAddress.value),
         MapEntry('SUBNET_MASK', subnetMask.value),
@@ -239,14 +239,14 @@ class DiscoveryAdvancedV0 extends Discovery {
         MapEntry('PORT_NUMBER', port.value.toString()),
         MapEntry(
           'AVAILABLE_NETWORK_PROTOCOLS',
-          availableProtocols.value.getCommaSeparatedList(),
+          availableProtocols.value?.getCommaSeparatedList(),
         ),
         MapEntry('AVAILABLE_INTERFACES',
-            availableInterfacesBitfield.value.getCommaSeparatedList()),
-        MapEntry('PRIMARY_LANGUAGE', primaryLanguage.value.enumAsString),
+            availableInterfacesBitfield.value?.getCommaSeparatedList()),
+        MapEntry('PRIMARY_LANGUAGE', primaryLanguage.value?.enumAsString),
         MapEntry(
           'AVAILABLE_LANGUAGES',
-          availableSecondaryLanguagesBitfield.value.getCommaSeparatedList(),
+          availableSecondaryLanguagesBitfield.value?.getCommaSeparatedList(),
         ),
         MapEntry(
           'SECONDARY_PRINTER_LANGUAGE',
@@ -257,9 +257,9 @@ class DiscoveryAdvancedV0 extends Discovery {
         MapEntry('LABEL_LENGTH', labelLength.value.toString()),
         MapEntry('LABEL_WIDTH', labelWidth.value.toString()),
         MapEntry('DARKNESS', darkness.value.toString()),
-        MapEntry('PRINTER_MEDIA_TYPE', mediaType.value.enumAsString),
-        MapEntry('PRINT_METHOD', printMethod.value.enumAsString),
-        MapEntry('PRINT_MODE', printMode.value.enumAsString),
+        MapEntry('PRINTER_MEDIA_TYPE', mediaType.value?.enumAsString),
+        MapEntry('PRINT_METHOD', printMethod.value?.enumAsString),
+        MapEntry('PRINT_MODE', printMode.value?.enumAsString),
         MapEntry('ODOMETER_TOTAL_LABEL_COUNT', odometerTotal.value.toString()),
         MapEntry('ODOMETER_MEDIAMARKER_COUNT_ONE',
             odometerMarkerOne.value.toString()),

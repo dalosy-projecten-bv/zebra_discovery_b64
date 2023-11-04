@@ -9,19 +9,16 @@ part 'hex_value.g.dart';
 @MyJsonSerializable()
 class HexValue extends ValueBase<String> {
   HexValue(
-    Uint8List byteArray,
-    int start,
-    int length,
-  ) : super(
-          byteArray: byteArray,
-          start: start,
-          length: length,
-          value: byteArray
-              .sublist(start, start + length)
-              .map((e) => e.toRadixString(16).toUpperCase().padRight(2, '0'))
-              .toList()
-              .join(),
-        );
+    super.fullByteArray,
+    super.start,
+    super.length,
+  );
+
+  @override
+  String constructValue(Uint8List byteArray) => byteArray
+      .map((e) => e.toRadixString(16).toUpperCase().padRight(2, '0'))
+      .toList()
+      .join();
 
   Map<String, dynamic> toJson() => _$HexValueToJson(this);
 }

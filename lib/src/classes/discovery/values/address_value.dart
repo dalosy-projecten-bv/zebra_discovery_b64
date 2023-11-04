@@ -9,18 +9,14 @@ part 'address_value.g.dart';
 @MyJsonSerializable()
 class AddressValue extends ValueBase<String> {
   AddressValue(
-    Uint8List byteArray,
-    int start,
-    int length,
-  ) : super(
-          byteArray: byteArray,
-          start: start,
-          length: length,
-          value: byteArray
-              .sublist(start, start + length)
-              .map((e) => e.toString())
-              .join('.'),
-        );
+    super.fullByteArray,
+    super.start,
+    super.length,
+  );
+
+  @override
+  String constructValue(Uint8List byteArray) =>
+      byteArray.map((e) => e.toString()).join('.');
 
   Map<String, dynamic> toJson() => _$AddressValueToJson(this);
 }

@@ -11,5 +11,7 @@ Map<String, dynamic> _$EnumValueToJson<T extends Enum>(EnumValue<T> instance) =>
       'byteArray': const Uint8ListConverter().toJson(instance.byteArray),
       'start': instance.start,
       'length': instance.length,
-      'value': instance.value.toJson(),
+      'value': instance.value?.toJson(),
+      'decodeError': instance.decodeError,
+      'enumBase': instance.enumBase.toJson(),
     };

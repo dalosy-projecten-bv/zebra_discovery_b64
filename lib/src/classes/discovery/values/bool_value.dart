@@ -10,18 +10,14 @@ part 'bool_value.g.dart';
 @MyJsonSerializable()
 class BoolValue extends ValueBase<bool> {
   BoolValue(
-    Uint8List byteArray,
-    int start,
-    int length,
-  ) : super(
-          byteArray: byteArray,
-          start: start,
-          length: length,
-          value: byteArray
-                  .sublist(start, start + length)
-                  .firstWhereOrNull((byte) => byte == 1) !=
-              null,
-        );
+    super.fullByteArray,
+    super.start,
+    super.length,
+  );
+
+  @override
+  bool constructValue(Uint8List byteArray) =>
+      byteArray.firstWhereOrNull((byte) => byte == 1) != null;
 
   Map<String, dynamic> toJson() => _$BoolValueToJson(this);
 }

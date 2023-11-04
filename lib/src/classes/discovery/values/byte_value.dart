@@ -9,15 +9,13 @@ part 'byte_value.g.dart';
 @MyJsonSerializable()
 class ByteValue extends ValueBase<int> {
   ByteValue(
-    Uint8List byteArray,
-    int start,
-    int length,
-  ) : super(
-          byteArray: byteArray,
-          start: start,
-          length: length,
-          value: byteArray[start],
-        );
+    super.fullByteArray,
+    super.start,
+    super.length,
+  );
+
+  @override
+  int constructValue(Uint8List byteArray) => byteArray[0];
 
   Map<String, dynamic> toJson() => _$ByteValueToJson(this);
 }

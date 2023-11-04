@@ -58,12 +58,13 @@ class DiscoveryLegacy extends Discovery {
     map.addEntries({
       MapEntry(
           'PORT_NUMBER',
-          productName.value.startsWith('QL') ||
-                  productName.value.startsWith('RW') ||
-                  productName.value.startsWith('MZ') ||
-                  productName.value.startsWith('P4T') ||
-                  productName.value.startsWith('MQ') ||
-                  productName.value.startsWith('MU')
+          productName.value == null ||
+                  productName.value!.startsWith('QL') ||
+                  productName.value!.startsWith('RW') ||
+                  productName.value!.startsWith('MZ') ||
+                  productName.value!.startsWith('P4T') ||
+                  productName.value!.startsWith('MQ') ||
+                  productName.value!.startsWith('MU')
               ? '6101'
               : '9100'),
       MapEntry('DNS_NAME', systemName.value),
@@ -81,7 +82,7 @@ class DiscoveryLegacy extends Discovery {
       MapEntry('GATEWAY', defaultGateway.value),
       MapEntry('SYSTEM_NAME', systemName.value),
       MapEntry('PORT_NAME', portName.value),
-      MapEntry('PORT_STATUS', portStatus.value.enumAsString),
+      MapEntry('PORT_STATUS', portStatus.value?.enumAsString),
       MapEntry('ENCRYPTED_GET_COMMUNITY_NAME', getCommunityName.value),
       MapEntry('ENCRYPTED_SET_COMMUNITY_NAME', setCommunityName.value),
     });

@@ -11,19 +11,17 @@ part 'list_enum_value.g.dart';
 @MyJsonSerializable()
 class ListEnumValue<T extends Enum> extends ValueBase<List<EnumData<T>>> {
   ListEnumValue(
-    Uint8List byteArray,
-    int start,
-    int length,
-    EnumBase<T> enumBase,
-  ) : super(
-          byteArray: byteArray,
-          start: start,
-          length: length,
-          value: enumBase.listFromByteArray(byteArray.sublist(
-            start,
-            start + length,
-          )),
-        );
+    super.fullByteArray,
+    super.start,
+    super.length,
+    this.enumBase,
+  );
+
+  final EnumBase<T> enumBase;
+
+  @override
+  List<EnumData<T>> constructValue(Uint8List byteArray) =>
+      enumBase.listFromByteArray(byteArray);
 
   Map<String, dynamic> toJson() => _$ListEnumValueToJson(this);
 }

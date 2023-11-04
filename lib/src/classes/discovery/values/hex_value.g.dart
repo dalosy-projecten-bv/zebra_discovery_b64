@@ -11,4 +11,5 @@ Map<String, dynamic> _$HexValueToJson(HexValue instance) => <String, dynamic>{
       'start': instance.start,
       'length': instance.length,
       'value': instance.value,
+      'decodeError': instance.decodeError,
     };
