@@ -203,7 +203,7 @@ void main() {
       bytesBuilder.add(Uint8List.fromList(
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       ));
-      final result = StringValue(bytesBuilder.toBytes(),0, 13);
+      final result = StringValue(bytesBuilder.toBytes(), 0, 13);
       expect(result.value, serial);
     });
   });
