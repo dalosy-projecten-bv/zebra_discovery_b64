@@ -10,22 +10,22 @@ void main() {
     final list = Uint8List.fromList([127, 0, 0, 1]);
 
     test('address_value', () {
-      final address = AddressValue(list, 0, 4);
-      expect(address.error, false);
-      expect(address.length, 4);
-      expect(uint8ListEquals(address.byteArray, list), true);
-      expect(address.value, '127.0.0.1');
+      final value = AddressValue(list, 0, 4);
+      expect(value.error, false);
+      expect(value.length, 4);
+      expect(uint8ListEquals(value.byteArray, list), true);
+      expect(value.value, '127.0.0.1');
     });
 
     test('address_value invalid', () {
-      final address = AddressValue(list, 1, 4);
-      expect(address.error, true);
-      expect(address.length, 4);
+      final value = AddressValue(list, 1, 4);
+      expect(value.error, true);
+      expect(value.length, 4);
       expect(
-        uint8ListEquals(address.byteArray, list.sublist(1)),
+        uint8ListEquals(value.byteArray, list.sublist(1)),
         true,
       );
-      expect(address.value, null);
+      expect(value.value, null);
     });
   });
 }
