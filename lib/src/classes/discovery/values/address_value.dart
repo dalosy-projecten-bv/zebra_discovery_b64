@@ -5,7 +5,10 @@ import 'package:zebra_discovery_b64/src/classes/json/my_json_serializable.dart';
 import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.dart';
 
 part 'address_value.g.dart';
-
+///The AddressValue class joins each byte value with a dot.
+///The value is taken 'as-is'. There are no checks if the result is a valid
+///address. The individual values will always have a value 0-255. The number
+///of values
 @MyJsonSerializable()
 class AddressValue extends ValueBase<String> {
   AddressValue(
