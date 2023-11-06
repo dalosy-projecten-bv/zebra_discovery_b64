@@ -7,6 +7,7 @@ import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.d
 
 part 'bool_value.g.dart';
 
+///This boolean value is true if there is at least one byte in the array with a value of 1.
 @MyJsonSerializable()
 class BoolValue extends ValueBase<bool> {
   BoolValue(
