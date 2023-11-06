@@ -6,7 +6,7 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/bool_value.dart
 import 'helpers/helpers.dart';
 
 void main() {
-  group('Uint8ListExtension tests', () {
+  group('BoolValue tests', () {
     test('bool_value single false', () {
       final list = Uint8List.fromList([0]);
       final value = BoolValue(list, 0, 1);

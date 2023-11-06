@@ -7,7 +7,7 @@ import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 import 'helpers/helpers.dart';
 
 void main() {
-  group('Uint8ListExtension tests', () {
+  group('Helpers tests', () {
     final list = Uint8List.fromList([0, 1, 2, 4, 8, 16, 32, 64, 128, 255]);
     // 00000000
     // 00000001
