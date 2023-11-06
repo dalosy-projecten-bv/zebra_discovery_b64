@@ -12,6 +12,6 @@ Map<String, dynamic> _$EnumValueToJson<T extends Enum>(EnumValue<T> instance) =>
       'start': instance.start,
       'length': instance.length,
       'value': instance.value?.toJson(),
-      'decodeError': instance.decodeError,
+      'decodeError': instance.error,
       'enumBase': instance.enumBase.toJson(),
     };

@@ -11,5 +11,5 @@ Map<String, dynamic> _$ByteValueToJson(ByteValue instance) => <String, dynamic>{
       'start': instance.start,
       'length': instance.length,
       'value': instance.value,
-      'decodeError': instance.decodeError,
+      'decodeError': instance.error,
     };

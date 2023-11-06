@@ -13,7 +13,7 @@ Map<String, dynamic> _$ListSegmentedEnumValueToJson<T extends Enum>(
       'start': instance.start,
       'length': instance.length,
       'value': instance.value?.map((e) => e.toJson()).toList(),
-      'decodeError': instance.decodeError,
+      'decodeError': instance.error,
       'enumBase': instance.enumBase.toJson(),
       'segment': instance.segment,
     };

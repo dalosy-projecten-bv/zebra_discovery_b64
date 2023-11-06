@@ -10,8 +10,8 @@ abstract class ValueBase<T> {
   ) {
     final result = fullByteArray.sublistSafe(start, start + length);
     byteArray = result.byteArray;
-    decodeError = result.decodeError;
-    if (decodeError) {
+    error = result.error;
+    if (error) {
       value = null;
       return;
     }
@@ -22,7 +22,7 @@ abstract class ValueBase<T> {
   final int start;
   final int length;
   late final T? value;
-  late final bool decodeError;
+  late final bool error;
 
   T constructValue(Uint8List byteArray);
 }
