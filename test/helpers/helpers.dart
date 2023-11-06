@@ -5,6 +5,23 @@ import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_error.da
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_interface.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_warning.dart';
 
+bool uint8ListEquals(Uint8List list1, Uint8List list2) {
+  if (list1.length != list2.length) {
+    return false;
+  }
+
+  for (final (index, item) in list1.indexed) {
+    if (item != list2[index]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+void printAsByte(int value) {
+  print(value.toRadixString(2).padLeft(8, '0'));
+}
+
 void printAsBinary32(int value) {
   print(value.toRadixString(2).padLeft(32, '0'));
 }

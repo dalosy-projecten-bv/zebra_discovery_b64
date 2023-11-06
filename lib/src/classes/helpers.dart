@@ -29,29 +29,35 @@ extension ListExtension on Iterable<EnumData> {
 extension Uint8ListExtension on Uint8List {
   ({
     Uint8List byteArray,
-    bool decodeError,
+    bool error,
   }) sublistSafe(start, [int? end]) {
+    if (start < 0) {
+      return (
+      byteArray: Uint8List(0),
+      error: true,
+      );
+    }
     if (start >= length) {
       return (
         byteArray: Uint8List(0),
-        decodeError: true,
+        error: true,
       );
     }
     if (end == null) {
       return (
         byteArray: sublist(start),
-        decodeError: false,
+        error: false,
       );
     }
     if (end <= length) {
       return (
         byteArray: sublist(start, end),
-        decodeError: false,
+        error: false,
       );
     }
     return (
       byteArray: sublist(start),
-      decodeError: true,
+      error: true,
     );
   }
 }

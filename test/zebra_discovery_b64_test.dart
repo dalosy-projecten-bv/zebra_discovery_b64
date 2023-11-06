@@ -7,7 +7,7 @@ import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.da
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 import 'package:zebra_discovery_b64/zebra_discovery_b64.dart';
 
-import 'test_helpers.dart';
+import 'helpers/helpers.dart';
 
 void main() {
   final String discoveryB64AdvancedV4 =
