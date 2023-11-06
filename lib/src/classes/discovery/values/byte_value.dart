@@ -6,6 +6,7 @@ import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.d
 
 part 'byte_value.g.dart';
 
+///The integer representation (0-255) is returned from the first byte in the array
 @MyJsonSerializable()
 class ByteValue extends ValueBase<int> {
   ByteValue(
