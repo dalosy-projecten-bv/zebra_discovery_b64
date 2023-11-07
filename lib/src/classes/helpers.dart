@@ -33,8 +33,8 @@ extension Uint8ListExtension on Uint8List {
   }) sublistSafe(start, [int? end]) {
     if (start < 0) {
       return (
-      byteArray: Uint8List(0),
-      error: true,
+        byteArray: Uint8List(0),
+        error: true,
       );
     }
     if (start >= length) {

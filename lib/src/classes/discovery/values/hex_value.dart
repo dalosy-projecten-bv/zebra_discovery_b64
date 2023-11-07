@@ -6,7 +6,6 @@ import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.d
 
 part 'hex_value.g.dart';
 
-
 ///The hex value representation (00-FF) is returned for each byte in the byte array
 @MyJsonSerializable()
 class HexValue extends ValueBase<String> {
