@@ -13,6 +13,6 @@ Map<String, dynamic> _$ListEnumValueToJson<T extends Enum>(
       'start': instance.start,
       'length': instance.length,
       'value': instance.value?.map((e) => e.toJson()).toList(),
-      'decodeError': instance.error,
+      'error': instance.error,
       'enumBase': instance.enumBase.toJson(),
     };

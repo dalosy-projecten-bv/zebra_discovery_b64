@@ -11,5 +11,5 @@ Map<String, dynamic> _$BoolValueToJson(BoolValue instance) => <String, dynamic>{
       'start': instance.start,
       'length': instance.length,
       'value': instance.value,
-      'decodeError': instance.error,
+      'error': instance.error,
     };

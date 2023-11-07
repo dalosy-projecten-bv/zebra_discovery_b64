@@ -11,5 +11,6 @@ Map<String, dynamic> _$ListCombinedSegmentedEnumValueToJson<T extends Enum>(
     <String, dynamic>{
       'segmentedEnumValues':
           instance.segmentedEnumValues.map((e) => e.toJson()).toList(),
-      'values': instance.values.map((e) => e.toJson()).toList(),
+      'values': instance.values?.map((e) => e.toJson()).toList(),
+      'error': instance.error,
     };
