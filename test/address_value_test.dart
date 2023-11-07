@@ -7,7 +7,8 @@ import 'helpers/helpers.dart';
 
 void main() {
   group('AddressValue tests', () {
-    final list = Uint8List.fromList([127, 0, 0, 1, 255]);
+    final list = Uint8List.fromList([127, 0, 0, 1]);
+    final list5Values = Uint8List.fromList([127, 0, 0, 1, 255]);
 
     test('address_value', () {
       final value = AddressValue(list, 0, 4);
@@ -51,11 +52,11 @@ void main() {
     });
 
     test('address_value 5 values', () {
-      final value = AddressValue(list, 0, 5);
+      final value = AddressValue(list5Values, 0, 5);
       expect(value.error, false);
       expect(value.length, 5);
       expect(
-        uint8ListEquals(value.byteArray, list),
+        uint8ListEquals(value.byteArray, list5Values),
         true,
       );
       expect(value.value, '127.0.0.1.255');
