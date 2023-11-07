@@ -29,7 +29,7 @@ void main() {
     });
 
     test('list_enum_value last value', () {
-      final byteValue1 = int.parse('0001 0000'.removeSpaces(), radix: 2);
+      final byteValue1 = int.parse('0000 1000'.removeSpaces(), radix: 2);
       final byteValue2 = int.parse('0000 0000'.removeSpaces(), radix: 2);
 
       final list = Uint8List.fromList([byteValue1, byteValue2]);
@@ -50,7 +50,7 @@ void main() {
     //Almost all, except NetworkProtocol.none, which can not be encoded, because
     //there is no bitfieldValue 0
     test('list_enum_value all values', () {
-      final byteValue1 = int.parse('0001 1111'.removeSpaces(), radix: 2);
+      final byteValue1 = int.parse('0000 1111'.removeSpaces(), radix: 2);
       final byteValue2 = int.parse('1111 1111'.removeSpaces(), radix: 2);
 
       final list = Uint8List.fromList([byteValue1, byteValue2]);
