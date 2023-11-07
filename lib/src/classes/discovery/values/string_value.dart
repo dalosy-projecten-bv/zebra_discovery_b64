@@ -6,6 +6,8 @@ import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.d
 
 part 'string_value.g.dart';
 
+///The StringValue converts an array of bytes to a string until it finds a
+///null character or when it reaches the end of the array.
 @MyJsonSerializable()
 class StringValue extends ValueBase<String> {
   StringValue(

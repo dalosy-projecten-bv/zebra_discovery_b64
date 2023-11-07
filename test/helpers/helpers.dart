@@ -5,6 +5,9 @@ import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_error.da
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_interface.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_warning.dart';
 
+const printableAscii = r' !"'
+    r"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+
 bool uint8ListEquals(Uint8List list1, Uint8List list2) {
   if (list1.length != list2.length) {
     return false;
