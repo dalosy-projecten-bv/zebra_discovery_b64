@@ -43,7 +43,7 @@ void main() {
       expect(value.value, 9223372036854775807);
     });
 
-    test('byte_value invalid', () {
+    test('int_value invalid', () {
       final list = Uint8List.fromList([255, 255, 255, 255]);
       final value = IntValue(list, 1, 4);
       expect(value.error, true);
