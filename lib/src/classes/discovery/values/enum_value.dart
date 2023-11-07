@@ -8,6 +8,10 @@ import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.d
 
 part 'enum_value.g.dart';
 
+///The enum value is determined by the integer representation of the byte list.
+///The first enum found where the bitfieldvalue is the same as the integer
+///is returned.
+///If no enum is found, the default enum value is returned
 @MyJsonSerializable()
 class EnumValue<T extends Enum> extends ValueBase<EnumData<T>> {
   EnumValue(
