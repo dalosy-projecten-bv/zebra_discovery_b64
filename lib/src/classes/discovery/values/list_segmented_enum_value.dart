@@ -8,6 +8,7 @@ import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.d
 
 part 'list_segmented_enum_value.g.dart';
 
+///This is one item for the ListCombinedSegmentedEnumValue
 @MyJsonSerializable()
 class ListSegmentedEnumValue<T extends Enum>
     extends ValueBase<List<SegmentedEnumData<T>>> {
