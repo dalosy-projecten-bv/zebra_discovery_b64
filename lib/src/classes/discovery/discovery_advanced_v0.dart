@@ -208,11 +208,11 @@ class DiscoveryAdvancedV0 extends Discovery {
         MapEntry('LOCATION', location.value),
         MapEntry(
           'ERRORS',
-          errors.values.getCommaSeparatedList(),
+          errors.values?.getCommaSeparatedList(),
         ),
         MapEntry(
           'WARNINGS',
-          warnings.values.getCommaSeparatedList(),
+          warnings.values?.getCommaSeparatedList(),
         ),
         MapEntry(
           'ACTIVE_NETWORK_INTERFACE',
