@@ -8,6 +8,9 @@ import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.d
 
 part 'list_enum_value.g.dart';
 
+///This returns a list of enum values. Each enum where the corresponding
+///bit is 1, indicated by the bitfieldvalue, is added to the list
+///If no enum is found, an empty list is returned.
 @MyJsonSerializable()
 class ListEnumValue<T extends Enum> extends ValueBase<List<EnumData<T>>> {
   ListEnumValue(
