@@ -22,9 +22,7 @@ void main() {
       expect(
         equals(
           value.value!.map((e) => e.enumeration).toList(),
-          [
-            NetworkProtocol.ftp,
-          ],
+          [NetworkProtocol.ftp],
         ),
         true,
       );
