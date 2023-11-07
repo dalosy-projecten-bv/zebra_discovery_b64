@@ -6,6 +6,8 @@ import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.d
 
 part 'not_used_value.g.dart';
 
+///The NotUsedValue can be used to skip bytes from the source, but 'document'
+///them anyway. It also shows that the byte are skipped intentionally.
 @MyJsonSerializable()
 class NotUsedValue extends ValueBase<Object?> {
   NotUsedValue(
