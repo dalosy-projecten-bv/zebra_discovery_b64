@@ -8,8 +8,8 @@ import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.d
 part 'int_value.g.dart';
 
 ///The list of bytes is converted to a single integer value
-///The first byte is the most significant byte
-///The last byte is the least significant byte
+///The first byte on position 0 is the most significant byte
+///The last byte on position [length-1]is the least significant byte
 @MyJsonSerializable()
 class IntValue extends ValueBase<int> {
   IntValue(
