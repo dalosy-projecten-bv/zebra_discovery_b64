@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// coverage:ignore-file
+
 part of 'wired_8021x_security_setting.dart';
 
 // **************************************************************************

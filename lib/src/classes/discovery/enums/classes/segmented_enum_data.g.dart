@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// coverage:ignore-file
+
 part of 'segmented_enum_data.dart';
 
 // **************************************************************************

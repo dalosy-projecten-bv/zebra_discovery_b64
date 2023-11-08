@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// coverage:ignore-file
+
 part of 'not_used_value.dart';
 
 // **************************************************************************
