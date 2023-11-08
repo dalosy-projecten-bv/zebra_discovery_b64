@@ -8,3 +8,9 @@ pubspec.lock
 
 # Exclude all Android Studio or IntelliJ IDEA files
 .idea/
+
+#Exclude build folders
+build/
+
+#Exclude coverage folders
+coverage/
