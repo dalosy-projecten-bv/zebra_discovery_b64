@@ -10,6 +10,7 @@ class Uint8ListConverter extends JsonConverter<Uint8List, List<String>> {
   Uint8List fromJson(List<String> json) {
     throw UnimplementedError();
   }
+
   // coverage:ignore-end
 
   @override
