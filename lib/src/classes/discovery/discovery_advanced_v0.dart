@@ -7,6 +7,7 @@ import 'package:zebra_discovery_b64/src/classes/discovery/enums/print_mode.dart'
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_error.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_interface.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_media_type.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_port_status.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_warning.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/secondary_printer_language.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/zbi_state.dart';
@@ -271,10 +272,28 @@ class DiscoveryAdvancedV0 extends Discovery {
         MapEntry('ZBI_ENABLED', zbiEnabled.value.toString()),
         MapEntry('ZBI_MAJOR_VER', zbiMajorVersion.value.toString()),
         MapEntry('ZBI_MINOR_VER', zbiMinorVersion.value.toString()),
-        // MapEntry('PORT_STATUS', ),
+        MapEntry('PORT_STATUS', getPortStatus().enumAsString),
+        MapEntry('PRODUCT_NUMBER', ''),
+        MapEntry('PORT_NAME', ''),
+        MapEntry('DATE_CODE', ''),
       },
     );
     // TODO: implement initMap
+  }
+
+  PrinterPortStatus getPortStatus() {
+    final err =
+        errors.values?.map((e) => e.enumeration).toList() ?? <PrinterError>[];
+
+    return err.contains(PrinterError.headOpen)
+        ? PrinterPortStatus.doorOpen
+        : err.contains(PrinterError.mediaOut)
+            ? PrinterPortStatus.paperOut
+            : err.contains(PrinterError.paperFeedError)
+                ? PrinterPortStatus.paperJammed
+                : err.isEmpty
+                    ? PrinterPortStatus.online
+                    : PrinterPortStatus.printerError;
   }
 
   @override
