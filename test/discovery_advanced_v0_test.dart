@@ -6,12 +6,12 @@ import 'package:zebra_discovery_b64/zebra_discovery_b64.dart';
 
 void main() {
   //This is a real string, received from an actual device
-  final String discoveryB64AdvancedV4 =
+  final String discoveryB64AdvancedV0 =
       "OiwuBAABAAFaQlIAAEQzSjE5MzIwNjcyMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFpUQyBaRDYyMC0yMDNkcGkgWlBMAAAAAAAAAAAAAAAAVjg0LjIwLjIzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG1EM0oxOTMyMDY3MjIAAAAAAAAAAAAAAAAAAAAAAAAAAGhvbWUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAdNnRgUAADAqAFM////AMCoAQEX1Q7/AAAAAQAAAAUAAAADAAgR8ATQA0AAZAACAAAAAQAAAPsAAA/lAAAP5QAAAAABAAIBA0Aj8AYEMC4xMwAAGykIAALSsBojtyQbAAA=:c0cb";
 
   group('Test advancedV0', () {
     test('Decode an advancedV0 message', () {
-      final discovery = Discovery.fromDiscoveryB64(discoveryB64AdvancedV4);
+      final discovery = Discovery.fromDiscoveryB64(discoveryB64AdvancedV0);
       expect(discovery, isA<DiscoveryAdvancedV0>());
       final json = discovery.toJson();
       JsonEncoder encoder = JsonEncoder.withIndent('  ');
