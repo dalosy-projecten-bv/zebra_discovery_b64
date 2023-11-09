@@ -8,9 +8,7 @@ import 'package:zebra_discovery_b64/src/classes/helpers.dart';
 import 'helpers/helpers.dart';
 
 void main() {
-
   group('additional tests', () {
-
     test('Test error codes', () {
       final errorsSegment0 = Uint8List.fromList([
         int.parse('0000 0000'.removeSpaces(), radix: 2),
