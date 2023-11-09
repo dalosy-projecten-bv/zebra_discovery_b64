@@ -22,10 +22,7 @@ void main() {
       expect(discovery.map['ADVANCED_DISCOVERY_VER'], '4');
       expect(discovery.map['COMPANY_ABBREVIATION'], 'ZBR');
       expect(discovery.map['SYSTEM_NAME'], 'D3J193206722');
-      expect(
-          discovery.map['PRODUCT_NAME'],
-          'ZTC ZD620-20'
-          '3dpi ZPL');
+      expect(discovery.map['PRODUCT_NAME'], 'ZTC ZD620-203dpi ZPL');
       expect(discovery.map['FIRMWARE_VER'], 'V84.20.23');
       expect(discovery.map['LOCATION'], '');
       expect(discovery.map['ERRORS'], '');
