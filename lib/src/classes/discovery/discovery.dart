@@ -58,12 +58,12 @@ abstract class Discovery {
           case >= 4:
             return DiscoveryAdvancedV4(byteArray);
           default:
-            throw Exception(
-                "The message contains an unknown advanced version ($discoveryVersion)");
+            throw FormatException(
+                "The message contains an unknown advanced version (${discoveryVersion.advancedVersion})");
         }
       default:
-        throw Exception(
-            "The message contains an unknown version ($discoveryVersion)");
+        throw FormatException(
+            "The message contains an unknown version (${discoveryVersion.version})");
     }
   }
 

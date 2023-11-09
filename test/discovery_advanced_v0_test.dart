@@ -9,6 +9,8 @@ void main() {
   final String discoveryB64AdvancedV0 =
       "OiwuBAABAAFaQlIAAEQzSjE5MzIwNjcyMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFpUQyBaRDYyMC0yMDNkcGkgWlBMAAAAAAAAAAAAAAAAVjg0LjIwLjIzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG1EM0oxOTMyMDY3MjIAAAAAAAAAAAAAAAAAAAAAAAAAAGhvbWUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAdNnRgUAADAqAFM////AMCoAQEX1Q7/AAAAAQAAAAUAAAADAAgR8ATQA0AAZAACAAAAAQAAAPsAAA/lAAAP5QAAAAABAAIBA0Aj8AYEMC4xMwAAGykIAALSsBojtyQbAAA=:c0cb";
 
+  final String discoveryB64V4Short = "OiwuBA==";
+
   group('Test advancedV0', () {
     test('Decode an advancedV0 message', () {
       final discovery = Discovery.fromDiscoveryB64(discoveryB64AdvancedV0);
@@ -73,6 +75,15 @@ void main() {
       expect(discovery.map['DATE_CODE'], '');
 
       expect(discovery.map.length, 47);
+    });
+
+    test('Decode a too short advanced message', () {
+      expect(
+          () => Discovery.fromDiscoveryB64(discoveryB64V4Short),
+          throwsA(predicate((e) =>
+              e is FormatException &&
+              e.message ==
+                  'The message contains an unknown advanced version (-1)')));
     });
   });
 }
