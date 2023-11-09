@@ -1,12 +1,26 @@
+import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:collection/collection.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/network_protocol.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_error.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_interface.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_warning.dart';
 
+Function eq = const DeepCollectionEquality().equals;
+
 const printableAscii = r' !"'
     r"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+
+// Inspiration taken from:
+// https://github.com/flutter/flutter/issues/20907#issuecomment-557634184
+String testResources(String name) {
+  var dir = Directory.current.path;
+  if (dir.endsWith('/test')) {
+    dir = dir.replaceAll('/test', '');
+  }
+  return File('$dir/test/test_resources/$name').readAsStringSync();
+}
 
 bool uint8ListEquals(Uint8List list1, Uint8List list2) {
   if (list1.length != list2.length) {

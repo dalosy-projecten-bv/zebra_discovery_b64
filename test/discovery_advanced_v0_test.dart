@@ -4,6 +4,8 @@ import 'package:test/test.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v0.dart';
 import 'package:zebra_discovery_b64/zebra_discovery_b64.dart';
 
+import 'helpers/helpers.dart';
+
 void main() {
   //This is a real string, received from an actual device
   final String discoveryB64AdvancedV0 =
@@ -14,11 +16,8 @@ void main() {
   group('Test advancedV0', () {
     test('Decode an advancedV0 message', () {
       final discovery = Discovery.fromDiscoveryB64(discoveryB64AdvancedV0);
+
       expect(discovery, isA<DiscoveryAdvancedV0>());
-      final json = discovery.toJson();
-      JsonEncoder encoder = JsonEncoder.withIndent('  ');
-      String prettyprint = encoder.convert(json);
-      print(prettyprint);
 
       expect(discovery.map['DISCOVERY_VER'], '4');
       expect(discovery.map['ADVANCED_DISCOVERY_VER'], '0');
@@ -34,10 +33,8 @@ void main() {
       expect(discovery.map['DEVICE_UNIQUE_ID'], 'D3J193206722');
       expect(discovery.map['DNS_DOMAIN'], 'home');
       expect(discovery.map['HARDWARE_ADDRESS'], '00704D9D1814');
-
       expect(discovery.map['USING_NET_PROTOCOL'], 'true');
       expect(discovery.map['DNS_NAME'], 'home');
-
       expect(discovery.map['IP_ACQUISITION_PROTOCOL'], 'All');
       expect(discovery.map['ADDRESS'], '192.168.1.76');
       expect(discovery.map['SUBNET_MASK'], '255.255.255.0');
@@ -45,7 +42,6 @@ void main() {
       expect(discovery.map['PORT_NUMBER'], '6101');
       expect(discovery.map['AVAILABLE_NETWORK_PROTOCOLS'],
           'FTP,LPD,TCP,UDP,HTTP,SMTP,POP3,SNMP,Weblink,TLS,HTTPS');
-
       expect(discovery.map['AVAILABLE_INTERFACES'],
           'Internal Wired,Wireless,Bluetooth,Serial,USB');
       expect(discovery.map['PRIMARY_LANGUAGE'], 'ZPL');
@@ -68,13 +64,17 @@ void main() {
       expect(discovery.map['ZBI_STATE'], 'Disabled');
       expect(discovery.map['ZBI_MAJOR_VER'], '2');
       expect(discovery.map['ZBI_MINOR_VER'], '1');
-
       expect(discovery.map['PORT_STATUS'], 'Online');
       expect(discovery.map['PRODUCT_NUMBER'], '');
       expect(discovery.map['PORT_NAME'], '');
       expect(discovery.map['DATE_CODE'], '');
-
       expect(discovery.map.length, 47);
+
+      final json = discovery.toJson();
+      final jsonExpected = jsonDecode(
+        testResources('discovery_advanced_v0.json'),
+      );
+      expect(eq(json, jsonExpected), true);
     });
 
     test('Decode a too short advanced message', () {
