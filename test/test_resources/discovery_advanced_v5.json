@@ -1,0 +1,2264 @@
+{
+  "byteArray": [
+    "00111010",
+    "00101100",
+    "00101110",
+    "00000100",
+    "00000101",
+    "00000001",
+    "00000000",
+    "00000001",
+    "01011010",
+    "01000010",
+    "01010010",
+    "00000000",
+    "00000000",
+    "01000100",
+    "00110011",
+    "01001010",
+    "00110001",
+    "00111001",
+    "00110011",
+    "00110010",
+    "00110000",
+    "00110110",
+    "00110111",
+    "00110010",
+    "00110010",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "01011010",
+    "01010100",
+    "01000011",
+    "00100000",
+    "01011010",
+    "01000100",
+    "00110110",
+    "00110010",
+    "00110000",
+    "00101101",
+    "00110010",
+    "00110000",
+    "00110011",
+    "01100100",
+    "01110000",
+    "01101001",
+    "00100000",
+    "01011010",
+    "01010000",
+    "01001100",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "01010110",
+    "00111000",
+    "00110100",
+    "00101110",
+    "00110010",
+    "00110000",
+    "00101110",
+    "00110010",
+    "00110011",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "01101101",
+    "01000100",
+    "00110011",
+    "01001010",
+    "00110001",
+    "00111001",
+    "00110011",
+    "00110010",
+    "00110000",
+    "00110110",
+    "00110111",
+    "00110010",
+    "00110010",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "01101000",
+    "01101111",
+    "01101101",
+    "01100101",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000001",
+    "00000000",
+    "00000111",
+    "01001101",
+    "10011101",
+    "00011000",
+    "00010100",
+    "00000000",
+    "00000000",
+    "11000000",
+    "10101000",
+    "00000001",
+    "01001100",
+    "11111111",
+    "11111111",
+    "11111111",
+    "00000000",
+    "11000000",
+    "10101000",
+    "00000001",
+    "00000001",
+    "00010111",
+    "11010101",
+    "00001110",
+    "11111111",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000001",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000101",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000011",
+    "00000000",
+    "00001000",
+    "00010001",
+    "11110000",
+    "00000100",
+    "11010000",
+    "00000011",
+    "01000000",
+    "00000000",
+    "01100100",
+    "00000000",
+    "00000010",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000001",
+    "00000000",
+    "00000000",
+    "00000000",
+    "11111011",
+    "00000000",
+    "00000000",
+    "00001111",
+    "11100101",
+    "00000000",
+    "00000000",
+    "00001111",
+    "11100101",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000000",
+    "00000001",
+    "00000000",
+    "00000010",
+    "00000001",
+    "00000011",
+    "01000000",
+    "00100011",
+    "11110000",
+    "00000110",
+    "00000100",
+    "00110000",
+    "00101110",
+    "00110001",
+    "00110011",
+    "00000000",
+    "00000000",
+    "00011011",
+    "00101001",
+    "00001000",
+    "00000000",
+    "00000010",
+    "11010010",
+    "10110000",
+    "00011010",
+    "00100011",
+    "10110111",
+    "00100100",
+    "00011011",
+    "00000000",
+    "00000000"
+  ],
+  "notUsed1": {
+    "byteArray": [
+      "00111010",
+      "00101100",
+      "00101110"
+    ],
+    "start": 0,
+    "length": 3,
+    "value": null,
+    "error": false
+  },
+  "discoveryVersion": {
+    "byteArray": [
+      "00000100"
+    ],
+    "start": 3,
+    "length": 1,
+    "value": 4,
+    "error": false
+  },
+  "map": {
+    "DISCOVERY_VER": "4",
+    "ADVANCED_DISCOVERY_VER": "5",
+    "COMPANY_ABBREVIATION": "ZBR",
+    "SYSTEM_NAME": "D3J193206722",
+    "PRODUCT_NAME": "ZTC ZD620-203dpi ZPL",
+    "FIRMWARE_VER": "V84.20.23",
+    "LOCATION": "",
+    "ERRORS": "",
+    "WARNINGS": "",
+    "ACTIVE_NETWORK_INTERFACE": "Internal Wired",
+    "SERIAL_NUMBER": "D3J193206722",
+    "DEVICE_UNIQUE_ID": "D3J193206722",
+    "DNS_DOMAIN": "home",
+    "HARDWARE_ADDRESS": "00704D9D1814",
+    "USING_NET_PROTOCOL": "true",
+    "DNS_NAME": "home",
+    "IP_ACQUISITION_PROTOCOL": "All",
+    "ADDRESS": "192.168.1.76",
+    "SUBNET_MASK": "255.255.255.0",
+    "GATEWAY": "192.168.1.1",
+    "PORT_NUMBER": "6101",
+    "AVAILABLE_NETWORK_PROTOCOLS": "FTP,LPD,TCP,UDP,HTTP,SMTP,POP3,SNMP,Weblink,TLS,HTTPS",
+    "AVAILABLE_INTERFACES": "Internal Wired,Wireless,Bluetooth,Serial,USB",
+    "PRIMARY_LANGUAGE": "ZPL",
+    "AVAILABLE_LANGUAGES": "ZPL,EPL",
+    "SECONDARY_PRINTER_LANGUAGE": "Unknown,SGD,SNMP",
+    "DOTS_PER_MM": "8",
+    "DOTS_PER_ROW": "4592",
+    "LABEL_LENGTH": "1232",
+    "LABEL_WIDTH": "832",
+    "DARKNESS": "100",
+    "PRINTER_MEDIA_TYPE": "Gap",
+    "PRINT_METHOD": "Direct Thermal",
+    "PRINT_MODE": "Tear Off",
+    "ODOMETER_TOTAL_LABEL_COUNT": "251",
+    "ODOMETER_MEDIAMARKER_COUNT_ONE": "4069",
+    "ODOMETER_MEDIAMARKER_COUNT_TWO": "4069",
+    "NUMBER_LABELS_REMAIN_IN_BATCH": "0",
+    "NUMBER_LABELS_QUEUED": "0",
+    "ZBI_ENABLED": "true",
+    "ZBI_STATE": "Disabled",
+    "ZBI_MAJOR_VER": "2",
+    "ZBI_MINOR_VER": "1",
+    "PORT_STATUS": "Online",
+    "PRODUCT_NUMBER": "",
+    "PORT_NAME": "",
+    "DATE_CODE": "",
+    "PRINT_HEAD_WIDTH": "832",
+    "JSON_PORT_NUMBER": "9200",
+    "LINK_OS_MAJOR_VER": "6",
+    "LINK_OS_MINOR_VER": "4",
+    "AVS_INI_VER": "0.13",
+    "PROCESSOR_ID": "1B29800020D2B01A",
+    "TLS_RAW_PORT_NUMBER": "9143",
+    "TLS_JSON_PORT_NUMBER": "9243",
+    "WIRED_8021X_SECURITY_SETTING": "None"
+  },
+  "advancedPacketFormat": {
+    "byteArray": [
+      "00000101"
+    ],
+    "start": 4,
+    "length": 1,
+    "value": 5,
+    "error": false
+  },
+  "notUsed2": {
+    "byteArray": [
+      "00000001",
+      "00000000",
+      "00000001"
+    ],
+    "start": 5,
+    "length": 3,
+    "value": null,
+    "error": false
+  },
+  "companyAbbreviation": {
+    "byteArray": [
+      "01011010",
+      "01000010",
+      "01010010",
+      "00000000",
+      "00000000"
+    ],
+    "start": 8,
+    "length": 5,
+    "value": "ZBR",
+    "error": false
+  },
+  "systemName": {
+    "byteArray": [
+      "01000100",
+      "00110011",
+      "01001010",
+      "00110001",
+      "00111001",
+      "00110011",
+      "00110010",
+      "00110000",
+      "00110110",
+      "00110111",
+      "00110010",
+      "00110010",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000"
+    ],
+    "start": 13,
+    "length": 63,
+    "value": "D3J193206722",
+    "error": false
+  },
+  "productName": {
+    "byteArray": [
+      "01011010",
+      "01010100",
+      "01000011",
+      "00100000",
+      "01011010",
+      "01000100",
+      "00110110",
+      "00110010",
+      "00110000",
+      "00101101",
+      "00110010",
+      "00110000",
+      "00110011",
+      "01100100",
+      "01110000",
+      "01101001",
+      "00100000",
+      "01011010",
+      "01010000",
+      "01001100",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000"
+    ],
+    "start": 76,
+    "length": 32,
+    "value": "ZTC ZD620-203dpi ZPL",
+    "error": false
+  },
+  "fwVersion": {
+    "byteArray": [
+      "01010110",
+      "00111000",
+      "00110100",
+      "00101110",
+      "00110010",
+      "00110000",
+      "00101110",
+      "00110010",
+      "00110011",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000"
+    ],
+    "start": 108,
+    "length": 16,
+    "value": "V84.20.23",
+    "error": false
+  },
+  "location": {
+    "byteArray": [
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000"
+    ],
+    "start": 124,
+    "length": 36,
+    "value": "",
+    "error": false
+  },
+  "errors": {
+    "segmentedEnumValues": [
+      {
+        "byteArray": [
+          "00000000",
+          "00000000",
+          "00000000",
+          "00000000"
+        ],
+        "start": 160,
+        "length": 4,
+        "value": [],
+        "error": false,
+        "enumBase": {
+          "values": [
+            {
+              "enumeration": "none",
+              "segment": 0,
+              "bitfieldValue": 0,
+              "enumAsString": "None"
+            },
+            {
+              "enumeration": "mediaOut",
+              "segment": 2,
+              "bitfieldValue": 1,
+              "enumAsString": "Paper Out"
+            },
+            {
+              "enumeration": "ribbonOut",
+              "segment": 2,
+              "bitfieldValue": 2,
+              "enumAsString": "Ribbon Out"
+            },
+            {
+              "enumeration": "headOpen",
+              "segment": 2,
+              "bitfieldValue": 4,
+              "enumAsString": "Head Open"
+            },
+            {
+              "enumeration": "printheadShutdown",
+              "segment": 2,
+              "bitfieldValue": 16,
+              "enumAsString": "Printhead Shutdown"
+            },
+            {
+              "enumeration": "motorOvertemp",
+              "segment": 2,
+              "bitfieldValue": 32,
+              "enumAsString": "Motor Overtemp"
+            },
+            {
+              "enumeration": "invalidHead",
+              "segment": 2,
+              "bitfieldValue": 128,
+              "enumAsString": "Invalid Head"
+            },
+            {
+              "enumeration": "thermistorFault",
+              "segment": 2,
+              "bitfieldValue": 512,
+              "enumAsString": "Thermistor Fault"
+            },
+            {
+              "enumeration": "paperFeedError",
+              "segment": 2,
+              "bitfieldValue": 16384,
+              "enumAsString": "Paper Feed"
+            },
+            {
+              "enumeration": "paused",
+              "segment": 2,
+              "bitfieldValue": 65536,
+              "enumAsString": "Paused"
+            },
+            {
+              "enumeration": "basicRuntimeError",
+              "segment": 2,
+              "bitfieldValue": 1048576,
+              "enumAsString": "Basic Runtime Error"
+            },
+            {
+              "enumeration": "basicForced",
+              "segment": 2,
+              "bitfieldValue": 2097152,
+              "enumAsString": "Basic Forced"
+            }
+          ]
+        },
+        "segment": 0
+      },
+      {
+        "byteArray": [
+          "00000000",
+          "00000000",
+          "00000000",
+          "00000000"
+        ],
+        "start": 164,
+        "length": 4,
+        "value": [],
+        "error": false,
+        "enumBase": {
+          "values": [
+            {
+              "enumeration": "none",
+              "segment": 0,
+              "bitfieldValue": 0,
+              "enumAsString": "None"
+            },
+            {
+              "enumeration": "mediaOut",
+              "segment": 2,
+              "bitfieldValue": 1,
+              "enumAsString": "Paper Out"
+            },
+            {
+              "enumeration": "ribbonOut",
+              "segment": 2,
+              "bitfieldValue": 2,
+              "enumAsString": "Ribbon Out"
+            },
+            {
+              "enumeration": "headOpen",
+              "segment": 2,
+              "bitfieldValue": 4,
+              "enumAsString": "Head Open"
+            },
+            {
+              "enumeration": "printheadShutdown",
+              "segment": 2,
+              "bitfieldValue": 16,
+              "enumAsString": "Printhead Shutdown"
+            },
+            {
+              "enumeration": "motorOvertemp",
+              "segment": 2,
+              "bitfieldValue": 32,
+              "enumAsString": "Motor Overtemp"
+            },
+            {
+              "enumeration": "invalidHead",
+              "segment": 2,
+              "bitfieldValue": 128,
+              "enumAsString": "Invalid Head"
+            },
+            {
+              "enumeration": "thermistorFault",
+              "segment": 2,
+              "bitfieldValue": 512,
+              "enumAsString": "Thermistor Fault"
+            },
+            {
+              "enumeration": "paperFeedError",
+              "segment": 2,
+              "bitfieldValue": 16384,
+              "enumAsString": "Paper Feed"
+            },
+            {
+              "enumeration": "paused",
+              "segment": 2,
+              "bitfieldValue": 65536,
+              "enumAsString": "Paused"
+            },
+            {
+              "enumeration": "basicRuntimeError",
+              "segment": 2,
+              "bitfieldValue": 1048576,
+              "enumAsString": "Basic Runtime Error"
+            },
+            {
+              "enumeration": "basicForced",
+              "segment": 2,
+              "bitfieldValue": 2097152,
+              "enumAsString": "Basic Forced"
+            }
+          ]
+        },
+        "segment": 1
+      },
+      {
+        "byteArray": [
+          "00000000",
+          "00000000",
+          "00000000",
+          "00000000"
+        ],
+        "start": 168,
+        "length": 4,
+        "value": [],
+        "error": false,
+        "enumBase": {
+          "values": [
+            {
+              "enumeration": "none",
+              "segment": 0,
+              "bitfieldValue": 0,
+              "enumAsString": "None"
+            },
+            {
+              "enumeration": "mediaOut",
+              "segment": 2,
+              "bitfieldValue": 1,
+              "enumAsString": "Paper Out"
+            },
+            {
+              "enumeration": "ribbonOut",
+              "segment": 2,
+              "bitfieldValue": 2,
+              "enumAsString": "Ribbon Out"
+            },
+            {
+              "enumeration": "headOpen",
+              "segment": 2,
+              "bitfieldValue": 4,
+              "enumAsString": "Head Open"
+            },
+            {
+              "enumeration": "printheadShutdown",
+              "segment": 2,
+              "bitfieldValue": 16,
+              "enumAsString": "Printhead Shutdown"
+            },
+            {
+              "enumeration": "motorOvertemp",
+              "segment": 2,
+              "bitfieldValue": 32,
+              "enumAsString": "Motor Overtemp"
+            },
+            {
+              "enumeration": "invalidHead",
+              "segment": 2,
+              "bitfieldValue": 128,
+              "enumAsString": "Invalid Head"
+            },
+            {
+              "enumeration": "thermistorFault",
+              "segment": 2,
+              "bitfieldValue": 512,
+              "enumAsString": "Thermistor Fault"
+            },
+            {
+              "enumeration": "paperFeedError",
+              "segment": 2,
+              "bitfieldValue": 16384,
+              "enumAsString": "Paper Feed"
+            },
+            {
+              "enumeration": "paused",
+              "segment": 2,
+              "bitfieldValue": 65536,
+              "enumAsString": "Paused"
+            },
+            {
+              "enumeration": "basicRuntimeError",
+              "segment": 2,
+              "bitfieldValue": 1048576,
+              "enumAsString": "Basic Runtime Error"
+            },
+            {
+              "enumeration": "basicForced",
+              "segment": 2,
+              "bitfieldValue": 2097152,
+              "enumAsString": "Basic Forced"
+            }
+          ]
+        },
+        "segment": 2
+      }
+    ],
+    "values": [],
+    "error": false
+  },
+  "warnings": {
+    "segmentedEnumValues": [
+      {
+        "byteArray": [
+          "00000000",
+          "00000000",
+          "00000000",
+          "00000000"
+        ],
+        "start": 172,
+        "length": 4,
+        "value": [],
+        "error": false,
+        "enumBase": {
+          "values": [
+            {
+              "enumeration": "none",
+              "segment": 0,
+              "bitfieldValue": 0,
+              "enumAsString": "None"
+            },
+            {
+              "enumeration": "headUnderTemp",
+              "segment": 2,
+              "bitfieldValue": 4096,
+              "enumAsString": "Head Cold"
+            },
+            {
+              "enumeration": "ribbonIn",
+              "segment": 2,
+              "bitfieldValue": 8192,
+              "enumAsString": "Ribbon In"
+            },
+            {
+              "enumeration": "batteryLow",
+              "segment": 2,
+              "bitfieldValue": 16384,
+              "enumAsString": "Battery Low"
+            },
+            {
+              "enumeration": "rfidError",
+              "segment": 2,
+              "bitfieldValue": 32768,
+              "enumAsString": "RFID Error"
+            }
+          ]
+        },
+        "segment": 0
+      },
+      {
+        "byteArray": [
+          "00000000",
+          "00000000",
+          "00000000",
+          "00000000"
+        ],
+        "start": 176,
+        "length": 4,
+        "value": [],
+        "error": false,
+        "enumBase": {
+          "values": [
+            {
+              "enumeration": "none",
+              "segment": 0,
+              "bitfieldValue": 0,
+              "enumAsString": "None"
+            },
+            {
+              "enumeration": "headUnderTemp",
+              "segment": 2,
+              "bitfieldValue": 4096,
+              "enumAsString": "Head Cold"
+            },
+            {
+              "enumeration": "ribbonIn",
+              "segment": 2,
+              "bitfieldValue": 8192,
+              "enumAsString": "Ribbon In"
+            },
+            {
+              "enumeration": "batteryLow",
+              "segment": 2,
+              "bitfieldValue": 16384,
+              "enumAsString": "Battery Low"
+            },
+            {
+              "enumeration": "rfidError",
+              "segment": 2,
+              "bitfieldValue": 32768,
+              "enumAsString": "RFID Error"
+            }
+          ]
+        },
+        "segment": 1
+      },
+      {
+        "byteArray": [
+          "00000000",
+          "00000000",
+          "00000000",
+          "00000000"
+        ],
+        "start": 180,
+        "length": 4,
+        "value": [],
+        "error": false,
+        "enumBase": {
+          "values": [
+            {
+              "enumeration": "none",
+              "segment": 0,
+              "bitfieldValue": 0,
+              "enumAsString": "None"
+            },
+            {
+              "enumeration": "headUnderTemp",
+              "segment": 2,
+              "bitfieldValue": 4096,
+              "enumAsString": "Head Cold"
+            },
+            {
+              "enumeration": "ribbonIn",
+              "segment": 2,
+              "bitfieldValue": 8192,
+              "enumAsString": "Ribbon In"
+            },
+            {
+              "enumeration": "batteryLow",
+              "segment": 2,
+              "bitfieldValue": 16384,
+              "enumAsString": "Battery Low"
+            },
+            {
+              "enumeration": "rfidError",
+              "segment": 2,
+              "bitfieldValue": 32768,
+              "enumAsString": "RFID Error"
+            }
+          ]
+        },
+        "segment": 2
+      }
+    ],
+    "values": [],
+    "error": false
+  },
+  "availableInterfacesBitfield": {
+    "byteArray": [
+      "00000000",
+      "00000000",
+      "00000000",
+      "01101101"
+    ],
+    "start": 184,
+    "length": 4,
+    "value": [
+      {
+        "enumeration": "internalWired",
+        "bitfieldValue": 1,
+        "enumAsString": "Internal Wired"
+      },
+      {
+        "enumeration": "wireless",
+        "bitfieldValue": 4,
+        "enumAsString": "Wireless"
+      },
+      {
+        "enumeration": "bluetooth",
+        "bitfieldValue": 8,
+        "enumAsString": "Bluetooth"
+      },
+      {
+        "enumeration": "serial",
+        "bitfieldValue": 32,
+        "enumAsString": "Serial"
+      },
+      {
+        "enumeration": "usb",
+        "bitfieldValue": 64,
+        "enumAsString": "USB"
+      }
+    ],
+    "error": false,
+    "enumBase": {
+      "defaultEnum": "unknown",
+      "values": [
+        {
+          "enumeration": "unknown",
+          "bitfieldValue": 0,
+          "enumAsString": "Unknown"
+        },
+        {
+          "enumeration": "internalWired",
+          "bitfieldValue": 1,
+          "enumAsString": "Internal Wired"
+        },
+        {
+          "enumeration": "externalWired",
+          "bitfieldValue": 2,
+          "enumAsString": "External Wired"
+        },
+        {
+          "enumeration": "wireless",
+          "bitfieldValue": 4,
+          "enumAsString": "Wireless"
+        },
+        {
+          "enumeration": "bluetooth",
+          "bitfieldValue": 8,
+          "enumAsString": "Bluetooth"
+        },
+        {
+          "enumeration": "parallel",
+          "bitfieldValue": 16,
+          "enumAsString": "Parallel"
+        },
+        {
+          "enumeration": "serial",
+          "bitfieldValue": 32,
+          "enumAsString": "Serial"
+        },
+        {
+          "enumeration": "usb",
+          "bitfieldValue": 64,
+          "enumAsString": "USB"
+        },
+        {
+          "enumeration": "sdCard",
+          "bitfieldValue": 128,
+          "enumAsString": "SD Card"
+        },
+        {
+          "enumeration": "battery",
+          "bitfieldValue": 256,
+          "enumAsString": "Battery"
+        }
+      ]
+    }
+  },
+  "deviceUniqueId": {
+    "byteArray": [
+      "01000100",
+      "00110011",
+      "01001010",
+      "00110001",
+      "00111001",
+      "00110011",
+      "00110010",
+      "00110000",
+      "00110110",
+      "00110111",
+      "00110010",
+      "00110010",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000"
+    ],
+    "start": 188,
+    "length": 32,
+    "value": "D3J193206722",
+    "error": false
+  },
+  "dnsDomain": {
+    "byteArray": [
+      "01101000",
+      "01101111",
+      "01101101",
+      "01100101",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000000"
+    ],
+    "start": 220,
+    "length": 100,
+    "value": "home",
+    "error": false
+  },
+  "activeInterface": {
+    "byteArray": [
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000001"
+    ],
+    "start": 320,
+    "length": 4,
+    "value": {
+      "enumeration": "internalWired",
+      "bitfieldValue": 1,
+      "enumAsString": "Internal Wired"
+    },
+    "error": false,
+    "enumBase": {
+      "defaultEnum": "unknown",
+      "values": [
+        {
+          "enumeration": "unknown",
+          "bitfieldValue": 0,
+          "enumAsString": "Unknown"
+        },
+        {
+          "enumeration": "internalWired",
+          "bitfieldValue": 1,
+          "enumAsString": "Internal Wired"
+        },
+        {
+          "enumeration": "externalWired",
+          "bitfieldValue": 2,
+          "enumAsString": "External Wired"
+        },
+        {
+          "enumeration": "wireless",
+          "bitfieldValue": 4,
+          "enumAsString": "Wireless"
+        },
+        {
+          "enumeration": "bluetooth",
+          "bitfieldValue": 8,
+          "enumAsString": "Bluetooth"
+        },
+        {
+          "enumeration": "parallel",
+          "bitfieldValue": 16,
+          "enumAsString": "Parallel"
+        },
+        {
+          "enumeration": "serial",
+          "bitfieldValue": 32,
+          "enumAsString": "Serial"
+        },
+        {
+          "enumeration": "usb",
+          "bitfieldValue": 64,
+          "enumAsString": "USB"
+        },
+        {
+          "enumeration": "sdCard",
+          "bitfieldValue": 128,
+          "enumAsString": "SD Card"
+        },
+        {
+          "enumeration": "battery",
+          "bitfieldValue": 256,
+          "enumAsString": "Battery"
+        }
+      ]
+    }
+  },
+  "macAddress": {
+    "byteArray": [
+      "00000000",
+      "00000111",
+      "01001101",
+      "10011101",
+      "00011000",
+      "00010100"
+    ],
+    "start": 324,
+    "length": 6,
+    "value": "00704D9D1814",
+    "error": false
+  },
+  "ipAcquisitionProto": {
+    "byteArray": [
+      "00000000",
+      "00000000"
+    ],
+    "start": 330,
+    "length": 2,
+    "value": {
+      "enumeration": "all",
+      "bitfieldValue": 0,
+      "enumAsString": "All"
+    },
+    "error": false,
+    "enumBase": {
+      "defaultEnum": "all",
+      "values": [
+        {
+          "enumeration": "all",
+          "bitfieldValue": 0,
+          "enumAsString": "All"
+        },
+        {
+          "enumeration": "glean",
+          "bitfieldValue": 1,
+          "enumAsString": "Glean"
+        },
+        {
+          "enumeration": "rarp",
+          "bitfieldValue": 2,
+          "enumAsString": "RARP"
+        },
+        {
+          "enumeration": "bootp",
+          "bitfieldValue": 3,
+          "enumAsString": "Bootp"
+        },
+        {
+          "enumeration": "dhcp",
+          "bitfieldValue": 4,
+          "enumAsString": "DHCP"
+        },
+        {
+          "enumeration": "dhcpAndBootp",
+          "bitfieldValue": 5,
+          "enumAsString": "DHCP and Bootp"
+        },
+        {
+          "enumeration": "static",
+          "bitfieldValue": 6,
+          "enumAsString": "Static"
+        }
+      ]
+    }
+  },
+  "ipAddress": {
+    "byteArray": [
+      "11000000",
+      "10101000",
+      "00000001",
+      "01001100"
+    ],
+    "start": 332,
+    "length": 4,
+    "value": "192.168.1.76",
+    "error": false
+  },
+  "subnetMask": {
+    "byteArray": [
+      "11111111",
+      "11111111",
+      "11111111",
+      "00000000"
+    ],
+    "start": 336,
+    "length": 4,
+    "value": "255.255.255.0",
+    "error": false
+  },
+  "gatewayMask": {
+    "byteArray": [
+      "11000000",
+      "10101000",
+      "00000001",
+      "00000001"
+    ],
+    "start": 340,
+    "length": 4,
+    "value": "192.168.1.1",
+    "error": false
+  },
+  "port": {
+    "byteArray": [
+      "00010111",
+      "11010101"
+    ],
+    "start": 344,
+    "length": 2,
+    "value": 6101,
+    "error": false
+  },
+  "availableProtocols": {
+    "byteArray": [
+      "00001110",
+      "11111111"
+    ],
+    "start": 346,
+    "length": 2,
+    "value": [
+      {
+        "enumeration": "ftp",
+        "bitfieldValue": 1,
+        "enumAsString": "FTP"
+      },
+      {
+        "enumeration": "lpd",
+        "bitfieldValue": 2,
+        "enumAsString": "LPD"
+      },
+      {
+        "enumeration": "tcpRaw",
+        "bitfieldValue": 4,
+        "enumAsString": "TCP"
+      },
+      {
+        "enumeration": "udpRaw",
+        "bitfieldValue": 8,
+        "enumAsString": "UDP"
+      },
+      {
+        "enumeration": "http",
+        "bitfieldValue": 16,
+        "enumAsString": "HTTP"
+      },
+      {
+        "enumeration": "smtp",
+        "bitfieldValue": 32,
+        "enumAsString": "SMTP"
+      },
+      {
+        "enumeration": "pop3",
+        "bitfieldValue": 64,
+        "enumAsString": "POP3"
+      },
+      {
+        "enumeration": "snmp",
+        "bitfieldValue": 128,
+        "enumAsString": "SNMP"
+      },
+      {
+        "enumeration": "weblink",
+        "bitfieldValue": 512,
+        "enumAsString": "Weblink"
+      },
+      {
+        "enumeration": "tls",
+        "bitfieldValue": 1024,
+        "enumAsString": "TLS"
+      },
+      {
+        "enumeration": "https",
+        "bitfieldValue": 2048,
+        "enumAsString": "HTTPS"
+      }
+    ],
+    "error": false,
+    "enumBase": {
+      "defaultEnum": "none",
+      "values": [
+        {
+          "enumeration": "none",
+          "bitfieldValue": 0,
+          "enumAsString": "None"
+        },
+        {
+          "enumeration": "ftp",
+          "bitfieldValue": 1,
+          "enumAsString": "FTP"
+        },
+        {
+          "enumeration": "lpd",
+          "bitfieldValue": 2,
+          "enumAsString": "LPD"
+        },
+        {
+          "enumeration": "tcpRaw",
+          "bitfieldValue": 4,
+          "enumAsString": "TCP"
+        },
+        {
+          "enumeration": "udpRaw",
+          "bitfieldValue": 8,
+          "enumAsString": "UDP"
+        },
+        {
+          "enumeration": "http",
+          "bitfieldValue": 16,
+          "enumAsString": "HTTP"
+        },
+        {
+          "enumeration": "smtp",
+          "bitfieldValue": 32,
+          "enumAsString": "SMTP"
+        },
+        {
+          "enumeration": "pop3",
+          "bitfieldValue": 64,
+          "enumAsString": "POP3"
+        },
+        {
+          "enumeration": "snmp",
+          "bitfieldValue": 128,
+          "enumAsString": "SNMP"
+        },
+        {
+          "enumeration": "telnet",
+          "bitfieldValue": 256,
+          "enumAsString": "Telnet"
+        },
+        {
+          "enumeration": "weblink",
+          "bitfieldValue": 512,
+          "enumAsString": "Weblink"
+        },
+        {
+          "enumeration": "tls",
+          "bitfieldValue": 1024,
+          "enumAsString": "TLS"
+        },
+        {
+          "enumeration": "https",
+          "bitfieldValue": 2048,
+          "enumAsString": "HTTPS"
+        }
+      ]
+    }
+  },
+  "primaryLanguage": {
+    "byteArray": [
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000001"
+    ],
+    "start": 348,
+    "length": 4,
+    "value": {
+      "enumeration": "zpl",
+      "bitfieldValue": 1,
+      "enumAsString": "ZPL"
+    },
+    "error": false,
+    "enumBase": {
+      "defaultEnum": "unknown",
+      "values": [
+        {
+          "enumeration": "unknown",
+          "bitfieldValue": 0,
+          "enumAsString": "unknown"
+        },
+        {
+          "enumeration": "zpl",
+          "bitfieldValue": 1,
+          "enumAsString": "ZPL"
+        },
+        {
+          "enumeration": "cpcl",
+          "bitfieldValue": 2,
+          "enumAsString": "CPCL"
+        },
+        {
+          "enumeration": "epl",
+          "bitfieldValue": 4,
+          "enumAsString": "EPL"
+        }
+      ]
+    }
+  },
+  "availableLanguagesBitfield": {
+    "byteArray": [
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000101"
+    ],
+    "start": 352,
+    "length": 4,
+    "value": [
+      {
+        "enumeration": "zpl",
+        "bitfieldValue": 1,
+        "enumAsString": "ZPL"
+      },
+      {
+        "enumeration": "epl",
+        "bitfieldValue": 4,
+        "enumAsString": "EPL"
+      }
+    ],
+    "error": false,
+    "enumBase": {
+      "defaultEnum": "unknown",
+      "values": [
+        {
+          "enumeration": "unknown",
+          "bitfieldValue": 0,
+          "enumAsString": "unknown"
+        },
+        {
+          "enumeration": "zpl",
+          "bitfieldValue": 1,
+          "enumAsString": "ZPL"
+        },
+        {
+          "enumeration": "cpcl",
+          "bitfieldValue": 2,
+          "enumAsString": "CPCL"
+        },
+        {
+          "enumeration": "epl",
+          "bitfieldValue": 4,
+          "enumAsString": "EPL"
+        }
+      ]
+    }
+  },
+  "availableSecondaryLanguagesBitfield": {
+    "byteArray": [
+      "00000000",
+      "00000000",
+      "00000000",
+      "00000011"
+    ],
+    "start": 356,
+    "length": 4,
+    "value": [
+      {
+        "enumeration": "sgd",
+        "bitfieldValue": 1,
+        "enumAsString": "SGD"
+      },
+      {
+        "enumeration": "snmp",
+        "bitfieldValue": 2,
+        "enumAsString": "SNMP"
+      }
+    ],
+    "error": false,
+    "enumBase": {
+      "defaultEnum": "unknown",
+      "values": [
+        {
+          "enumeration": "unknown",
+          "bitfieldValue": 0,
+          "enumAsString": "Unknown"
+        },
+        {
+          "enumeration": "sgd",
+          "bitfieldValue": 1,
+          "enumAsString": "SGD"
+        },
+        {
+          "enumeration": "snmp",
+          "bitfieldValue": 2,
+          "enumAsString": "SNMP"
+        }
+      ]
+    }
+  },
+  "dotsPerMm": {
+    "byteArray": [
+      "00000000",
+      "00001000"
+    ],
+    "start": 360,
+    "length": 2,
+    "value": 8,
+    "error": false
+  },
+  "dotsPerDotRow": {
+    "byteArray": [
+      "00010001",
+      "11110000"
+    ],
+    "start": 362,
+    "length": 2,
+    "value": 4592,
+    "error": false
+  },
+  "labelLength": {
+    "byteArray": [
+      "00000100",
+      "11010000"
+    ],
+    "start": 364,
+    "length": 2,
+    "value": 1232,
+    "error": false
+  },
+  "labelWidth": {
+    "byteArray": [
+      "00000011",
+      "01000000"
+    ],
+    "start": 366,
+    "length": 2,
+    "value": 832,
+    "error": false
+  },
+  "darkness": {
+    "byteArray": [
+      "00000000",
+      "01100100"
+    ],
+    "start": 368,
+    "length": 2,
+    "value": 100,
+    "error": false
+  },
+  "mediaType": {
+    "byteArray": [
+      "00000000",
+      "00000010"
+    ],
+    "start": 370,
+    "length": 2,
+    "value": {
+      "enumeration": "gap",
+      "bitfieldValue": 2,
+      "enumAsString": "Gap"
+    },
+    "error": false,
+    "enumBase": {
+      "defaultEnum": "gap",
+      "values": [
+        {
+          "enumeration": "continuous",
+          "bitfieldValue": 0,
+          "enumAsString": "Continuous"
+        },
+        {
+          "enumeration": "blackMark",
+          "bitfieldValue": 1,
+          "enumAsString": "Black Mark"
+        },
+        {
+          "enumeration": "gap",
+          "bitfieldValue": 2,
+          "enumAsString": "Gap"
+        }
+      ]
+    }
+  },
+  "printMethod": {
+    "byteArray": [
+      "00000000",
+      "00000000"
+    ],
+    "start": 372,
+    "length": 2,
+    "value": {
+      "enumeration": "directThermal",
+      "bitfieldValue": 0,
+      "enumAsString": "Direct Thermal"
+    },
+    "error": false,
+    "enumBase": {
+      "defaultEnum": "directThermal",
+      "values": [
+        {
+          "enumeration": "directThermal",
+          "bitfieldValue": 0,
+          "enumAsString": "Direct Thermal"
+        },
+        {
+          "enumeration": "thermalTransfer",
+          "bitfieldValue": 1,
+          "enumAsString": "Thermal Transfer"
+        }
+      ]
+    }
+  },
+  "printMode": {
+    "byteArray": [
+      "00000000",
+      "00000001"
+    ],
+    "start": 374,
+    "length": 2,
+    "value": {
+      "enumeration": "tearOff",
+      "bitfieldValue": 1,
+      "enumAsString": "Tear Off"
+    },
+    "error": false,
+    "enumBase": {
+      "defaultEnum": "rewind",
+      "values": [
+        {
+          "enumeration": "rewind",
+          "bitfieldValue": 0,
+          "enumAsString": "Rewind"
+        },
+        {
+          "enumeration": "tearOff",
+          "bitfieldValue": 1,
+          "enumAsString": "Tear Off"
+        },
+        {
+          "enumeration": "peelOff",
+          "bitfieldValue": 2,
+          "enumAsString": "Peel Off"
+        },
+        {
+          "enumeration": "pace",
+          "bitfieldValue": 3,
+          "enumAsString": "Pace"
+        },
+        {
+          "enumeration": "cutter",
+          "bitfieldValue": 4,
+          "enumAsString": "Cutter"
+        },
+        {
+          "enumeration": "delayedCut",
+          "bitfieldValue": 5,
+          "enumAsString": "Delayed Cuts"
+        },
+        {
+          "enumeration": "applicator",
+          "bitfieldValue": 6,
+          "enumAsString": "Applicator"
+        },
+        {
+          "enumeration": "linerlessPeel",
+          "bitfieldValue": 7,
+          "enumAsString": "Linerless Peel"
+        },
+        {
+          "enumeration": "linerlessRewind",
+          "bitfieldValue": 8,
+          "enumAsString": "Linerless Rewind"
+        },
+        {
+          "enumeration": "partialCutter",
+          "bitfieldValue": 9,
+          "enumAsString": "Partial Cutter"
+        },
+        {
+          "enumeration": "rfid",
+          "bitfieldValue": 10,
+          "enumAsString": "RFID"
+        },
+        {
+          "enumeration": "linerlessTear",
+          "bitfieldValue": 11,
+          "enumAsString": "Linerless Tear"
+        }
+      ]
+    }
+  },
+  "odometerTotal": {
+    "byteArray": [
+      "00000000",
+      "00000000",
+      "00000000",
+      "11111011"
+    ],
+    "start": 376,
+    "length": 4,
+    "value": 251,
+    "error": false
+  },
+  "odometerMarkerOne": {
+    "byteArray": [
+      "00000000",
+      "00000000",
+      "00001111",
+      "11100101"
+    ],
+    "start": 380,
+    "length": 4,
+    "value": 4069,
+    "error": false
+  },
+  "odometerMarkerTwo": {
+    "byteArray": [
+      "00000000",
+      "00000000",
+      "00001111",
+      "11100101"
+    ],
+    "start": 384,
+    "length": 4,
+    "value": 4069,
+    "error": false
+  },
+  "numOfLabelsInBatch": {
+    "byteArray": [
+      "00000000",
+      "00000000"
+    ],
+    "start": 388,
+    "length": 2,
+    "value": 0,
+    "error": false
+  },
+  "labelsQueued": {
+    "byteArray": [
+      "00000000",
+      "00000000"
+    ],
+    "start": 390,
+    "length": 2,
+    "value": 0,
+    "error": false
+  },
+  "zbiEnabled": {
+    "byteArray": [
+      "00000001"
+    ],
+    "start": 392,
+    "length": 1,
+    "value": true,
+    "error": false
+  },
+  "zbiState": {
+    "byteArray": [
+      "00000000"
+    ],
+    "start": 393,
+    "length": 1,
+    "value": {
+      "enumeration": "disabled",
+      "bitfieldValue": 0,
+      "enumAsString": "Disabled"
+    },
+    "error": false,
+    "enumBase": {
+      "defaultEnum": "stopped",
+      "values": [
+        {
+          "enumeration": "disabled",
+          "bitfieldValue": 0,
+          "enumAsString": "Disabled"
+        },
+        {
+          "enumeration": "stopped",
+          "bitfieldValue": 1,
+          "enumAsString": "Stopped"
+        },
+        {
+          "enumeration": "running",
+          "bitfieldValue": 2,
+          "enumAsString": "Running"
+        }
+      ]
+    }
+  },
+  "zbiMajorVersion": {
+    "byteArray": [
+      "00000010"
+    ],
+    "start": 394,
+    "length": 1,
+    "value": 2,
+    "error": false
+  },
+  "zbiMinorVersion": {
+    "byteArray": [
+      "00000001"
+    ],
+    "start": 395,
+    "length": 1,
+    "value": 1,
+    "error": false
+  },
+  "printHeadWidth": {
+    "byteArray": [
+      "00000011",
+      "01000000"
+    ],
+    "start": 396,
+    "length": 2,
+    "value": 832,
+    "error": false
+  },
+  "jsonPort": {
+    "byteArray": [
+      "00100011",
+      "11110000"
+    ],
+    "start": 398,
+    "length": 2,
+    "value": 9200,
+    "error": false
+  },
+  "linkOsMajorVer": {
+    "byteArray": [
+      "00000110"
+    ],
+    "start": 400,
+    "length": 1,
+    "value": 6,
+    "error": false
+  },
+  "linkOsMinorVer": {
+    "byteArray": [
+      "00000100"
+    ],
+    "start": 401,
+    "length": 1,
+    "value": 4,
+    "error": false
+  },
+  "avsIniVersion": {
+    "byteArray": [
+      "00110000",
+      "00101110",
+      "00110001",
+      "00110011",
+      "00000000",
+      "00000000"
+    ],
+    "start": 402,
+    "length": 6,
+    "value": "0.13",
+    "error": false
+  },
+  "processorId": {
+    "byteArray": [
+      "00011011",
+      "00101001",
+      "00001000",
+      "00000000",
+      "00000010",
+      "11010010",
+      "10110000",
+      "00011010"
+    ],
+    "start": 408,
+    "length": 8,
+    "value": "1B29800020D2B01A",
+    "error": false
+  },
+  "tlsRawPort": {
+    "byteArray": [
+      "00100011",
+      "10110111"
+    ],
+    "start": 416,
+    "length": 2,
+    "value": 9143,
+    "error": false
+  },
+  "tlsJsonPort": {
+    "byteArray": [
+      "00100100",
+      "00011011"
+    ],
+    "start": 418,
+    "length": 2,
+    "value": 9243,
+    "error": false
+  },
+  "wired8021XSecuritySetting": {
+    "byteArray": [
+      "00000000"
+    ],
+    "start": 420,
+    "length": 1,
+    "value": {
+      "enumeration": "none",
+      "bitfieldValue": 0,
+      "enumAsString": "None"
+    },
+    "error": false,
+    "enumBase": {
+      "defaultEnum": "none",
+      "values": [
+        {
+          "enumeration": "none",
+          "bitfieldValue": 0,
+          "enumAsString": "None"
+        },
+        {
+          "enumeration": "peap",
+          "bitfieldValue": 1,
+          "enumAsString": "PEAP"
+        },
+        {
+          "enumeration": "eapTls",
+          "bitfieldValue": 2,
+          "enumAsString": "EAP-TLS"
+        },
+        {
+          "enumeration": "eapTtls",
+          "bitfieldValue": 3,
+          "enumAsString": "EAP-TTLS"
+        }
+      ]
+    }
+  }
+}
