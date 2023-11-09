@@ -229,7 +229,7 @@ class DiscoveryAdvancedV0 extends Discovery {
               ? "true"
               : "false",
         ),
-        MapEntry('DNS_NAME', systemName.value),
+        MapEntry('DNS_NAME', dnsDomain.value),
         MapEntry(
           'IP_ACQUISITION_PROTOCOL',
           ipAcquisitionProto.value?.enumAsString,
@@ -247,7 +247,7 @@ class DiscoveryAdvancedV0 extends Discovery {
         MapEntry('PRIMARY_LANGUAGE', primaryLanguage.value?.enumAsString),
         MapEntry(
           'AVAILABLE_LANGUAGES',
-          availableSecondaryLanguagesBitfield.value?.getCommaSeparatedList(),
+          availableLanguagesBitfield.value?.getCommaSeparatedList(),
         ),
         MapEntry(
           'SECONDARY_PRINTER_LANGUAGE',
@@ -270,6 +270,7 @@ class DiscoveryAdvancedV0 extends Discovery {
             numOfLabelsInBatch.value.toString()),
         MapEntry('NUMBER_LABELS_QUEUED', labelsQueued.value.toString()),
         MapEntry('ZBI_ENABLED', zbiEnabled.value.toString()),
+        MapEntry('ZBI_STATE', zbiState.value?.enumAsString),
         MapEntry('ZBI_MAJOR_VER', zbiMajorVersion.value.toString()),
         MapEntry('ZBI_MINOR_VER', zbiMinorVersion.value.toString()),
         MapEntry('PORT_STATUS', getPortStatus().enumAsString),
