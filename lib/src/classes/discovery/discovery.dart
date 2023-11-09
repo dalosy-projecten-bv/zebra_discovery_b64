@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:meta/meta.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v0.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v1.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v2.dart';
@@ -24,7 +23,8 @@ abstract class Discovery {
   final ByteValue discoveryVersion;
   final map = <String, dynamic>{};
 
-  @mustCallSuper
+  //This attribute is removed, so we don't need a dependency on the meta package
+  // @mustCallSuper
   void initMap() {
     map.addEntries({
       MapEntry('DISCOVERY_VER', discoveryVersion.value.toString()),
