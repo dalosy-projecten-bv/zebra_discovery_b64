@@ -7,7 +7,7 @@ import 'package:zebra_discovery_b64/zebra_discovery_b64.dart';
 import 'helpers/helpers.dart';
 
 void main() {
-  //This is a real string, received from an actual device
+  //This is a crafted by hand for testing purposes
   final String discoveryB64Legacy =
       "OiwuAzEyMzQ1Njc4MTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3MTIzNDU2Nzg5MDEyMzQ1AP8A/wD/MTIzNDU2Nzg5MAABwKgBOP///wDAqAEBMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjMA/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wCqAKoAqgCqAKoAqgCqAKoAqgCqAKoAqgCqAKoAqgCqMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMgUxMjM0NTY3ODkwMTIzNDU2";
 
