@@ -4,6 +4,8 @@ import 'package:test/test.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_legacy.dart';
 import 'package:zebra_discovery_b64/zebra_discovery_b64.dart';
 
+import 'helpers/helpers.dart';
+
 void main() {
   //This is a real string, received from an actual device
   final String discoveryB64Legacy =
@@ -16,11 +18,8 @@ void main() {
   group('Test legacy', () {
     test('Decode an legacy message', () {
       final discovery = Discovery.fromDiscoveryB64(discoveryB64Legacy);
+
       expect(discovery, isA<DiscoveryLegacy>());
-      final json = discovery.toJson();
-      JsonEncoder encoder = JsonEncoder.withIndent('  ');
-      String prettyprint = encoder.convert(json);
-      print(prettyprint);
 
       expect(discovery.map['DISCOVERY_VER'], '3');
       expect(discovery.map['PRODUCT_NUMBER'], '12345678');
@@ -44,18 +43,28 @@ void main() {
       expect(discovery.map['PORT_NUMBER'], '9100');
       expect(discovery.map['DNS_NAME'], '1234567890123456789012345');
       expect(discovery.map.length, 19);
+
+      final json = discovery.toJson();
+      final jsonExpected = jsonDecode(
+        testResources('discovery_legacy.json'),
+      );
+      expect(eq(json, jsonExpected), true);
     });
 
     test('Decode a legacy message with unknown version', () {
       expect(
-        () => Discovery.fromDiscoveryB64(discoveryB64V2),
-        throwsA( predicate((e) => e is FormatException && e.message =='The message contains an unknown version (2)')) );
+          () => Discovery.fromDiscoveryB64(discoveryB64V2),
+          throwsA(predicate((e) =>
+              e is FormatException &&
+              e.message == 'The message contains an unknown version (2)')));
     });
 
     test('Decode a too short legacy message', () {
       expect(
-              () => Discovery.fromDiscoveryB64(discoveryB64Short),
-          throwsA( predicate((e) => e is FormatException && e.message =='The message contains an unknown version (-1)')) );
+          () => Discovery.fromDiscoveryB64(discoveryB64Short),
+          throwsA(predicate((e) =>
+              e is FormatException &&
+              e.message == 'The message contains an unknown version (-1)')));
     });
   });
 }
