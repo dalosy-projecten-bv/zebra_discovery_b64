@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:test/test.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v0.dart';
 import 'package:zebra_discovery_b64/zebra_discovery_b64.dart';
@@ -11,10 +13,10 @@ void main() {
     test('Decode an advancedV0 message', () {
       final discovery = Discovery.fromDiscoveryB64(discoveryB64AdvancedV4);
       expect(discovery, isA<DiscoveryAdvancedV0>());
-      // final json = discovery.toJson();
-      // JsonEncoder encoder = JsonEncoder.withIndent('  ');
-      // String prettyprint = encoder.convert(json);
-      // print(prettyprint);
+      final json = discovery.toJson();
+      JsonEncoder encoder = JsonEncoder.withIndent('  ');
+      String prettyprint = encoder.convert(json);
+      print(prettyprint);
 
       expect(discovery.map['DISCOVERY_VER'], '4');
       expect(discovery.map['ADVANCED_DISCOVERY_VER'], '0');

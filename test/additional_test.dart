@@ -2,61 +2,14 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:test/test.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v4.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.dart';
 import 'package:zebra_discovery_b64/src/classes/helpers.dart';
-import 'package:zebra_discovery_b64/zebra_discovery_b64.dart';
 
 import 'helpers/helpers.dart';
 
 void main() {
-  final String discoveryB64AdvancedV4 =
-      "OiwuBAUBAAFaQlIAAEQzSjE5MzIwNjcyMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFpUQyBaRDYyMC0yMDNkcGkgWlBMAAAAAAAAAAAAAAAAVjg0LjIwLjIzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG1EM0oxOTMyMDY3MjIAAAAAAAAAAAAAAAAAAAAAAAAAAGhvbWUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAdNnRgUAADAqAFM////AMCoAQEX1Q7/AAAAAQAAAAUAAAADAAgR8ATQA0AAZAACAAAAAQAAAPsAAA/lAAAP5QAAAAABAAIBA0Aj8AYEMC4xMwAAGykIAALSsBojtyQbAAA=:c0cb";
 
-  group('A group of tests', () {
-    setUp(() {
-      // Additional setup goes here.
-    });
-
-    test('Decode an advancedV4 message', () {
-      final discovery = Discovery.fromDiscoveryB64(discoveryB64AdvancedV4);
-      expect(discovery, isA<DiscoveryAdvancedV4>());
-      final json = discovery.toJson();
-      JsonEncoder encoder = JsonEncoder.withIndent('  ');
-      String prettyprint = encoder.convert(json);
-      print(prettyprint);
-
-      expect(discovery.map['DISCOVERY_VER'], '4');
-      expect(discovery.map['ADVANCED_DISCOVERY_VER'], '5');
-      expect(discovery.map['COMPANY_ABBREVIATION'], 'ZBR');
-      expect(discovery.map['SYSTEM_NAME'], 'D3J193206722');
-      expect(
-          discovery.map['PRODUCT_NAME'],
-          'ZTC ZD620-20'
-          '3dpi ZPL');
-      expect(discovery.map['FIRMWARE_VER'], 'V84.20.23');
-      expect(discovery.map['LOCATION'], '');
-      expect(discovery.map['ERRORS'], '');
-      expect(discovery.map['WARNINGS'], '');
-      expect(discovery.map['ACTIVE_NETWORK_INTERFACE'], 'Internal Wired');
-      expect(discovery.map['SERIAL_NUMBER'], 'D3J193206722');
-      expect(discovery.map['DEVICE_UNIQUE_ID'], 'D3J193206722');
-      expect(discovery.map['DNS_DOMAIN'], 'home');
-      expect(discovery.map['HARDWARE_ADDRESS'], '00704D9D1814');
-
-      // expect(discovery.map['USING_NET_PROTOCOL'], 'TODO');
-      // expect(discovery.map['DNS_NAME'], 'TODO');
-
-      expect(discovery.map['IP_ACQUISITION_PROTOCOL'], 'All');
-      expect(discovery.map['ADDRESS'], '192.168.1.76');
-      expect(discovery.map['SUBNET_MASK'], '255.255.255.0');
-      expect(discovery.map['GATEWAY'], '192.168.1.1');
-      expect(discovery.map['PORT_NUMBER'], '6101');
-      expect(discovery.map['AVAILABLE_NETWORK_PROTOCOLS'],
-          'FTP,LPD,TCP,UDP,HTTP,SMTP,POP3,SNMP,Weblink,TLS,HTTPS');
-
-      expect(discovery.map.length, 51);
-    });
+  group('additional tests', () {
 
     test('Test error codes', () {
       final errorsSegment0 = Uint8List.fromList([
