@@ -88,7 +88,6 @@ void main() {
         int.parse(byte4, radix: 2),
       ]);
       final result = parseInteger(byteArray);
-      printAsBinary32(result);
       expect(result, int.parse('$byte1$byte2$byte3$byte4', radix: 2));
     });
 
@@ -104,7 +103,6 @@ void main() {
         int.parse(byte4, radix: 2),
       ]);
       final result = parseInteger(byteArray);
-      printAsBinary32(result);
       expect(result, int.parse('$byte1$byte2$byte3$byte4', radix: 2));
     });
 
@@ -120,7 +118,6 @@ void main() {
         int.parse(byte4, radix: 2),
       ]);
       final result = parseInteger(byteArray);
-      printAsBinary32(result);
       expect(result, int.parse('$byte1$byte2$byte3$byte4', radix: 2));
     });
 
@@ -136,7 +133,6 @@ void main() {
         int.parse(byte4, radix: 2),
       ]);
       final result = parseInteger(byteArray);
-      printAsBinary32(result);
       expect(result, int.parse('$byte1$byte2$byte3$byte4', radix: 2));
     });
 

@@ -35,14 +35,6 @@ bool uint8ListEquals(Uint8List list1, Uint8List list2) {
   return true;
 }
 
-void printAsByte(int value) {
-  print(value.toRadixString(2).padLeft(8, '0'));
-}
-
-void printAsBinary32(int value) {
-  print(value.toRadixString(2).padLeft(32, '0'));
-}
-
 String getErrors({
   required Uint8List errorsSegment0,
   required Uint8List errorsSegment1,
