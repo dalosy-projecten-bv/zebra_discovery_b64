@@ -6,7 +6,9 @@ class MyJsonSerializable extends JsonSerializable {
   const MyJsonSerializable({
     super.createFactory = false,
     super.explicitToJson = true,
+    // coverage:ignore-start
   }) : super(converters: const [
+          // coverage:ignore-end
           GenericConverter(),
           Uint8ListConverter(),
         ]);

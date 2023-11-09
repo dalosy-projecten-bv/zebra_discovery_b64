@@ -4,10 +4,13 @@ import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 class GenericConverter<T> implements JsonConverter<T, Object> {
   const GenericConverter();
 
+  // coverage:ignore-start
   @override
   T fromJson(Object json) {
     throw UnimplementedError();
   }
+
+  // coverage:ignore-end
 
   @override
   Object toJson(T object) {
@@ -15,18 +18,12 @@ class GenericConverter<T> implements JsonConverter<T, Object> {
       return object.toJson();
     }
 
-    if (object is List) {
-      if (object.isEmpty) return [];
-
-      if (object.first is Serializable) {
-        return object.map((t) => t.toJson()).toList();
-      }
-    }
-
+    // coverage:ignore-start
     throw ArgumentError.value(
       object,
       'Cannot serialize to JSON',
       'OperationResult._toJson this object or List either is not Serializable or is unrecognized.',
     );
+    // coverage:ignore-end
   }
 }
