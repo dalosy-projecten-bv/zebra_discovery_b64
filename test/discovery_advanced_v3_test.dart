@@ -1,23 +1,23 @@
 import 'package:test/test.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v4.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v3.dart';
 import 'package:zebra_discovery_b64/zebra_discovery_b64.dart';
 
 void main() {
   //This is a real string, received from an actual device
   final String discoveryB64AdvancedV4 =
-      "OiwuBAQBAAFaQlIAAEQzSjE5MzIwNjcyMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFpUQyBaRDYyMC0yMDNkcGkgWlBMAAAAAAAAAAAAAAAAVjg0LjIwLjIzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG1EM0oxOTMyMDY3MjIAAAAAAAAAAAAAAAAAAAAAAAAAAGhvbWUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAdNnRgUAADAqAFM////AMCoAQEX1Q7/AAAAAQAAAAUAAAADAAgR8ATQA0AAZAACAAAAAQAAAPsAAA/lAAAP5QAAAAABAAIBA0Aj8AYEMC4xMwAAGykIAALSsBojtyQbAAA=:c0cb";
+      "OiwuBAMBAAFaQlIAAEQzSjE5MzIwNjcyMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFpUQyBaRDYyMC0yMDNkcGkgWlBMAAAAAAAAAAAAAAAAVjg0LjIwLjIzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG1EM0oxOTMyMDY3MjIAAAAAAAAAAAAAAAAAAAAAAAAAAGhvbWUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAdNnRgUAADAqAFM////AMCoAQEX1Q7/AAAAAQAAAAUAAAADAAgR8ATQA0AAZAACAAAAAQAAAPsAAA/lAAAP5QAAAAABAAIBA0Aj8AYEMC4xMwAAGykIAALSsBojtyQbAAA=:c0cb";
 
-  group('Test advancedV4', () {
+  group('Test advancedV3', () {
     test('Decode an advancedV4 message', () {
       final discovery = Discovery.fromDiscoveryB64(discoveryB64AdvancedV4);
-      expect(discovery, isA<DiscoveryAdvancedV4>());
+      expect(discovery, isA<DiscoveryAdvancedV3>());
       // final json = discovery.toJson();
       // JsonEncoder encoder = JsonEncoder.withIndent('  ');
       // String prettyprint = encoder.convert(json);
       // print(prettyprint);
 
       expect(discovery.map['DISCOVERY_VER'], '4');
-      expect(discovery.map['ADVANCED_DISCOVERY_VER'], '4');
+      expect(discovery.map['ADVANCED_DISCOVERY_VER'], '3');
       expect(discovery.map['COMPANY_ABBREVIATION'], 'ZBR');
       expect(discovery.map['SYSTEM_NAME'], 'D3J193206722');
       expect(
@@ -73,16 +73,12 @@ void main() {
       expect(discovery.map['LINK_OS_MAJOR_VER'], '6');
       expect(discovery.map['LINK_OS_MINOR_VER'], '4');
       expect(discovery.map['AVS_INI_VER'], '0.13');
-      expect(discovery.map['PROCESSOR_ID'], '1B29800020D2B01A');
-      expect(discovery.map['TLS_RAW_PORT_NUMBER'], '9143');
-      expect(discovery.map['TLS_JSON_PORT_NUMBER'], '9243');
-      expect(discovery.map['WIRED_8021X_SECURITY_SETTING'], 'None');
       expect(discovery.map['PORT_STATUS'], 'Online');
       expect(discovery.map['PRODUCT_NUMBER'], '');
       expect(discovery.map['PORT_NAME'], '');
       expect(discovery.map['DATE_CODE'], '');
 
-      expect(discovery.map.length, 56);
+      expect(discovery.map.length, 52);
     });
   });
 }
