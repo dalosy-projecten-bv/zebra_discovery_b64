@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:collection/collection.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v0.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v1.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v2.dart';
@@ -9,6 +10,7 @@ import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v4.
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_legacy.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_version.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/byte_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_base.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
 
 abstract class Discovery {
@@ -22,6 +24,13 @@ abstract class Discovery {
   final NotUsedValue notUsed1;
   final ByteValue discoveryVersion;
   final map = <String, dynamic>{};
+
+  List<ValueBase> get items => <ValueBase>[
+        notUsed1,
+        discoveryVersion,
+      ];
+
+  bool hasError() => items.firstWhereOrNull((e) => e.error) != null;
 
   //This attribute is removed, so we don't need a dependency on the meta package
   // @mustCallSuper

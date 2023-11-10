@@ -1,5 +1,6 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v1.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/byte_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_base.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/int_value.dart';
 import 'package:zebra_discovery_b64/src/classes/json/my_json_serializable.dart';
 import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.dart';
@@ -26,6 +27,14 @@ class DiscoveryAdvancedV2 extends DiscoveryAdvancedV1 {
       MapEntry('LINK_OS_MINOR_VER', linkOsMinorVer.value.toString()),
     });
   }
+
+  @override
+  List<ValueBase> get items => <ValueBase>[
+        ...super.items,
+        jsonPort,
+        linkOsMajorVer,
+        linkOsMinorVer,
+      ];
 
   @override
   Map<String, dynamic> toJson() => _$DiscoveryAdvancedV2ToJson(this);

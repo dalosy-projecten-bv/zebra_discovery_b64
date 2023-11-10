@@ -14,6 +14,7 @@ import 'package:zebra_discovery_b64/src/classes/discovery/enums/zbi_state.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/address_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/bool_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/byte_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_base.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/int_value.dart';
@@ -279,7 +280,6 @@ class DiscoveryAdvancedV0 extends Discovery {
         MapEntry('DATE_CODE', ''),
       },
     );
-    // TODO: implement initMap
   }
 
   PrinterPortStatus getPortStatus() {
@@ -296,6 +296,51 @@ class DiscoveryAdvancedV0 extends Discovery {
                     ? PrinterPortStatus.online
                     : PrinterPortStatus.printerError;
   }
+
+  @override
+  List<ValueBase> get items => <ValueBase>[
+        ...super.items,
+        advancedPacketFormat,
+        notUsed2,
+        companyAbbreviation,
+        systemName,
+        productName,
+        fwVersion,
+        location,
+        ...errors.segmentedEnumValues,
+        ...warnings.segmentedEnumValues,
+        availableLanguagesBitfield,
+        deviceUniqueId,
+        dnsDomain,
+        activeInterface,
+        macAddress,
+        ipAcquisitionProto,
+        ipAddress,
+        subnetMask,
+        gatewayMask,
+        port,
+        availableProtocols,
+        primaryLanguage,
+        availableLanguagesBitfield,
+        availableSecondaryLanguagesBitfield,
+        dotsPerMm,
+        dotsPerDotRow,
+        labelLength,
+        labelWidth,
+        darkness,
+        mediaType,
+        printMethod,
+        printMode,
+        odometerTotal,
+        odometerMarkerOne,
+        odometerMarkerTwo,
+        numOfLabelsInBatch,
+        labelsQueued,
+        zbiEnabled,
+        zbiState,
+        zbiMajorVersion,
+        zbiMinorVersion
+      ];
 
   @override
   Map<String, dynamic> toJson() => _$DiscoveryAdvancedV0ToJson(this);

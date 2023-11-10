@@ -2,6 +2,7 @@ import 'package:zebra_discovery_b64/src/classes/discovery/discovery.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/enums/printer_port_status.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/address_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/bool_value.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_base.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/enum_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/hex_value.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/not_used_value.dart';
@@ -87,6 +88,29 @@ class DiscoveryLegacy extends Discovery {
       MapEntry('ENCRYPTED_SET_COMMUNITY_NAME', setCommunityName.value),
     });
   }
+
+  @override
+  List<ValueBase> get items => <ValueBase>[
+        ...super.items,
+        productNumber,
+        productName,
+        dateCode,
+        fwVersion,
+        companyAbbreviation,
+        hwAddress,
+        serialNum,
+        usingNetProtocol,
+        ipAddress,
+        subnetMask,
+        defaultGateway,
+        systemName,
+        notUsed2,
+        getCommunityName,
+        setCommunityName,
+        notUsed3,
+        portStatus,
+        portName,
+      ];
 
   @override
   Map<String, dynamic> toJson() => _$DiscoveryLegacyToJson(this);

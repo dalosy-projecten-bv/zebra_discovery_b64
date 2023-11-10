@@ -1,4 +1,5 @@
 import 'package:zebra_discovery_b64/src/classes/discovery/discovery_advanced_v2.dart';
+import 'package:zebra_discovery_b64/src/classes/discovery/values/classes/value_base.dart';
 import 'package:zebra_discovery_b64/src/classes/discovery/values/string_value.dart';
 import 'package:zebra_discovery_b64/src/classes/json/my_json_serializable.dart';
 import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.dart';
@@ -19,6 +20,12 @@ class DiscoveryAdvancedV3 extends DiscoveryAdvancedV2 {
       MapEntry('AVS_INI_VER', avsIniVersion.value),
     });
   }
+
+  @override
+  List<ValueBase> get items => <ValueBase>[
+    ...super.items,
+    avsIniVersion,
+  ];
 
   @override
   Map<String, dynamic> toJson() => _$DiscoveryAdvancedV3ToJson(this);
