@@ -36,4 +36,4 @@ This code aims compatability with
 - Link-OS multiplatorm SDK 2.15.1
 - WebServices v. 2.14.5198
 
-Samples decoded messages can be found in the [test_resources](https://github.com/dalosy-projecten-bv/zebra_discovery_b64/tree/main/test/test_resources) folder.
+Samples of decoded messages can be found in the [test_resources](https://github.com/dalosy-projecten-bv/zebra_discovery_b64/tree/main/test/test_resources) folder.
