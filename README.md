@@ -32,8 +32,8 @@ The `DiscoveryAdvancedV4` is used for versions 4 and higher.
 The actual type depends on version information provided in the discovery_b64 message.
 
 ## Additional information
-This code aims compatability with
-- Link-OS multiplatorm SDK 2.15.1
+This code aims compatibility with
+- Link-OS multiplatform SDK 2.15.1
 - WebServices v. 2.14.5198
 
 Samples of decoded messages can be found in the [test_resources](https://github.com/dalosy-projecten-bv/zebra_discovery_b64/tree/main/test/test_resources) folder.
