@@ -14,7 +14,7 @@ Map<String, dynamic> _$DiscoveryAdvancedV2ToJson(
       'byteArray': const Uint8ListConverter().toJson(instance.byteArray),
       'notUsed1': instance.notUsed1.toJson(),
       'discoveryVersion': instance.discoveryVersion.toJson(),
-      'map': instance.map,
+      'map': instance.discoveryDataMap,
       'advancedPacketFormat': instance.advancedPacketFormat.toJson(),
       'notUsed2': instance.notUsed2.toJson(),
       'companyAbbreviation': instance.companyAbbreviation.toJson(),

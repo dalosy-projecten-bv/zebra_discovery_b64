@@ -16,7 +16,7 @@ class DiscoveryAdvancedV3 extends DiscoveryAdvancedV2 {
   @override
   void initMap() {
     super.initMap();
-    map.addEntries({
+    discoveryDataMap.addEntries({
       MapEntry('AVS_INI_VER', avsIniVersion.value),
     });
   }

@@ -21,7 +21,7 @@ class DiscoveryAdvancedV2 extends DiscoveryAdvancedV1 {
   @override
   void initMap() {
     super.initMap();
-    map.addEntries({
+    discoveryDataMap.addEntries({
       MapEntry('JSON_PORT_NUMBER', jsonPort.value.toString()),
       MapEntry('LINK_OS_MAJOR_VER', linkOsMajorVer.value.toString()),
       MapEntry('LINK_OS_MINOR_VER', linkOsMinorVer.value.toString()),

@@ -199,7 +199,7 @@ class DiscoveryAdvancedV0 extends Discovery {
   @override
   void initMap() {
     super.initMap();
-    map.addEntries(
+    discoveryDataMap.addEntries(
       {
         MapEntry(
             'ADVANCED_DISCOVERY_VER', advancedPacketFormat.value.toString()),

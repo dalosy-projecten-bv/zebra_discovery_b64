@@ -56,7 +56,7 @@ class DiscoveryLegacy extends Discovery {
   @override
   void initMap() {
     super.initMap();
-    map.addEntries({
+    discoveryDataMap.addEntries({
       MapEntry(
           'PORT_NUMBER',
           productName.value == null ||

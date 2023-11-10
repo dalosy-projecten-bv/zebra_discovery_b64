@@ -13,7 +13,7 @@ Map<String, dynamic> _$DiscoveryLegacyToJson(DiscoveryLegacy instance) =>
       'byteArray': const Uint8ListConverter().toJson(instance.byteArray),
       'notUsed1': instance.notUsed1.toJson(),
       'discoveryVersion': instance.discoveryVersion.toJson(),
-      'map': instance.map,
+      'map': instance.discoveryDataMap,
       'productNumber': instance.productNumber.toJson(),
       'productName': instance.productName.toJson(),
       'dateCode': instance.dateCode.toJson(),

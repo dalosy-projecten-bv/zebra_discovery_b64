@@ -23,7 +23,7 @@ abstract class Discovery {
   final Uint8List byteArray;
   final NotUsedValue notUsed1;
   final ByteValue discoveryVersion;
-  final map = <String, dynamic>{};
+  final discoveryDataMap = <String, dynamic>{};
 
   List<ValueBase> get items => <ValueBase>[
         notUsed1,
@@ -35,7 +35,7 @@ abstract class Discovery {
   //This attribute is removed, so we don't need a dependency on the meta package
   // @mustCallSuper
   void initMap() {
-    map.addEntries({
+    discoveryDataMap.addEntries({
       MapEntry('DISCOVERY_VER', discoveryVersion.value.toString()),
     });
   }

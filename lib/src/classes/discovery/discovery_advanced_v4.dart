@@ -30,7 +30,7 @@ class DiscoveryAdvancedV4 extends DiscoveryAdvancedV3 {
   @override
   void initMap() {
     super.initMap();
-    map.addEntries({
+    discoveryDataMap.addEntries({
       MapEntry('PROCESSOR_ID', processorId.value),
       MapEntry('TLS_RAW_PORT_NUMBER', tlsRawPort.value.toString()),
       MapEntry('TLS_JSON_PORT_NUMBER', tlsJsonPort.value.toString()),

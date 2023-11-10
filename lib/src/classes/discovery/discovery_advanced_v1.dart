@@ -16,7 +16,7 @@ class DiscoveryAdvancedV1 extends DiscoveryAdvancedV0 {
   @override
   void initMap() {
     super.initMap();
-    map.addEntries({
+    discoveryDataMap.addEntries({
       MapEntry('PRINT_HEAD_WIDTH', printHeadWidth.value.toString()),
     });
   }
