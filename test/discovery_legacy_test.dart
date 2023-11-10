@@ -43,6 +43,7 @@ void main() {
       expect(discovery.map['PORT_NUMBER'], '9100');
       expect(discovery.map['DNS_NAME'], '1234567890123456789012345');
       expect(discovery.map.length, 19);
+      expect(discovery.items.length, 20);
 
       final json = discovery.toJson();
       final jsonExpected = jsonDecode(

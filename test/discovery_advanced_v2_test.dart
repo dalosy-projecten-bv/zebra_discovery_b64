@@ -71,6 +71,7 @@ void main() {
       expect(discovery.map['PORT_NAME'], '');
       expect(discovery.map['DATE_CODE'], '');
       expect(discovery.map.length, 51);
+      expect(discovery.items.length, 50);
 
       final json = discovery.toJson();
       final jsonExpected = jsonDecode(
