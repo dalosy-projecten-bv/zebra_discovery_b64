@@ -69,6 +69,7 @@ void main() {
       expect(discovery.map['DATE_CODE'], '');
       expect(discovery.map.length, 48);
       expect(discovery.items.length, 47);
+      expect(discovery.error, false);
 
       final json = discovery.toJson();
       final jsonExpected = jsonDecode(

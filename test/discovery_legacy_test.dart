@@ -11,6 +11,9 @@ void main() {
   final String discoveryB64Legacy =
       "OiwuAzEyMzQ1Njc4MTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3MTIzNDU2Nzg5MDEyMzQ1AP8A/wD/MTIzNDU2Nzg5MAABwKgBOP///wDAqAEBMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjMA/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wCqAKoAqgCqAKoAqgCqAKoAqgCqAKoAqgCqAKoAqgCqMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMgUxMjM0NTY3ODkwMTIzNDU2";
 
+  final String discoveryB64LegacyShort =
+      "OiwuAzEyMzQ1Njc4MTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3MTIzNDU2Nzg5MDEyMzQ1AP8A/wD/MTIzNDU2Nzg5MAABwKgBOP///wDAqAEBMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjMA/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wCqAKoAqgCqAKoAqgCqAKoAqgCqAKoAqgCqAKoAqgCqMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMgUxMjM0NTY3ODkw";
+
   final String discoveryB64V2 = "OiwuAg==";
 
   final String discoveryB64Short = "Oiwu";
@@ -44,12 +47,18 @@ void main() {
       expect(discovery.map['DNS_NAME'], '1234567890123456789012345');
       expect(discovery.map.length, 19);
       expect(discovery.items.length, 20);
+      expect(discovery.error, false);
 
       final json = discovery.toJson();
       final jsonExpected = jsonDecode(
         testResources('discovery_legacy.json'),
       );
       expect(eq(json, jsonExpected), true);
+    });
+
+    test('Decode an legacy message', () {
+      final discovery = Discovery.fromDiscoveryB64(discoveryB64LegacyShort);
+      expect(discovery.error, true);
     });
 
     test('Decode a legacy message with unknown version', () {

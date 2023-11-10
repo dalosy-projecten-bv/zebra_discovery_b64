@@ -30,7 +30,7 @@ abstract class Discovery {
         discoveryVersion,
       ];
 
-  bool hasError() => items.firstWhereOrNull((e) => e.error) != null;
+  bool get error => items.firstWhereOrNull((e) => e.error) != null;
 
   //This attribute is removed, so we don't need a dependency on the meta package
   // @mustCallSuper
