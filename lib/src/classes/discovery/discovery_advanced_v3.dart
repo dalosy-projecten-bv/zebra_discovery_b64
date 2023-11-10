@@ -23,9 +23,9 @@ class DiscoveryAdvancedV3 extends DiscoveryAdvancedV2 {
 
   @override
   List<ValueBase> get items => <ValueBase>[
-    ...super.items,
-    avsIniVersion,
-  ];
+        ...super.items,
+        avsIniVersion,
+      ];
 
   @override
   Map<String, dynamic> toJson() => _$DiscoveryAdvancedV3ToJson(this);
