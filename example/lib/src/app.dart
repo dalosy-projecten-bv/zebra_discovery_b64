@@ -1,3 +1,4 @@
+import 'package:example_zebra_discovery_b64/src/discovery_b64/discovery_b64_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -71,6 +72,8 @@ class MyApp extends StatelessWidget {
                     return SettingsView(controller: settingsController);
                   case SampleItemDetailsView.routeName:
                     return const SampleItemDetailsView();
+                  case DiscoveryB64View.routeName:
+                    return const DiscoveryB64View();
                   case SampleItemListView.routeName:
                   default:
                     return const SampleItemListView();

@@ -2,5 +2,6 @@
   "appTitle": "example_zebra_discovery_b64",
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+  "discoveryB64Title": "Decode a discovery_b64 message"
 }
