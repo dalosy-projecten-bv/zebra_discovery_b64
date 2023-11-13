@@ -3,5 +3,5 @@
   "@appTitle": {
     "description": "The title of the application"
   },
-  "discoveryB64Title": "Decode a discovery_b64 message"
+  "discoveryB64Title": "Decode a DiscoveryB64 message"
 }
