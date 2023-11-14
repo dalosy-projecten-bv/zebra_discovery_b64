@@ -2,6 +2,8 @@
 
 This library decodes the discovery_b64 message that Zebra printers will send when they connect to a websocket endpoint, also named WebLink in the Zebra documentation.
 
+[Online demo](https://dalosy-projecten-bv.github.io/zebra_discovery_b64/)
+
 ## Features
 - Decodes the raw base64 string into an easy to use strongly typed class.
 - For backwards compatibility, the decoded value has a property `discoveryDataMap` that has the same entries as the Zebra SDK provides with the `getDiscoveryDataMap()` function.
