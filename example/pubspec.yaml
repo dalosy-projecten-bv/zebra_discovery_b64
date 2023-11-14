@@ -12,6 +12,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  zebra_discovery_b64:
+    path: ../
   flutter_localizations:
     sdk: flutter
 
