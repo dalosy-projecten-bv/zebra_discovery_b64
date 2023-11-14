@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../settings/settings_view.dart';
 import 'sample_item.dart';
-import 'sample_item_details_view.dart';
 
 /// Displays a list of SampleItems.
 class SampleItemListView extends StatelessWidget {
@@ -11,9 +10,6 @@ class SampleItemListView extends StatelessWidget {
     super.key,
     this.items = const [
       SampleItem('DiscoveryB64', DiscoveryB64View.routeName),
-      SampleItem('SampleItem 1', SampleItemDetailsView.routeName),
-      SampleItem('SampleItem 2',SampleItemDetailsView.routeName),
-      SampleItem('SampleItem 3',SampleItemDetailsView.routeName),
     ],
   });
 
@@ -25,7 +21,7 @@ class SampleItemListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sample Items'),
+        title: const Text('DiscoveryB64 test application'),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
@@ -55,7 +51,7 @@ class SampleItemListView extends StatelessWidget {
           final item = items[index];
 
           return ListTile(
-              title: Text('${item.name}'),
+              title: Text(item.name),
               leading: const CircleAvatar(
                 // Display the Flutter Logo image asset.
                 foregroundImage: AssetImage('assets/images/flutter_logo.png'),
