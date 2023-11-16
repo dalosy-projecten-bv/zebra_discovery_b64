@@ -1,6 +1,6 @@
 name: zebra_discovery_b64
 description: This library decodes the discovery_b64 message that Zebra printers will send when they connect to a websocket endpoint, also named WebLink in the Zebra documentation.
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/dalosy-projecten-bv/zebra_discovery_b64
 
 environment:
