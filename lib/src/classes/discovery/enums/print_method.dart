@@ -4,6 +4,7 @@ import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
 part 'print_method.g.dart';
 
+/// The discovered print method
 @JsonEnum(alwaysCreate: true)
 enum PrintMethod implements Serializable {
   directThermal(0, 'Direct Thermal'),

@@ -4,6 +4,7 @@ import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
 part 'ip_acquisition_protocol.g.dart';
 
+/// The discovered IP acquisition protocol
 @JsonEnum(alwaysCreate: true)
 enum IpAcquisitionProtocol implements Serializable {
   all(0, 'All'),

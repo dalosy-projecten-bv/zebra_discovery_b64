@@ -12,6 +12,7 @@ import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.d
 
 part 'discovery_legacy.g.dart';
 
+/// This class is used for discovery_b64 legacy structures
 @MyJsonSerializable()
 class DiscoveryLegacy extends Discovery {
   DiscoveryLegacy(super.byteArray)

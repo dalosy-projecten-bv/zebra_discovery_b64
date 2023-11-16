@@ -4,6 +4,7 @@ import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
 part 'printer_media_type.g.dart';
 
+/// The discovered media type
 @JsonEnum(alwaysCreate: true)
 enum PrinterMediaType implements Serializable {
   continuous(0, "Continuous"),

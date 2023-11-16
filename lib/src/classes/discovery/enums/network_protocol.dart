@@ -4,6 +4,7 @@ import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
 part 'network_protocol.g.dart';
 
+/// The discovered network protocols
 @JsonEnum(alwaysCreate: true)
 enum NetworkProtocol implements Serializable {
   none(0, 'None'),

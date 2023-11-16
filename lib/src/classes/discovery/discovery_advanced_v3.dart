@@ -6,6 +6,7 @@ import 'package:zebra_discovery_b64/src/classes/json/uint8_list_json_converter.d
 
 part 'discovery_advanced_v3.g.dart';
 
+/// This class is used for discovery_b64 advanced structures with version >=3
 @MyJsonSerializable()
 class DiscoveryAdvancedV3 extends DiscoveryAdvancedV2 {
   DiscoveryAdvancedV3(super.byteArray)

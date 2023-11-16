@@ -4,6 +4,7 @@ import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
 part 'print_mode.g.dart';
 
+/// The discovered printe mode
 @JsonEnum(alwaysCreate: true)
 enum PrintMode implements Serializable {
   rewind(0, "Rewind"),

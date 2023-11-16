@@ -4,6 +4,7 @@ import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
 part 'printer_port_status.g.dart';
 
+/// The discovered printer status
 @JsonEnum(alwaysCreate: true)
 enum PrinterPortStatus implements Serializable {
   none(0, "None"),

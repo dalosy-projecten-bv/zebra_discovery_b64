@@ -4,6 +4,7 @@ import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
 part 'zbi_state.g.dart';
 
+/// The discovered zbi state
 @JsonEnum(alwaysCreate: true)
 enum ZbiState implements Serializable {
   disabled(0, "Disabled"),

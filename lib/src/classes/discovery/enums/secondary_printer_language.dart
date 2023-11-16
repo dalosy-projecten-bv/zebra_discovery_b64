@@ -4,6 +4,7 @@ import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
 part 'secondary_printer_language.g.dart';
 
+/// The discovered secondary language
 @JsonEnum(alwaysCreate: true)
 enum SecondaryPrinterLanguage implements Serializable {
   unknown(0, "Unknown"),

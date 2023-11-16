@@ -4,6 +4,7 @@ import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
 part 'printer_error.g.dart';
 
+/// The discovered printer errors
 @JsonEnum(alwaysCreate: true)
 enum PrinterError implements Serializable {
   none(0, 0, "None"),

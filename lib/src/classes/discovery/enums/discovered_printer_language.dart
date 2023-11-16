@@ -4,6 +4,7 @@ import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
 part 'discovered_printer_language.g.dart';
 
+/// The discovered printer language
 @JsonEnum(alwaysCreate: true)
 enum DiscoveredPrinterLanguage implements Serializable {
   unknown(0, 'unknown'),

@@ -4,6 +4,7 @@ import 'package:zebra_discovery_b64/src/classes/json/serializable.dart';
 
 part 'wired_8021x_security_setting.g.dart';
 
+/// The discovered wired 8021x security
 @JsonEnum(alwaysCreate: true)
 enum Wired8021xSecuritySetting implements Serializable {
   none(0, "None"),
