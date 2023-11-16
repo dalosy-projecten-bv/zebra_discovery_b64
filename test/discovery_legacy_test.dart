@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:test/test.dart';
-import 'package:zebra_discovery_b64/src/classes/discovery/discovery_legacy.dart';
 import 'package:zebra_discovery_b64/zebra_discovery_b64.dart';
 
 import 'helpers/helpers.dart';
