@@ -72,7 +72,6 @@ class DiscoveryLegacy extends Discovery {
       MapEntry('DNS_NAME', systemName.value),
       MapEntry('ADDRESS', ipAddress.value),
       MapEntry('COMPANY_ABBREVIATION', companyAbbreviation.value),
-      MapEntry('COMPANY_ABBREVIATION', companyAbbreviation.value),
       MapEntry('PRODUCT_NUMBER', productNumber.value),
       MapEntry('PRODUCT_NAME', productName.value),
       MapEntry('DATE_CODE', dateCode.value),
